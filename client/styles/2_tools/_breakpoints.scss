@@ -1,0 +1,40 @@
+/* ======================================== */
+/* =                                      = */
+/* =           Breakpoint Tools           = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines breakpoint mixins
+.      
+*/
+
+// - - - - - - - - -
+// * Media Query Breakpoints
+// prefix: $media
+// usage: -sm || -md || -lg || xlg
+// - - - - - - - - -
+@mixin media-sm{
+      @media (max-width: #{$screen-md}) {
+            @content;
+      }
+}
+
+@mixin media-md{
+      @media (min-width: #{$screen-md}) {
+            @content;
+      }
+}
+
+@mixin media-lg{
+      @media (min-width: #{$screen-lg}) {
+            @content;
+      }
+}
+
+@mixin media-xlg{
+      @media (min-width: #{$screen-xlg}) {
+            @content;
+      }
+}

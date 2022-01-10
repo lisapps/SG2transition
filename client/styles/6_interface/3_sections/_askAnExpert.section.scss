@@ -1,0 +1,140 @@
+.s-askAnExpert {
+    padding: 3em 0;
+
+    // form[data-thanks] { display: none; }
+
+    &__ {
+        &form {
+            max-width: 40em;
+            &[data-confirmation] {
+                margin-bottom: 2em;
+                margin-top: 6em;
+
+                @media screen and (min-width: $screen-md) {
+                    margin-top: 8em;
+                }
+
+                .s-askAnExpert__form {
+                    &__block {
+                        &__status { margin-bottom: 1em; }
+                        &__inputs { min-height: 7em; }
+                    }
+                }
+
+                hr {
+                    margin-bottom: 6em;
+                    @media screen and (min-width: $screen-md) {
+                        margin-bottom: 8em;
+                    }
+                }
+
+                &:not([hidden]) ~ .s-askAnExpert__legal { display: block; }
+            }
+            &__ {
+                &block {
+                    animation: formIn 1s;
+                    min-height: 28em;
+                    display: flex;
+                    flex-direction: column;
+
+                    &[hidden] {
+                        animation: formOut 1s;
+                        display: none;
+                    }
+
+                    &__ {
+                        &status {
+                            display: flex;
+                            justify-content: center;
+                            text-align: center;
+                            margin: 1em 0 3.5em 0;
+                            li {
+                                color: #6c7175;
+                                &:first-child {
+                                    margin-left: 0;
+                                }
+                                &:empty {
+                                    height: 0.25em;
+                                    background-color: #353535;
+                                    opacity: 1;
+                                    border-radius: 0.25em;
+                                    flex-grow: 1;
+                                    max-width: 5em;
+                                    margin: 2em 1em;
+                                }
+                                &:only-child {
+                                    button {
+                                        border-color: black;
+                                        svg { fill: #c41320; }
+                                    }
+                                }
+                                &[data-active] {
+                                    color: #353535;
+                                    button {
+                                        border-width: 0.25em;
+                                        border-color: #c41320;
+                                        svg { fill: black; }
+                                    }
+                                    & ~ li:empty {
+                                        opacity: 0.4;
+                                    }
+                                }
+                            }
+                            button {
+                                position: relative;
+                                border-width: 0.125em;
+                                border-style: solid;
+                                border-color: rgb(181, 185, 189);
+                                border-radius: 50%;
+                                width: 4em;
+                                height: 4em;
+                                display: flex; 
+                                padding: 0;
+                                margin-bottom: 0.5em;
+
+                                svg {
+                                    display: block;
+                                    margin: auto;
+                                    width: 1.5em;
+                                    height: 1.5em;
+                                    fill: rgb(181, 185, 189)
+                                }
+                            }
+                        }
+                        &inputs {
+                            flex-grow: 1;
+                            min-height: 15em;
+                            padding-bottom: 1.5em;
+                        }
+                        &cta {
+                            display: grid;
+                            grid-gap: 1em;
+                            grid-template-columns: repeat(auto-fit, 9.375em);
+                            justify-content: end;
+                        }
+                        &signup {
+                            display: flex;
+                            align-items: flex-start;
+                            .f-input { padding-right: 2em; }
+                        }
+                    }
+                }
+            }
+        }
+        &legal {
+            display: none;
+            padding-top: 3em;
+        }
+    }
+
+    .l-row__col { overflow: initial; }
+}
+
+@keyframes formIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes formOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

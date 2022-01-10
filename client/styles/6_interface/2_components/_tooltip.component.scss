@@ -1,0 +1,131 @@
+.c-tooltip {
+
+    $root: &;
+    position: relative;
+    color: $link-color;
+    cursor: pointer;
+    
+    &__{
+        &message {
+            display: none;
+            max-height: 45%;
+            max-width: 85%;
+            position: fixed;
+            top: -100000px;
+            left: -100000px;
+            background-color: $tooltipMessage-backgroundColor;
+            color: $tooltipMessage-color;
+            font-size: 0.875rem;
+            box-sizing: border-box;
+            padding: 0.5em 1.25em;
+            overflow: auto; // previously overflow: scroll;
+            border-top: 0.5em solid $tooltipMessage-backgroundColor;
+            border-bottom: 0.5em solid $tooltipMessage-backgroundColor;
+            z-index: 3141594;
+            
+            @include media-md {
+                max-height: initial;
+                max-width: 21.875rem;
+                padding: 1em 1.25em;
+            }
+
+            h1, h2, h3, h4, h5, h6 { margin-bottom: 0.25rem; }
+
+            > *:last-child { margin-bottom: 0; }
+
+            &.c-tooltip--active { display: block; }
+
+        }
+        
+        &arrow {
+            display: none;
+            position: absolute;
+            border-width: 0.5rem;
+            border-style: solid;
+            border-color: transparent transparent $tooltipMessage-backgroundColor transparent;
+            left: -100000px;
+            top: -100000px;
+            z-index: 3141593;
+
+            &.c-tooltip--active { display: block; }
+        }
+
+        &group {
+            display: none;
+
+            .c-tooltip__arrow {
+                display: block;
+                width: 0.5rem;
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: translateX(0.625rem);
+                order: 1;
+            }
+
+            .c-tooltip__message {
+                display: block;
+                width: 100%;
+                max-width: inherit;
+                position: relative;
+                max-height: 18.750em;
+                top: auto;
+                left: auto;
+                border-top: 0.5rem solid $tooltipMessage-backgroundColor;
+                border-bottom: 0.5rem solid $tooltipMessage-backgroundColor;
+                margin-top: -1px;
+                padding: 0 0.5rem;
+                order: 2;
+                overflow: auto; // Previously overflow-y: scroll;
+                
+                //word breaks
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+
+                &--{
+                    &helper { 
+                        background-color: $tooltipMessage-backgroundColor-helper;
+                        color: white;
+                        border-color: $tooltipMessage-backgroundColor-helper;
+                        &+.c-tooltip__arrow {
+                            border-color: transparent transparent $tooltipMessage-backgroundColor-helper transparent;
+                        }
+                        a { color: $tooltipMessage-linkColor; }
+                    }
+                    &error { 
+                        background-color: $tooltipMessage-backgroundColor-error;
+                        color: white;  
+                        border-color: $tooltipMessage-backgroundColor-error;
+                        &+.c-tooltip__arrow {
+                            border-color: transparent transparent $tooltipMessage-backgroundColor-error transparent;
+                        }
+                    }
+                }
+            }
+            &--{
+                &active {
+                    display: flex;
+                    flex-direction: column;
+
+                    .c-tooltip__message { margin-top: 0.5rem; }
+                    .c-tooltip__arrow { position: absolute; }
+                }
+            }
+        }
+    }
+    &.f-input { color: #585858; }
+
+    html[dir="rtl"] & {
+        &__{
+            &group {
+                .c-tooltip__arrow {
+                    transform: translateX(-0.625rem);
+                }
+            }
+        }
+    }
+}

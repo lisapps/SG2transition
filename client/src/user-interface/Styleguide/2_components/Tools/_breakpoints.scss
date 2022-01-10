@@ -1,0 +1,222 @@
+.v-breakpoints {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  border-top: 1px solid #777;
+  padding: 0.5em;
+  color: #fff;
+  font-size: 0.875rem;
+  &__val {
+    display: flex;
+    background: #323232;
+    padding: 0.125em 0.5em;
+    border-radius: 20px;
+    input {
+      display: inline-block;
+      text-align: right;
+      background: none;
+      border: none;
+      color: inherit;
+      padding: 0;
+      &::placeholder {
+        color: inherit;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::selection {
+        background-color: gray;
+      }
+    }
+    span {
+      margin-top: 0.1em;
+    }
+  }
+  &__modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 6px;
+    margin: 0 1em;
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      display: flex;
+      &:hover {
+        svg {
+          fill: white;
+        }
+      }
+      &:focus {
+        outline: 0;
+        svg {
+          border: none;
+          fill: white;
+        }
+      }
+      &.-disabled {
+        cursor: not-allowed;
+        display: none;
+        svg {
+          fill: #292929;
+        }
+      }
+      svg {
+        width: auto;
+        height: auto;
+        fill: #7f7f7f;
+        transition: fill 300ms;
+      }
+    }
+  }
+}
+
+.v-viewFrame {
+  width: 100%;
+  background: #bebebe;
+  position: relative;
+  &__window {
+    display: block;
+    border: none;
+    background: #bebebe;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 315px;
+  }
+  iframe {
+    display: block;
+    border: none;
+    background: #bebebe;
+    width: 100%;
+    min-width: 315px;
+    user-select: none;
+    // transition: height 60ms ease-in-out 0s;
+  }
+  &__grip {
+    position: absolute;
+    width: auto;
+    height: 5em;
+    color: #fff;
+    user-select: none;
+    &:hover {
+      cursor: col-resize;
+    }
+  }
+
+  &-- {
+    &active {
+      &::after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1001;
+      }
+    }
+  }
+}
+
+#sgViewer {
+  position: relative;
+  background: #bebebe;
+  overflow: hidden;
+}
+#sgViewerFrame {
+  position: relative;
+}
+.v-viewFrame__grip {
+  color: #555;
+  position: absolute;
+  top: 50%;
+  // transform: translateY(-50%);
+  padding: 3px;
+  background: none;
+  // transition: background 250ms;
+  width: 1em;
+  box-sizing: border-box;
+  &:hover,
+  &.-active {
+    background: #b0b0b0;
+  }
+  &--left {
+    left: 0;
+    transform: translateX(-100%);
+    top: 0;
+    height: 100%;
+    // width: 0.5em;
+  }
+  &--right {
+    right: 0;
+    transform: translateX(100%);
+    top: 0;
+    height: 100%;
+    // width: 0.5em;
+  }
+}
+button {
+  cursor: pointer;
+}
+// #btnFiesta {
+//   &.-active {
+//     color: white;
+//     svg {
+//       animation-name: fiestaLoca;
+//       animation-duration: 1.2s;
+//       animation-iteration-count: infinite;
+//     }
+//     .fiestaOval {
+//       animation-name: fiestaPoppers;
+//       animation-duration: 0.5s;
+//       animation-iteration-count: infinite;
+//       transform-origin: center;
+//     }
+//     .fiestaConfetti {
+//       animation-name: fiestaPoppers;
+//       animation-duration: 0.35s;
+//       animation-iteration-count: infinite;
+//       transform-origin: center;
+//     }
+//   }
+// }
+// @keyframes fiestaLoca {
+//   0% {
+//     fill: #ff787a;
+//     transform: scale(1) rotate(0);
+//   }
+//   20% {
+//     fill: yellow;
+//     transform: scale(1.2) rotate(-3deg);
+//   }
+//   40% {
+//     fill: #4b83e3;
+//   }
+//   60% {
+//     fill: #78ff81;
+//     transform: scale(1) rotate(4deg);
+//   }
+//   80% {
+//     fill: #88f3f7;
+//     transform: scale(1.3) rotate(12deg);
+//   }
+//   100% {
+//     fill: #f788f7;
+//     transform: scale(1) rotate(0);
+//   }
+// }
+
+// @keyframes fiestaPoppers {
+//   0% {
+//     transform: scale(1);
+//   }
+//   50% {
+//     transform: scale(1.3);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }

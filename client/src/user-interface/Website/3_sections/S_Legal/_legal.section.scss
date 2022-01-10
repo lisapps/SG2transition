@@ -1,0 +1,22 @@
+.s-legal {
+
+	padding: 3.125em 0;
+	
+	p, ol li {
+		font-size: 0.75rem;
+		color: $legal-list-color;
+		&:before { content: '*'; }
+	}
+	ol {
+		list-style-position: inside;
+		padding: 0;
+		margin: 0;
+	}
+	a { color: $legal-link-color; }
+	
+	// --- SECTION CONTENT: END --- //
+	html[dir="rtl"] & {
+		ol { padding: 0; }
+	}
+	
+}

@@ -1,0 +1,396 @@
+//Comparison Section
+// ***** KEYOU ADDED THIS STUFF: BEGIN ***** //
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv //
+.section-comparision {
+    background: black;
+
+
+    .comparision-inner {
+        padding-bottom: 1.428rem;
+    }
+
+    .comparision-box {
+        position: relative;
+    }
+
+    .filter-values {
+        overflow: hidden;
+
+        .scroller {
+            overflow-x: scroll;
+            padding-bottom: 30px;
+            margin-bottom: -30px;
+        }
+    }
+
+    .value-table {
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+        background-color: $comparison-table-bg-color;
+        margin:0 auto;
+
+        &.cover {
+            display: none;
+        }
+    }
+
+
+    .value-row {
+        display: table-row;
+
+        &.fix-title {
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            background: black;
+        }
+    }
+
+    .filter-xs {
+        height: 2.2em;
+
+        .filter-item {
+            position: absolute;
+            width: 0;
+            overflow: visible;
+            white-space: nowrap;
+            z-index: 0;
+        }
+    }
+
+    .comparision-item {
+        display: table-cell;
+        vertical-align: middle;
+        border-right: 1px solid black;        
+        background: white;
+        padding: 13px 10px;
+        min-width: 140px;
+        width: 150px;
+        font-weight: 300;
+        border-top: 1px solid white;
+        color: $comparison-table-color;
+        text-align: center;
+
+        &:last-child, &.last {
+            border-right: none;
+        }
+
+        &.filter-sm {
+            display: none;
+
+            &.comparision-btn {
+                display: none;
+            }
+        }
+
+        &.border-none {
+            border-top-color: transparent;
+        }
+
+        &.comparision-btn {
+            &.disabled {
+                background-color: #404040;
+
+                a, svg {
+                    display: none;
+                }
+
+                &:before {
+                    content: "-";
+                    color:white;
+                }
+            }
+
+            &:hover {
+                background-color: #858585;
+            }
+
+            &:last-child {
+                border-right: 1px solid #858585;
+            }
+
+            display: table-cell;
+            background-color: #707070;
+            padding: 5px 0;
+            border-top-color: transparent;
+            line-height: 18px;
+            height: 30px;
+            cursor: pointer;
+
+            svg {
+                fill: white;
+                width: 10px;
+                height: 10px;
+                margin-right: 5px;
+            }
+
+            a {
+                color: white;
+            }
+        }
+
+        &.removed {
+            display: none;
+        }
+
+    }
+
+    .product-header {
+        background-color: $accent-2;
+        border-top-color: $accent-2;
+
+        &:last-child {
+            border-right: 1px solid $accent-2;
+        }
+
+        h5 {
+            margin: 0;
+            padding: 0;
+            line-height: 17px;
+            color: white;
+        }
+    }
+
+    .product-thumb {
+
+        img {
+            height: 90px;
+            display: block;
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+
+    .filter-item {
+        background-color: $comparison-table-bg-color;
+        padding: 7px 0;
+        width: 100%;
+
+        h5 {
+            margin: 0;
+            padding: 0;
+            line-height: 17px;
+            color: #282828;
+            text-indent: 10px;
+        }
+    }
+
+    .scroll {
+        text-align: center;
+        margin-top: 1rem;
+
+        .scroll-left,
+        .scroll-right {
+            width: 29px;
+            height: 29px;
+        }
+
+
+
+        .reset {
+            display: inline;
+            line-height: 28px;
+
+            a {
+                color: $accent-3;
+            }
+        }
+
+        .scroll-left {
+            margin-left: 1rem;
+            background-image: url("/images/icons/scroll-left.png");
+            cursor: pointer;
+            float: left;
+
+            &.disabled {
+                opacity: .5;
+            }
+        }
+
+        .scroll-right {
+            margin-right: 1rem;
+            background-image: url("/images/icons/scroll-right.png");
+            cursor: pointer;
+            float: right;
+
+            &.disabled {
+                opacity: .5;
+            }
+        }
+
+        &.noscroll {
+            justify-content: center;
+
+            .scroll-left,
+            .scroll-right {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width:$screen-md) {
+
+    .section-comparision {
+        h2 {
+            margin: 0 0 1.5rem 1.5rem;
+        }
+        .filter-values{
+            padding-right:10px;
+        }
+        .comparision-inner {
+            padding-bottom: 2rem;
+        }
+
+        .filter-xs {
+            display: none;
+        }
+
+        .value-table {
+            background-color: black;
+            border-collapse: separate;
+            border-spacing: 5px 0;
+            margin: 0 auto;
+
+            &.cover {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: black;
+                height: 100%;
+                display: table;
+
+                &.noscroll {
+                    display: none;
+                }
+
+                .product-thumb {
+                    img {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+
+        .comparision-item {
+            min-width: 151px;
+            width: 151px;
+            line-height: 18px;
+            border-right: none;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &.filter-sm {
+                background-color: #404040;
+                line-height: 19px;
+                display: table-cell;
+                color: #fff;
+                min-width: 172px;
+                width: 172px;
+                border-top-color: #999999;
+                text-align: left;
+                padding-left: .5rem;
+
+                &.comparision-btn {
+                    display: table-cell;
+                    text-align: center;
+                }
+
+                &.border-none {
+                    border-top: 1px solid #404040;
+                }
+            }
+
+            &.comparision-btn {
+                border-top: 5px solid black;
+                line-height: 18px;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+
+        .product-header h5 {
+            line-height: 18px;
+        }
+
+        .odd {
+            background-color: $comparison-table-bg-color;
+        }
+
+        .scroll {
+            position: absolute;
+            width: 100%;
+            bottom:0;
+
+            .reset {
+                display: none;
+            }
+
+            .scroll-left {
+                margin-left: 195px;
+                margin-top:-6rem;
+            }
+            .scroll-right {
+                margin-right:2rem;
+                margin-top:-6rem;
+            }
+            &.noscroll {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width:$screen-lg) {
+
+    .section-comparision {
+        padding-bottom: 2rem;
+
+        h2 {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .comparision-inner {
+            padding-bottom: 3.125rem;
+        }
+
+        .value-table {
+            border-spacing: 10px 0;
+        }
+
+        .product-header h5 {
+            text-align: center;
+            line-height: 19px;
+            color: white;
+        }
+
+        .comparision-item {
+            min-width: 175px;
+            width: 175px;
+
+            &.filter-sm {
+                min-width: 193px;
+                width: 193px;
+            }
+
+            &.comparision-btn {
+                border-top: 10px solid black;
+            }
+        }
+
+        .scroll {
+
+            .scroll-left {
+                margin-left: 220px;
+            }
+        }
+    }
+}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ //
+// ***** KEYOU ADDED THIS STUFF: END ***** //

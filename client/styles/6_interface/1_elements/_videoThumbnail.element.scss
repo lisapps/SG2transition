@@ -1,0 +1,21 @@
+.e-videoThumbnail {
+    display: inline-block;
+    border: 0.125em solid black;
+    &:hover { cursor: pointer; }
+
+    &__ {
+        &gfx {
+            position: relative;
+            svg {
+                top: 50%;
+                left: 50%;
+                width: 3em;
+                height: 3em;
+                fill: white;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+            img { display: block; }
+        }
+    }
+}

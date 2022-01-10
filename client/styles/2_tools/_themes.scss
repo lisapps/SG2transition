@@ -1,0 +1,103 @@
+@mixin theme-dark(
+// -- layout
+      $body-color: 		$theme-dark-body-color,
+      $hr-color: 			$theme-dark-hr-color,
+// -- type
+      $font-base-color: 	$theme-dark-font-base-color,
+      $heading-color: 	      $theme-dark-heading-color,
+      $link-color:    	      $theme-dark-link-color,
+      $link-hover:    	      $theme-dark-link-hover,
+      $link-active:   	      $theme-dark-link-active,
+      // -- buttons - only used on hyperx?
+      // BTN1
+      // $btn-1-bg-color:        null,
+      // $btn-1-txt-color:       null,
+      // $btn-1-border-color:    null,
+      // // hover
+      // $btn-1-bg-hover:        null,
+      // $btn-1-txt-hover:       null,
+      // $btn-1-border-hover:    null,
+      
+      // // BTN2
+      // $btn-3-bg-color:	    rgba(255, 255, 255, .05),
+      // $btn-3-txt-color:	    white,
+      // $btn-3-border-color:    white,
+      // // // hover
+      // $btn-3-bg-hover: 	    $font-base-color,
+      // $btn-3-txt-hover: 	    white,
+      // $btn-3-border-hover:    $font-base-color,
+
+      $tag-bg-color:          $tag-darktheme-bg-color,
+      $tag-color:             $tag-darktheme-text-color,
+      $tag-hover:             $tag-darktheme-link-hover
+) {
+
+	// ### BASE PROPERTIES ### //
+	  color: $font-base-color;
+	  background-color: $body-color;
+  
+      h1, h2, h3, h4, h5, h6 { color: $heading-color; }
+      a:not(.e-btn) {
+            color: $link-color;
+            &:hover, &:focus { color: $link-hover; }
+            &:active { color: $link-active; }
+      }
+      hr { background-color: $hr-color; }
+      svg { fill: white; }
+      label { color: $theme-dark-body-color; }
+
+	  .l-flexTiles__item{
+			&--alternate{
+				  background: rgba(255,255,255,.125);
+			}
+	  }
+
+	  .c-productCardLite {
+			&__ {
+				  &links {
+						a:not(.btn):not(.e-btn) {
+							  color: white;
+						}
+				  }
+			}
+	  }
+
+	  .c-blogCard {
+			background-color: lighten($body-color, 10%);
+			&__ {
+				  &tags {
+						&__item {
+							  a {
+									color: #6C7175;
+									&:hover { color: white; }
+							  }
+						}
+				  }
+				  &heading {
+						a, a:hover { color: white; }
+				  }
+			}
+	  }
+
+	  // -- include custom declarations per theme
+	  @content;
+
+      a.e-tag {
+            background-color: $tag-bg-color;
+            color: $tag-color;
+            &:hover {
+                  color: $tag-hover;
+            }
+        }
+
+      .e-btn--alt2 {
+            color: $font-base-color;
+            border-color: $font-base-color;
+            background-color: rgba(0,0,0,0.05);
+            &:hover {
+                  border-color: #353535;
+                  background-color: #353535;
+            }
+      }
+
+}

@@ -1,0 +1,496 @@
+[
+  {
+    "topic": "Brand Elements",
+    "url": "/brand/elements",
+    "keywords": "Brand Elements"
+  },
+  {
+    "topic": "Kingston Logo",
+    "url": "/brand/elements/logo",
+    "keywords": "Kingston Logo Specific Cases Guidance"
+  },
+  {
+    "topic": "Kingston Brand Colors",
+    "url": "/brand/elements/colors",
+    "keywords": "Kingston Brand Colors"
+  },
+  {
+    "topic": "Kingston Typography",
+    "url": "/brand/elements/typography",
+    "keywords": "Kingston Typography"
+  },
+  {
+    "topic": "Kingston Illustrations",
+    "url": "/brand/elements/illustrations",
+    "keywords": "Kingston Illustrations"
+  },
+  {
+    "topic": "Kingston Tone of Voice",
+    "url": "/brand/elements/tone",
+    "keywords": "Kingston Tone of Voice"
+  },
+  {
+    "topic": "Kingston Emojis",
+    "url": "/brand/elements/emojis",
+    "keywords": "Kingston Emojis"
+  },
+  {
+    "topic": "Kingston Brand Usage Examples",
+    "url": "/brand/elements/examples",
+    "keywords": "Kingston Brand Usage Examples b2c web banner cta styles buttons flyers datasheets printed media"
+  },
+
+  {
+    "topic": "Kingston is With You (KIWY)",
+    "url": "/brand/kiwy/vision",
+    "keywords": "Kingston is With You KIWY"
+  },
+  {
+    "topic": "KIWY",
+    "url": "/brand/kiwy/vision",
+    "keywords": "Kingston is With You KIWY"
+  },
+  {
+    "topic": "KIWY: Our Vision",
+    "url": "/brand/kiwy/vision",
+    "keywords": "Kingston is With You KIWY Our Vision"
+  },
+  {
+    "topic": "KIWY: Our Goal",
+    "url": "/brand/kiwy/goal",
+    "keywords": "Kingston is With You KIWY Our Goal"
+  },
+  {
+    "topic": "KIWY: Tag Line Usage",
+    "url": "/brand/kiwy/tagline",
+    "keywords": "Kingston is With You KIWY Tag Line usage"
+  },
+  {
+    "topic": "KIWY: Icon Guideline",
+    "url": "/brand/kiwy/icon",
+    "keywords": "Kingston is With You KIWY Icon Guideline"
+  },
+
+  {
+    "topic": "Kingston FURY",
+    "url": "/brand/fury/logo",
+    "keywords": "Kingston FURY"
+  },
+  {
+    "topic": "About Kingston FURY",
+    "url": "/brand/fury/about",
+    "keywords": "Kingston FURY About"
+  },
+  {
+    "topic": "FURY Colors",
+    "url": "/brand/fury/colors",
+    "keywords": "FURY Colors"
+  },
+  {
+    "topic": "FURY Typography",
+    "url": "/brand/fury/typography",
+    "keywords": "FURY Typography"
+  },
+  {
+    "topic": "FURY Backgrounds",
+    "url": "/brand/fury/backgrounds",
+    "keywords": "Kingston FURY Backgrounds"
+  },
+  {
+    "topic": "FURY Swag",
+    "url": "/brand/fury/giveaways",
+    "keywords": "Kingston FURY Swag Merch Merchandise"
+  },
+  {
+    "topic": "FURY CTA Styles",
+    "url": "/brand/fury/ctastyles",
+    "keywords": "Kingston FURY CTA Styles"
+  },
+  {
+    "topic": "FURY Web Banners",
+    "url": "/brand/fury/webbanners",
+    "keywords": "Kingston FURY Web Banners"
+  },
+
+  {
+    "topic": "Kingston Photography",
+    "url": "/brand/photography/overview",
+    "keywords": "Kingston Photography"
+  },
+  {
+    "topic": "Photography: B2C vs. B2b",
+    "url": "/brand/photography/b2c-vs-b2b",
+    "keywords": "Kingston Photography b2c vs b2b"
+  },
+  {
+    "topic": "Photography: Guidance",
+    "url": "/brand/photography/guidance",
+    "keywords": "Kingston Photography Guidance"
+  },
+  {
+    "topic": "Photography: Product Lifestyle",
+    "url": "/brand/photography/product-lifestyle",
+    "keywords": "Kingston Photography Product Lifestyle"
+  },
+  {
+    "topic": "Photography: Research & Fact Check",
+    "url": "/brand/photography/research",
+    "keywords": "Kingston Photography Research Fact Check"
+  },
+
+  {
+    "topic": "Video Guidelines",
+    "url": "/brand/video/name1",
+    "keywords": "Kingston Video Guidelines"
+  },
+
+  {
+    "topic": "Program Logos",
+    "url": "/brand/program-logos",
+    "keywords": "Kingston Program Logos"
+  },
+  {
+    "topic": "Product Category Logos",
+    "url": "/brand/product-category-logos",
+    "keywords": "Kingston Product Category Logos"
+  },
+  {
+    "topic": "ISO Logo & Legal Guidelines",
+    "url": "/brand/legal",
+    "keywords": "Kingston ISO Logo & Legal Guidelines"
+  },
+
+  { "topic": "Ambassadors", "url": "/ui/ambassadors", "keywords": "brand ambassadors section" },
+  {
+    "topic": "Ask An Expert",
+    "url": "/ui/ask-an-expert",
+    "keywords": "Ask An Expert section lead generation type form used to gain potential clients and partners"
+  },
+  {
+    "topic": "Banners",
+    "url": "/ui/banners",
+    "keywords": "organizes photos with titles and description into a grid based layout using cards that contain the photo, title and description. The number of cards per row changes based on page width"
+  },
+  { "topic": "Bio", "url": "/ui/bio", "keywords": "bio section" },
+  { "topic": "Blog", "url": "/ui/blog", "keywords": "blog article section" },
+  {
+    "topic": "Configurator Results: 1",
+    "url": "/ui/configurator-one",
+    "keywords": "configurator results one section system information"
+  },
+  {
+    "topic": "Configurator Results: 2",
+    "url": "/ui/configurator-two",
+    "keywords": "configurator results two section system information"
+  },
+  {
+    "topic": "Configurator Results: 3",
+    "url": "/ui/configurator-three",
+    "keywords": "configurator results three section system information"
+  },
+  {
+    "topic": "Configurator Results: 4",
+    "url": "/ui/configurator-four",
+    "keywords": "configurator results four section system information"
+  },
+  {
+    "topic": "Configurator Results: 5",
+    "url": "/ui/configurator-five",
+    "keywords": "configurator results five section system information"
+  },
+  {
+    "topic": "Configurator Results: 6",
+    "url": "/ui/configurator-six",
+    "keywords": "configurator results six section system information"
+  },
+  {
+    "topic": "Configurator Results: 7",
+    "url": "/ui/configurator-seven",
+    "keywords": "configurator results seven section system information"
+  },
+  {
+    "topic": "Configurator Results: 8",
+    "url": "/ui/configurator-eight",
+    "keywords": "configurator results eight section system information"
+  },
+  {
+    "topic": "Configurator Results: 9",
+    "url": "/ui/configurator-nine",
+    "keywords": "configurator results nine section system information"
+  },
+  {
+    "topic": "Configurator Results: 10",
+    "url": "/ui/configurator-ten",
+    "keywords": "configurator results ten section system information"
+  },
+  { "topic": "Content", "url": "/ui/content", "keywords": "copyright section" },
+  {
+    "topic": "Copyright",
+    "url": "/ui/copyright",
+    "keywords": "copyright section layout any combination of content such as headings, paragraphs, images, lists, quotes, videos, etc"
+  },
+  {
+    "topic": "Decoder",
+    "url": "/ui/decoder",
+    "keywords": "Decoder Section is designed to help you identify Kingston  memory modules by specification"
+  },
+  { "topic": "FAQs", "url": "/ui/faqs", "keywords": "faqs questions answers section" },
+  {
+    "topic": "Feature Box",
+    "url": "/ui/feature-box",
+    "keywords": "Feature Box section displays a feature of a product with the name feature image badge icon text description below"
+  },
+  {
+    "topic": "Footer",
+    "url": "/ui/footer",
+    "keywords": "small area at the bottom of the page that provides access to important information links"
+  },
+  { "topic": "Header", "url": "/ui/header", "keywords": "header section grand headline product" },
+  {
+    "topic": "Heading",
+    "url": "/ui/heading",
+    "keywords": "heading section heading brief subtitle description"
+  },
+  {
+    "topic": "Hero",
+    "url": "/ui/hero",
+    "keywords": "hero section grand showcase large image product"
+  },
+  {
+    "topic": "Homepage Hero",
+    "url": "/ui/homepage-hero",
+    "keywords": "homepage hero section grand showcase large image product video larger height than the normal Hero"
+  },
+  {
+    "topic": "Image Full Width",
+    "url": "/ui/image-full-width",
+    "keywords": "drag and droppable image and the display requires 512, 1024, 2048 pixels wide height flexible"
+  },
+  {
+    "topic": "Image Limited Width",
+    "url": "/ui/image-limited-width",
+    "keywords": "limited width display requires a 512px wide image and one larger image could be 960px, 1200px, etc wide The larger one would max out at 100% of the image size selected background theme would show in the margins"
+  },
+  {
+    "topic": "In Page Nav",
+    "url": "/ui/in-page-nav",
+    "keywords": "in-page-nav in page nav navigation section mainly in product pages to jump to specific areas of the page"
+  },
+  {
+    "topic": "Info Gallery",
+    "url": "/ui/info-gallery",
+    "keywords": "info gallery section information card format"
+  },
+  {
+    "topic": "Key Feature",
+    "url": "/ui/key-feature",
+    "keywords": "Key Feature section grand featured image backdrop"
+  },
+  {
+    "topic": "Key Features Lite",
+    "url": "/ui/key-features-lite",
+    "keywords": "Key Feature lite section headings and feature descriptions"
+  },
+  {
+    "topic": "Legal",
+    "url": "/ui/legal",
+    "keywords": "legal text with footnotes"
+  },
+  {
+    "topic": "Lifestyle",
+    "url": "/ui/lifestyle",
+    "keywords": "lifestyle full-width parallax image for aesthetic display"
+  },
+  {
+    "topic": "Links",
+    "url": "/ui/links",
+    "keywords": "links collection of links with optional descriptions"
+  },
+  {
+    "topic": "Logos",
+    "url": "/ui/logos",
+    "keywords": "logos from teams or companies in a grid layout"
+  },
+  {
+    "topic": "Notification",
+    "url": "/ui/Notification",
+    "keywords": "Notification top page display of important information meant to captivate the users attention"
+  },
+  {
+    "topic": "Notification: Small",
+    "url": "/ui/notification-small",
+    "keywords": "Notification small top page display of important information meant to captivate the users attention centered text"
+  },
+  {
+    "topic": "Page Results",
+    "url": "/ui/page-results",
+    "keywords": "Page Resutls lists out the pages found via the search feature in the nav bar"
+  },
+  {
+    "topic": "Photo Gallery",
+    "url": "/ui/photo-gallery",
+    "keywords": "Photo Gallery Section description is shown in the modal slider"
+  },
+  {
+    "topic": "Press",
+    "url": "/ui/press",
+    "keywords": "Press release Section tabs tabbed content links linked articles"
+  },
+  { "topic": "Product", "url": "/ui/product", "keywords": "product full section" },
+  {
+    "topic": "Product Gallery : DRAM :: Part Level",
+    "url": "/ui/product-gallery-dram-part",
+    "keywords": "Product Gallery DRAM Part Level list"
+  },
+  {
+    "topic": "Product Gallery : DRAM :: Product Level",
+    "url": "/ui/product-gallery-dram-product",
+    "keywords": "Product Gallery DRAM Product Level list"
+  },
+  {
+    "topic": "Product Gallery : Filter View",
+    "url": "/ui/product-gallery-filter",
+    "keywords": "Product Gallery filter sort"
+  },
+  {
+    "topic": "Product Gallery : Non-DRAM :: Part Level",
+    "url": "/ui/product-gallery-ndram-part",
+    "keywords": "Product Gallery non-DRAM Part Level cards"
+  },
+  {
+    "topic": "Product Gallery : Non-DRAM :: Product Level",
+    "url": "/ui/product-gallery-ndram-product",
+    "keywords": "Product Gallery non-DRAM Product Level cards"
+  },
+  {
+    "topic": "Product Gallery : Tab",
+    "url": "/ui/product-gallery-tab",
+    "keywords": "Product Gallery Level cards tab view"
+  },
+  {
+    "topic": "Product Gallery : Tab with Notification",
+    "url": "/ui/product-gallery-tab-note",
+    "keywords": "Product Gallery Level cards tab view with Notification"
+  },
+  {
+    "topic": "Product Lite",
+    "url": "/ui/product-lite",
+    "keywords": "Product Lite"
+  },
+  {
+    "topic": "Product Results",
+    "url": "/ui/product-results",
+    "keywords": "Product Results related"
+  },
+  { "topic": "Promo", "url": "/ui/promo", "keywords": "promo product section" },
+  {
+    "topic": "Related Articles",
+    "url": "/ui/related-articles",
+    "keywords": "Related Articles section"
+  },
+  {
+    "topic": "Reviews",
+    "url": "/ui/reviews",
+    "keywords": "Reviews section quote link users"
+  },
+  {
+    "topic": "Search Configurator",
+    "url": "/ui/search-configurator",
+    "keywords": "Search Configurator section"
+  },
+  {
+    "topic": "Search Configurator: Single",
+    "url": "/ui/search-configurator-single",
+    "keywords": "Search Configurator single section"
+  },
+  {
+    "topic": "Shortcut Links",
+    "url": "/ui/shortcut-links",
+    "keywords": "Shortcut Links section layout text centered"
+  },
+  {
+    "topic": "Social International",
+    "url": "/ui/social-international",
+    "keywords": "Social International section social media links"
+  },
+  {
+    "topic": "Social",
+    "url": "/ui/social-links",
+    "keywords": "Social section social media links"
+  },
+  {
+    "topic": "Steps Gallery",
+    "url": "/ui/steps-gallery",
+    "keywords": "Steps Gallery information formatted into cards and organized in enumerated steps, with a call to action on the final step"
+  },
+  {
+    "topic": "Suport Contact",
+    "url": "/ui/support-contact",
+    "keywords": "The Support Contact section provides the contact information to customer service and technical issues"
+  },
+  {
+    "topic": "Suport Global",
+    "url": "/ui/support-global",
+    "keywords": "The Support global section provides the contact information international"
+  },
+  {
+    "topic": "System Scan Results: 1",
+    "url": "/ui/system-scan-results-1",
+    "keywords": "System Scan Results 1 oneinformation compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 2",
+    "url": "/ui/system-scan-results-2",
+    "keywords": "System Scan Results 2 two information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 3",
+    "url": "/ui/system-scan-results-3",
+    "keywords": "System Scan Results 3 three information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 4",
+    "url": "/ui/system-scan-results-4",
+    "keywords": "System Scan Results 4 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 5",
+    "url": "/ui/system-scan-results-5",
+    "keywords": "System Scan Results 5 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 6",
+    "url": "/ui/system-scan-results-6",
+    "keywords": "System Scan Results 6 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 7",
+    "url": "/ui/system-scan-results-7",
+    "keywords": "System Scan Results 7 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 8",
+    "url": "/ui/system-scan-results-8",
+    "keywords": "System Scan Results 8 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: 9",
+    "url": "/ui/system-scan-results-9",
+    "keywords": "System Scan Results 9 information compatible upgrades"
+  },
+  {
+    "topic": "System Scan Results: No Results",
+    "url": "/ui/system-scan-no-results",
+    "keywords": "System Scan no Results information compatible upgrades"
+  },
+  {
+    "topic": "Tech Specs",
+    "url": "/ui/tech-specs",
+    "keywords": "Tech Specs section displays detailed information relating specific product"
+  },
+  {
+    "topic": "Video Gallery",
+    "url": "/ui/tech-specs",
+    "keywords": "Video Gallery showcases collection of video thumbnails with titles descriptions link full view video full-view"
+  }
+]

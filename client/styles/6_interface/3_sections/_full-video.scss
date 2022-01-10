@@ -1,0 +1,19 @@
+.s-fullVideo {
+
+	// --- VIEW PRESETS: BEGIN --- //
+	background-color: #000;
+
+
+	// --- YOUTUBE CONTAINER: BEGIN --- //
+	iframe {
+		width: 100%;
+		max-width: 1920px;
+		height: 56.25vw;
+		max-height: 1080px;
+		border: 0px;
+		display: block;
+		margin: auto;
+	}
+	// --- YOUTUBE CONTAINER: END --- //
+	
+}

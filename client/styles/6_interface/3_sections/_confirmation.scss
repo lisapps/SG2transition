@@ -1,0 +1,164 @@
+.s-confirmation {
+    $root: &;
+
+    .c-heading {
+        &__block {
+            &__header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h2 { order: 2; }
+
+                svg {
+                    font-size: 1.75em;
+                    margin-right: 0.25em;
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    .l-grid {
+        grid-gap: 1.5em;
+        @media screen and (min-width: $screen-lg) {
+            grid-gap: 3em;    
+        }
+    }
+
+    &__{
+        
+        &information {
+            &__{
+                &info, &deliveryAdd, &shipOpts {
+                    margin-bottom: 2rem;
+                    h3 { 
+                        font-size: 1.250rem; 
+                        margin-bottom: 1.5rem;
+                        a { 
+                            font-family: $font-1-family;
+                            font-size: 1rem; 
+                            font-weight: 300;
+                            margin-left: 1rem;
+                        }
+                    }
+                    > *:last-child { margin-bottom: 0; }
+                }
+                &info, &shipOpts {
+                    p { 
+                        font-weight: $font-1-weight-bold;
+                        color: $confirmation-info-color; 
+                    }
+                }
+                &deliveryAdd {
+                    &__{
+                        &name, &phone { 
+                            font-weight: $font-1-weight-bold;
+                            color: $confirmation-info-color; 
+                        }
+                        &address {
+                            span { display: block; }
+                        }
+                    }
+                }
+                &shipOpts { margin-bottom: 0; }
+                &cta {
+                    .e-btn {
+                        width: 100%;
+                        margin: 0; 
+                    }
+                }
+            }
+        }
+
+        &summary {
+            
+            .c-accordion {
+                background-color: #f9f9f8;
+                border: 1px solid $color-default-med-bg;
+                margin-bottom: 1.5em;
+                &__ {
+                    &tab {
+                        button {
+                            background-color: $confirmation-bg-color;
+                            font-weight: $font-1-weight-bold;
+                            font-size: 1.125em;
+                            color: $accent-2;
+                            padding: 0.5em 1.25em;
+                            border: none;
+                            
+                            @include media-lg {
+                                pointer-events: none;
+                            }
+
+                            span { 
+                                display: block; 
+                                position: absolute;
+                                right: 1.25em;
+                            }
+
+                            .c-accordion__tab__icon {
+                                @include media-lg {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &--active {
+                            button {
+                                span { display: none; }
+                            }
+                        }
+                    }
+                    &panel {
+                        border-top: 1px solid $color-default-med-bg;
+                    }                
+                }
+            }
+
+            span { font-weight: $font-1-weight-bold; }
+
+            &__digicert {
+                float: left;
+                padding-top: 0;
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        .c-heading {
+            &__block {
+                &__header {
+                    svg { 
+                        margin-left: 0.25em; 
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        &__{
+            &summary {
+                &__digicert {
+                    float: right;
+                    padding-top: 0;
+                }
+
+                .c-accordion {
+                    &__tab {
+                        span {
+                            &:last-child { float: left; }
+                        }
+                        > * {
+                            &:first-child {
+                                &::after {
+                                    margin-right: 0.25em;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

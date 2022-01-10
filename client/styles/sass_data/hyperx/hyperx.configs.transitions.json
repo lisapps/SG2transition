@@ -1,0 +1,5 @@
+{
+    "transitionSlow": "450ms",
+    "transitionNormal": "350ms",
+    "transitionFast": "250ms"
+}

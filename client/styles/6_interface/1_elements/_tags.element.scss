@@ -1,0 +1,13 @@
+.e-tag {
+    background-color: $tag-bg-color;
+    padding: 0.125em 0.75em;
+    border-radius: 1em;
+    display: block;
+    color: $tag-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0.25em;
+    font-size: 0.75rem;
+    
+    &:hover { color: $link-color; }
+}

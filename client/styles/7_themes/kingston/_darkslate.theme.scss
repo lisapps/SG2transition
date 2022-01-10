@@ -1,0 +1,160 @@
+.t-darkSlate {
+    @include theme-dark(
+        $body-color: $darkslate
+    ) {
+        // ### SECTIONS ### //
+        &.s-shortcutNavigation {
+            a.browse-link {
+                color: #fff;
+                &:hover { color: #fff; }
+                svg { fill: #fff; }
+            }
+            .nav-products {
+                &__card {
+                    a {
+                        color: #fff;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }    
+        
+                    &__img {
+                        svg {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.section-call_to_action {
+            > * {
+                background-color: black;
+                color: #fff;
+            }
+            .tab {
+                background: url(/images/fpo/section-call_to_action/angle-left_black.svg) no-repeat top left, url(/images/fpo/section-call_to_action/angle-right_black.svg) no-repeat top right;
+                background-size: 1.5em 1.5em;
+                background-color: black;
+                span { background-color: black; }
+            }
+        }
+
+        &.s-inPageNav {
+            color: white;
+        }
+
+        // ### COMPONENTS ### //
+        .f-input {
+            background-color: $body-color;
+            border-color: $color-default-med-bg;
+            .c-dropDown__toggler .f-input__icon:first-of-type svg { fill: $denim; }
+            .c-dropDown__panel {
+                ul, ol { background-color: lighten($body-color, 10%); }
+            }
+        }
+
+        .f-quantity {
+            &__input {
+                border-color: black;
+                background-color: $darkslate;
+            }
+        }
+
+        .c-searchCard{
+            &__heading, &__body{
+                color: initial;
+                &__cta .f-input{
+                    background: initial;
+                }
+            }
+            svg{
+                fill: initial;
+            }
+        }
+
+        .c-searchDrop {
+            &__toggle { color: #fff; }
+        }
+
+        .c-tooltip {
+            color: $sky;
+            &__{
+                &message {
+                    h1, h2, h3, h4, h5, h6 {
+                        color: $darkslate;
+                    }
+                }
+            }
+        }
+        .c-consoleMenu {
+            color: #fff;
+            &__nav {
+                > * {
+                    a {
+                        color: #fff;
+                        &:hover { color: #fff; }
+                    }
+                }
+            }
+        }
+
+        .c-bannerCard__details {
+            background-color: $granite;  
+            color: white;
+            a {
+                color: white;
+            }
+        }
+
+        .c-articleCard__details {
+            background-color: $granite;
+            color: white;
+            a {
+                color: white;
+            }
+        }
+
+        .c-blogCard {
+            background-color: $granite;
+            color: white;
+            a {
+                color: white;
+            }
+            &__tags {
+                &:after { background-image: linear-gradient(90deg, rgba(108,113,117,0.1), $granite); }
+            }
+        }
+
+        .c-endorsementCard__copy__quote::before, .c-endorsementCard__copy__quote::after {
+            color: white;
+        }
+
+        &.s-blog {
+            .c-slideMenu__slider__toggle {
+                svg { fill: white; }
+            }
+            .c-filterCard__details__content {
+                .f-input {
+                    background-color: transparent;
+                }
+            }
+            .c-filterCard__details__cta__reset {
+                background-color: rgba(255,255,255,0.05);
+                color: $coal;
+                border-color: rgba(0,0,0,0.15);
+                &:hover {
+                    background-color: $coal;
+                    color: white;
+                }
+            }
+        }
+
+        .s-footer__links h6 a:not(.e-btn), .s-footer__links ul li a:not(.e-btn) {
+            color: white;
+            &:hover {
+                color: $sky;
+            }
+        }
+    };
+}

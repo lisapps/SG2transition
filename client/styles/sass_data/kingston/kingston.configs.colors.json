@@ -1,0 +1,58 @@
+{
+    "stone": "#eaeef1", 
+    "white": "#ffffff",
+    "pearl": "#f7f9fa",
+    "silver": "#e0e3e7",
+    "cloudy": "#b5b9bd",
+    "granite": "#6c7175",
+    "slate": "#35424A",
+    "darkslate": "#20262d",
+    "midnight": "#001428",
+    
+    "denim": "#2263b2",
+    "sky": "#93d5ff",
+    "rex": "#c8102e",
+    "coal": "#353535",
+    "gray": "#d8d8d8",
+    
+
+    "accent-1": "$denim",
+    "accent-2": "$denim",
+    "accent-3": "$sky",
+
+    "color-main-dark": "white",
+    "color-main-light": "$coal",
+
+    "color-alt": "$color-main-dark",
+    "color-state-active": "$color-main-light",
+    "color-state-disabled": "$cloudy",
+
+    "color-svg-default-fill": "$cloudy",
+    "color-svg-dark-fill": "$darkslate",
+
+    "color-bg-light": "$pearl",
+    "color-bg-dark": "$darkslate",
+    "color-page-default-bg": "$white",
+    "color-card-default-bg": "$stone",
+
+    "color-txt-light": "white",
+    "color-txt-dark": "$coal",
+    "color-txt-default": "$coal",
+
+    "color-kl-light": "$accent-3",
+    "color-kl-dark": "$accent-1",
+
+    "color-default-bg": "$silver",
+    "color-default-light-bg": "white",
+    "color-default-med-bg": "$cloudy",
+    "color-default-darker-bg": "$darkslate",
+
+    "link-color": "$denim",
+    "link-color-dark": "$sky",
+    "link-hover": "$denim",
+    "link-hover-dark": "$sky",
+    "link-active": "black",
+
+    "tag-bg-color": "$coal",
+    "tag-color": "$white"
+}

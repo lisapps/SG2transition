@@ -1,0 +1,39 @@
+/* ======================================== */
+/* =                                      = */
+/* =              Tables Base             = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base Table Styles
+.     table | th | tr | td | thead | tbody | tfoot
+.      
+*/
+
+// - - - - - - - - - -
+// * Table
+// - - - - - - - - - -
+table{
+      margin-top: $margin-base-top;
+      margin-bottom: $margin-base-bottom;
+      width: 100%;
+}
+th{
+      // Base styles for th tag
+}
+tr{
+      // Base styles for tr tag
+}
+td{
+      // Base styles for td tag
+}
+thead{
+      // Base styles for thad tag
+}
+tbody{
+      // Base styles for tbody tag      
+}
+tfoot{
+      // Base styles for tbody tag      
+}

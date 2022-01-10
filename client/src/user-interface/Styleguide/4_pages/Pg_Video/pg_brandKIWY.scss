@@ -1,0 +1,40 @@
+.pg-brandKIWY {
+  .s-content {
+    .l-row > .l-row__col {
+      padding: 1em;
+      @include media-lg {
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.e-iconKIWY {
+  display: block;
+  padding: 2.5em 2em;
+  @include media-lg {
+    padding: 1.25em 8em;
+  }
+}
+
+.c-iconGrid {
+  > * {
+    border: 1px solid black;
+    border-right: 0;
+    &:nth-child(2) {
+      border-right: 1px solid black;
+    }
+    &:nth-child(3) {
+      border-bottom: 1px solid black;
+    }
+    &:last-child {
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+    @include media-lg {
+      border-bottom: 1px solid black;
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.s-promo {
+  $root: &;
+  position: relative;
+  color: black;
+  &__ {
+    &content {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      max-width: 70rem;
+      margin: auto;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-50%);
+      padding-top: 2em;
+
+      > * {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        padding: $pad-sm;
+      }
+
+      @media screen and (max-width: $screen-md) {
+        color: white;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .u-h1,
+        .u-h2,
+        .u-h3,
+        .u-h4,
+        .u-h5,
+        .u-h6 {
+          color: white;
+        }
+      }
+
+      @include media-md {
+        padding: $global-padding-md;
+        justify-content: flex-start;
+        text-align: center;
+        > * {
+          max-width: 35%;
+          background-color: transparent;
+          padding: 0;
+        }
+      }
+      @include media-lg {
+        padding: $global-padding-lg;
+        height: auto;
+      }
+    }
+    &image {
+      overflow: hidden;
+      min-height: 12.5em; // ~200px
+      line-height: 0;
+      display: block;
+      img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        @media screen and (min-width: 64em) {
+          max-height: 43.75em;
+        }
+      }
+    }
+  }
+
+  // -- modifiers
+  @include media-md {
+    &-- {
+      &txtLeft,
+      &txtRight {
+        #{$root}__content {
+          justify-content: center;
+          text-align: left;
+        }
+      }
+      &txtLeft {
+        #{$root}__content {
+          align-items: flex-start;
+        }
+      }
+      &txtRight {
+        #{$root}__content {
+          align-items: flex-end;
+        }
+      }
+      &dark {
+        #{$root}__content {
+          @include theme-dark($body-color: transparent);
+        }
+      }
+      &copy50 {
+        #{$root}__content {
+          > * {
+            max-width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  html[dir="rtl"] & {
+    &__ {
+      &content {
+        a.e-btn--alt2 {
+          margin: 0 0 0 1rem;
+          @media screen and (max-width: $screen-md) {
+            margin: 0 0 1rem 0;
+          }
+        }
+      }
+    }
+    &-- {
+      &txtLeft,
+      &txtRight {
+        #{$root}__content {
+          text-align: right;
+        }
+      }
+      &txtLeft {
+        #{$root}__content {
+          align-items: flex-end;
+        }
+      }
+      &txtRight {
+        #{$root}__content {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+.c-videoThumbnail {
+  border: 2px solid black;
+  position: relative;
+  display: inline-block;
+  svg {
+    width: 3.125rem;
+    height: 3.125rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: white;
+  }
+  img {
+    display: block;
+  }
+}

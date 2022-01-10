@@ -1,0 +1,18 @@
+.t-white {
+    background-color: $white;
+    .c-articleCard__details {
+        background: $color-card-default-bg; ;
+        color: $coal;
+    }
+
+    .c-bannerCard__details {
+        background-color: $color-card-default-bg;  
+        color: $coal
+    }
+
+    .c-blogCard {
+        background-color: $color-card-default-bg;  
+        color: $coal
+    }
+}
+

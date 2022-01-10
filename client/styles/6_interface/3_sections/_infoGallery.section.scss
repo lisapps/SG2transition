@@ -1,0 +1,10 @@
+.s-infoGallery {
+	.l-flexTiles {
+		&__item {
+			.c-infoCard { height: 100%; }
+			&--alternate {
+				background: $color-default-med-bg;
+			}
+		}
+	}
+}

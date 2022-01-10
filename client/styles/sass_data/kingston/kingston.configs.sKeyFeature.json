@@ -1,0 +1,13 @@
+{
+    "glass-bg-color": "rgba(255, 255, 255, .15)",
+    "glass-filter": "blur(3px)",
+
+    "glass-bg-color-hover": "rgba(255, 255, 255, .20)",
+    "glass-filter-hover": "blur(4px)",
+    
+    "keyfeature-btn-alt1-text": "$coal",
+    "keyfeature-btn-alt1-bg": "$glass-bg-color",
+    "keyfeature-btn-alt1-bg-filter": "$glass-filter",
+    "keyfeature-btn-alt1-bg-hover": "$glass-bg-color-hover",
+    "keyfeature-btn-alt1-bg-hover-filter": "$glass-filter-hover"
+}

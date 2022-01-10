@@ -1,0 +1,12 @@
+{
+    "form2-svg-fill": "$cloudy",
+
+    "form2-borderColor": "$cloudy",
+    "form2-color-disabled": "$cloudy",
+
+    "form2-outline-borderRadius": "0 0 0.375em 0.375em",
+    "form2-outline-textarea-padding": "0.3em 0",
+
+    "form2-reactive-margin-bottom": "0.125em",
+    "form2-icon-fill": "$cloudy"
+}

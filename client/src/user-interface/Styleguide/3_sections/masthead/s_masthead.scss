@@ -1,0 +1,104 @@
+.s-masthead {
+  background-color: #141514; // Replace with Color Variable
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25em;
+  position: sticky;
+  top: 0;
+  z-index: 9001;
+  &__toggle {
+    position: absolute;
+    display: flex;
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 50%;
+    padding: 0.5em 0.25em;
+    margin-right: 1em;
+    margin-left: 0.75em;
+    transition: transform 500ms;
+    transform: rotate(0) translateY(-50%);
+    transform-origin: top;
+    z-index: 9001;
+    &:hover {
+      cursor: pointer;
+    }
+    @include media-md {
+      margin-left: 1.25em;
+    }
+    &__hamburger {
+      fill: white;
+      width: 20px;
+      rect {
+        transition: transform 220ms, opacity 220ms;
+      }
+    }
+    &--active {
+      // transition-timing-function: cubic-bezier(0.42, 0, 0.4, 1.6);
+      transition-timing-function: cubic-bezier(0.22, 0.61, 0.03, 1.26);
+      transform: rotate(270deg) translateY(-50%);
+      transform-origin: top;
+      .s-masthead__toggle__hamburger {
+        rect {
+          &:first-child {
+            transform: rotate(45deg) translate(14px, -10px);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: rotate(-45deg) translate(-45px, 0px);
+          }
+        }
+      }
+    }
+  }
+  &__logo {
+    color: white; // Replace with Color Variable
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    user-select: none;
+    &__divider {
+      background: #d02138; // Replace with Color Variable
+      width: 1px;
+      height: 2.25em;
+      margin: 0 4vw;
+      @include media-lg {
+        margin: 0 1.75em;
+      }
+    }
+    .e-logoKingston {
+      display: inline-flex;
+      max-height: 2.25em;
+      svg {
+        width: 32vw;
+        min-width: 100px;
+        height: initial;
+        height: auto;
+        @include media-md {
+          width: 10.5em;
+        }
+      }
+      img {
+        width: 32vw;
+        height: auto;
+        min-width: 100px;
+        @include media-md {
+          width: 10em;
+        }
+      }
+    }
+    &__title {
+      margin: 0;
+      font-family: "proxima-nova"; // Replace with Font Variable
+      font-weight: 300; // Replace w/ weight variable
+      font-size: 4.75vw;
+      @include media-md {
+        font-size: 1.5em; // Custom Size
+      }
+    }
+  }
+}

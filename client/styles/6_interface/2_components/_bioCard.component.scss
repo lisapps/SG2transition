@@ -1,0 +1,102 @@
+.c-bioCard {
+    $root: &;
+    width: 100%;
+    @include media-md {
+        width: 65%;
+        max-width: 28.5em;    
+    }
+    img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    &__{
+        &table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            th, td { padding: 0.25em 0.5em; }
+            th { 
+                background-color: $color-default-med-bg;
+                color: black;
+                font-weight: 600; 
+                text-align: left;
+                border: 1px solid white;
+            }
+            td { border: 1px solid $biocard-bg-border; }
+        }
+
+        &social {
+            margin-bottom: 1.5rem;
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                margin-bottom: 0;
+                list-style: none;
+                padding-left: 0;
+                justify-content: space-around;
+                @include media-md {
+                    justify-content: flex-start;
+                }
+                li {
+                    height: 3rem;
+                    width: 3rem;
+                    background-color: black;
+                    margin-bottom: 0;
+                    @include media-md {
+                        margin-right: 1.25em;
+                    }
+                    &:last-child { margin-right: 0; }
+                    a {
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        svg {
+                            height: 2rem;
+                            width: 2rem;
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__{
+            &table {
+                th { text-align: right; }
+            }
+            &social {
+                ul {
+                    padding-right: 0;
+                    @include media-md {
+                        justify-content: flex-start;
+                    }
+                    li {
+                        @include media-md {
+                            margin-left: 1.25em;
+                            margin-right: 0;
+                        }
+                        &:last-child { margin-left: 0; }
+                    }
+                }
+            }
+        }
+    }
+
+    &--{
+        &left {
+            @include media-md {
+                float: left;
+                margin: 0 1.875rem 0 0;    
+            }
+        }
+        &right {
+            @include media-md {
+                float: right;
+                margin: 0 0 .5em 1em;    
+            }
+        }
+    }
+}

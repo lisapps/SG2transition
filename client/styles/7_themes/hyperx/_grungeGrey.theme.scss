@@ -1,0 +1,12 @@
+.t-grungegrey, .t-grungeGrey {
+	background-image: url(/images/themes/grunge-bg-gray-medium.jpg);
+	background-size: 100% auto;
+	background-position: top;
+	background-repeat: repeat-y;
+	border-width: 1px;
+	border-color: #ddd;
+	border-style: solid none solid;
+	@media screen and (min-width: $screen-md) {
+		background-image: url(/images/themes/grunge-bg-gray-large.jpg);
+	}
+}

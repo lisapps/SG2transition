@@ -1,0 +1,33 @@
+// ### Base Properties ### //
+	$body-color				: $white;
+	
+// ### HR settings ### // 
+	$hr-color				: $silver;
+	$h-margins				: 1.25rem;
+
+	$margin-base-top		: 0;
+    $margin-base-bottom		: 1.5rem;
+
+// ### Base Breakpoints ### //
+	$screen-md				: 32em; // (512px)
+	$screen-lg				: 50em; // (800px)
+	$screen-xlg				: 113em; // (1808px)
+
+// ### Minimum Screen Support ### //
+	$screen-min				: 20rem; // 320px
+
+	$breakpoints			: $screen-md, $screen-lg, $screen-xlg;
+    $breakpointsName		: "md", "lg", "xlg";
+
+// ### Grid Setup ### //
+	$col-number				: 12; //amount of columns
+	$gutters				: 1em;
+	$max-content-width		: 60rem;
+	$coreLayout-max-content-width : 60rem;
+
+	// #*#*#*#*#*#*#*# LEGACY #*#*#*#*#*#*#*#*#*#* //
+	// --- Base Paddings
+	$pad-sm					: 1.25em;  // (20px)
+	$pad-md					: 1.875em; // (30px)
+	$pad-lg					: 3.125em; // (50px)
+	

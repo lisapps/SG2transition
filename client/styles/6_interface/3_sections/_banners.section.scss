@@ -1,0 +1,25 @@
+.s-banners {
+    padding: 1.25em;
+    .l- {
+        &grid {
+            grid-gap: 1.25em;
+
+            //IE
+            @media all and (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+                display: flex;
+            }
+        }
+        &gridFlex {
+            padding: 0;
+        }
+    }
+
+    &-- {
+        &dark {
+            .c-bannerCard {
+                @extend .c-bannerCard--dark;
+            }
+        }
+    }
+}

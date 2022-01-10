@@ -1,0 +1,930 @@
+.s-productGallery3 {
+    $root: &;
+    background-color: $productGallery3-bgColor;
+
+    .c-heading {
+        background-color: $productGallery3-heading-bgColor;
+        padding-top: 2.5em;
+        padding-bottom: 1.5em;
+        
+        &__block__header { 
+            h2 { color: $productGallery3-heading-textColor; }
+            p { color: $productGallery3-heading-textColor; }
+        }
+    }
+
+    .l-tabView {
+        background-color: black;
+        padding: 0;
+        // @include media-lg { overflow: hidden; }
+
+        #{$root} {
+            &__filterLayout {
+                &__ {
+                    &controls {
+                        padding: $productGallery3-layout-gutter;
+                        @include media-lg { padding: $productGallery3-layout-gutter 0.750em 0 $productGallery3-layout-gutter; }
+                    }
+                    &slides {
+                        &.c-slideMenu {
+                            &:after { left: 1em; }
+                            .c-slideMenu__slider {
+                                &__ {
+                                    &toggle {
+                                        padding: 0.75em 1em;
+                                        @include media-lg { padding: 0 0 0.625rem 0; }
+                                    }
+                                    &panel { right: auto; }
+                                }
+                                &--right {
+                                    .c-slideMenu__slider__toggle {
+                                        padding: 0.75em 1em;
+                                        svg { right: 1em; }
+                                    }
+                                    .c-slideMenu__slider__panel { right: 0; }
+                                }
+                            }
+                        }
+                        &.c-slideMenu--sticky, &.c-slideMenu--stickyAnimate {
+                            &:after { left: 0; }
+                            .c-slideMenu__slider--active {
+                                width: 100vw;
+                                position: absolute;
+                                left: 0;
+                                @include media-md {
+                                    width: 16em;
+                                    position: initial;
+                                }
+                                .c-slideMenu__slider__toggle {
+                                    padding-left: 1em;
+                                }
+                                .c-slideMenu__slider__panel {
+                                    right: auto;
+                                }
+                                &.c-slideMenu__slider--right {
+                                    position: absolute;
+                                    left: auto;
+                                    right: 0;
+                                    .c-slideMenu__slider__toggle {
+                                        padding-right: 1em;
+                                        svg { right: 1em; }
+                                    }
+                                    .c-slideMenu__slider__panel {
+                                        right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &view {
+                        padding: $productGallery3-layout-gutter 0 0;
+
+                        .l-gridFlex {
+                            padding: $productGallery3-layout-gutter;
+                            @include media-lg { padding: 0.5em $productGallery3-layout-gutter $productGallery3-layout-gutter 0.750em; }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__{
+            &tabs {
+                height: 4.625em;
+                max-height: none;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: center;
+
+                &__tab {
+                    position: relative;
+                    border-radius: 5px 5px 0 0;
+                    margin-right: 0.5em;
+                    font-weight: 500;
+                    color: white;
+                    background-color: $productGallery3-tab-bg-color;
+                    border-top: 5px solid $productGallery3-tab-bg-color;
+                    padding-top: calc(1em - 5px);
+                    white-space: nowrap;
+                    transition: background-color 250ms ease, border-top 250ms ease;
+                    @include media-md {
+                        padding-left: 2em;
+                        padding-right: 2em;
+                        padding-bottom: 1em;
+                    }
+
+                    &:last-child { margin-right: 0; }
+
+                    &:before, &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        height: 0.625em;
+                        width: 0.25em;
+                        background-color: #353535;
+                        transition: background-color 250ms ease;
+                    }
+
+                    &:before { left: -0.25em; }
+                    &:after { right: -0.25em; }
+
+                    span {
+                        &:before, &:after {
+                            content: "";
+                            height: 1.25em;
+                            width: 0.5em;
+                            background-color: black;
+                            position: absolute;
+                            bottom: 0;
+                            border-radius: 5px;
+                            z-index: 2;
+                        }
+                        &:before { left: -0.5em; }
+                        &:after { right: -0.5em; }
+                    }
+
+                    &:hover {
+                        background-color: $productGallery3-tab-color-hover;
+                        border-top: 5px solid $productGallery3-tab-color-hover;
+                        &:before, &:after {
+                            background-color: $productGallery3-tab-color-hover;
+                        }
+                    }
+
+                    &--active {
+                        background-color: $productGallery3-bgColor; 
+                        color: black;
+                        border-top: 5px solid $productGallery3-activeTab-borderTop;
+                        &:before, &:after {
+                            background-color: $productGallery3-activeTab-bg;
+                        }
+                        &:hover {
+                            background-color: $productGallery3-bgColor;
+                            border-top: 5px solid $productGallery3-activeTab-borderTop;
+                            &:before, &:after {
+                                background-color: $productGallery3-bgColor;
+                            }
+                        }
+                    }
+
+                    &--active, &:hover { 
+                        display: block;
+                    }
+                }
+
+                &--activateTabScroll {
+                    justify-content: flex-start;
+                    white-space: nowrap;
+                    overflow: scroll;
+                    -webkit-overflow-scrolling: touch;
+                    scroll-behavior: smooth;
+                    &::-webkit-scrollbar { display: none; }
+                    
+
+                    .l-tabView__tabs__tab {
+                        display: inline-block;
+
+                        &:first-child { margin-left: 1em; }
+                    }
+                }
+            }
+            
+            &panels { 
+                background-color: $productGallery3-bgColor; 
+                padding: 1em 0 0 0;
+                @include media-md {
+                    padding: 1.5em 0;
+                }
+
+                .c-notification {
+                    background-color: $color-default-bg; //--silver
+                    border-radius: 5px;
+                    margin-left: $productGallery3-layout-gutter;
+                    margin-right: $productGallery3-layout-gutter;
+                    &__content { padding: 0.5em 1em; }
+                    &__close {
+                        top: 0.5em;
+                        svg {
+                            height: 0.5em;
+                            width: 0.5em;
+                        }
+                    }
+                    &--close { padding: 0; }
+                }
+            }    
+        }
+    }
+
+    .c-accordion {
+        &__ {
+            &tab {
+                font-family: $font-1-family;
+                button { 
+                    padding: 0.375em 0; 
+                    .c-accordion__tab__icon { fill: $accordionArrow_color; }
+                    &:hover, &:focus {
+                        .c-accordion__tab__icon { fill: $accordionArrow_color_active; }
+                    }
+                }
+            }
+            &panel {
+                &__content { padding: 0.75em 0; }
+            }
+        }
+    }
+
+    &__ {
+        &grid {
+            &__ {
+                &cell {
+                    position: relative;
+                    transition: box-shadow, opacity;
+                    // transition-duration: 400ms, 400ms;
+                    // transition-timing-function: ease-out, ease;
+                    // transition-delay: 0ms, 0ms;
+
+                    .c-productCard4 {
+                        -webkit-box-shadow: $dropshadow-base;
+                        -moz-box-shadow: $dropshadow-base;
+                        box-shadow: $dropshadow-base;
+
+                        transition: opacity, $dropshadow-transition;
+                        transition-duration: $transitionNormal, $transitionNormal;
+                        transition-timing-function: none, $dropshadow-transition-timing;
+                        transition-delay: 0, $dropshadow-transition-delay;
+
+                        &__footer {
+                            .e-btn {
+                                transition: background-color 150ms ease-in, border-color 150ms ease-in;
+                            }
+                            .e-btn:not(.c-productCard4__footer__buyBtn) {
+                                &:last-child { 
+                                    background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color; 
+                                    border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color;
+                                    &:focus {
+                                        background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover; 
+                                        border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover, &:focus {
+                            -webkit-box-shadow: $dropshadow-visible;
+                            -moz-box-shadow: $dropshadow-visible;
+                            box-shadow: $dropshadow-visible;
+
+                            .c-productCard4__footer {
+                                .e-btn {
+                                    &:last-child { 
+                                        background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover; 
+                                        border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover;
+                                        color: white;
+
+                                        svg { fill: white; }
+                                    }
+                                }
+                            }
+                        }
+
+                        &--active {
+                            &:hover, &:focus {
+                                .c-productCard4__footer {
+                                    .e-btn {
+                                        &:last-child {
+                                            background-color: $productCard4-buyBtn-color-active; 
+                                            border: 1px solid $productCard4-buyBtn-color-active;
+                                            color: $productCard4-buyBtn-color-active;
+                                            svg { fill: $productCard4-arrow-color-active; }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &-- {
+                &list {
+                    > * { position: inherit; }
+                }
+                &active {
+                    #{$root}__grid__cell {
+                        &[selected] {
+                            .c-productCard4 {
+                                -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0.375);
+                                -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0.375);
+                                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0.375);
+
+                                &--active {
+                                    .c-productCard4__footer__buyBtn,
+                                    .c-productCard4__footer__buyBtn:active,
+                                    .c-productCard4__footer__buyBtn:focus {
+                                        background-color: $productCard4-buyBtn-color-active; 
+                                        border: 1px solid $productCard4-buyBtn-color-active;
+                                        color: $productCard4-buyBtn-color-active;
+                                        svg { fill: $productCard4-arrow-color-active; }
+                                    }
+
+                                    .c-productCard4__footer__buyBtn {
+                                        &:hover {
+                                            svg { fill: $productCard4-arrow-color-hover; }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:not([selected]) {
+                            opacity: 0.6;
+                            .c-productCard4 {
+                                -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0);
+                                -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0);
+                                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 0.375em 0.125em rgba(0, 0, 0, 0);
+                                &:hover, &:focus { 
+                                    opacity: 1; 
+                                    .c-productCard4__footer {
+                                        .e-btn {
+                                            &:last-child { 
+                                                background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover; 
+                                                border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &__footer {
+                                    .e-btn:not(.c-productCard4__footer__buyBtn) {
+                                        &:last-child { 
+                                            background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color; 
+                                            border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover, &:focus { 
+                            opacity: 1; 
+                            .c-productCard4__footer {
+                                .e-btn:not(.c-productCard4__footer__buyBtn) {
+                                    &:last-child { 
+                                        background-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover; 
+                                        border-color: $productCard4-selectionsBtn-notSelected-btn-bg-color-hover;
+                                    }
+                                }
+                            }
+                        }
+        
+                        transition: box-shadow, opacity;
+                        transition-duration: 400ms, 400ms;
+                        transition-timing-function: ease-out, ease;
+                        transition-delay: 0ms, 0ms;
+                    }
+                }
+            }
+        }
+
+        &tabLeft, &tabRight {
+            height: 4.625em; // == TabView Height
+            width: 1em;
+            position: absolute;
+            background-color: transparent;
+            z-index: 1;
+        }
+
+        &tabLeft { 
+            background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,1) 100%);
+            left: 0; 
+            &:hover, &:focus { cursor: w-resize; }
+        }
+        &tabRight { 
+            background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,1) 100%);
+            right: 0; 
+            transform: translateY(-4.625em);
+            &:hover, &:focus { cursor: e-resize; }
+        }
+
+        &filterLayout {
+            display: grid;
+            grid-template-areas:
+            "controls"
+            "sort"
+            "view";
+            @include media-lg {
+                grid-template-columns: 20% 1fr 11em;
+                grid-template-rows: 2em auto 1fr;
+                grid-template-areas:
+                    "options view view"
+                    "controls view view"
+                    "filter view view";
+            }
+
+            &__ {
+                &controls {
+                    padding: 1em;
+                    grid-area: controls;
+                    @include media-lg {
+                        padding: 1em 0.750em 0 1em;
+                    }
+                    
+                    h5 {
+                        padding-bottom: 0.625rem;
+                        margin-bottom: 0.5em;
+                        border-bottom: 1px solid $productGallery-filterlayout-controls-h5;
+                    }
+        
+                    ul {
+                        padding-left: 0;
+                        list-style: none;
+                        svg {
+                            height: 1em;
+                            width: 1em;
+                        }
+                    }
+        
+                    .c-searchCard {
+                        border: none;
+                        &__ {
+                            &body { 
+                                background-color: transparent; 
+                                padding: 0;
+
+                                p { margin-bottom: 1em; }
+
+                                &__cta {
+                                    flex-direction: row;
+                                    .f-input {
+                                        border-radius: 3px;
+                                        margin: 0 0.5em 0 0;
+                                        padding-bottom: 0;
+                                    }
+                                    .e-btn { 
+                                        display: flex;
+                                        height: 2.25em;
+                                        width: 2.25em; 
+                                        margin: 0;
+                                        padding: 0.5em;
+                                        svg { margin: 0; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                    &__{
+                        &section { 
+                            margin-bottom: 1em; 
+                            &:last-child { margin-bottom: 0; }
+                        }
+                    }
+                }        
+        
+                &slides {
+                    grid-area: sort;
+        
+                    @include media-lg {
+                        height: auto;
+                        position: relative;
+                        padding: 1em 0.750em 1em 1em;
+                        grid-area: filter;
+                    }
+        
+                    .c-slideMenu {
+
+                        &__{
+                            &slider {
+                                &__{
+                                    &toggle {
+                                        // pointer-events: none;
+                            
+                                        @include media-lg {
+                                            width: 100%;
+                                            display: block;
+                                            text-align: left;
+                                            border-bottom: 1px solid $productGallery-filterlayout-controls-h5;
+                                            margin-bottom: 0.625rem;
+                                            padding: 0 0 0.625rem 0;
+                                            pointer-events: none;
+                                        }
+        
+                                        svg {
+                                            @include media-lg {
+                                                transition: unset;
+                                            }
+                                        }
+                                    }
+                                    &panel { 
+                                        @include media-lg { border: none; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                    &__ {
+                        &filter {
+                            @include media-lg {
+                                position: relative;
+                                width: 100%;
+                            }
+
+                            .c-filterCard {
+                                &__{
+                                    &details {
+                                        @include media-lg {
+                                            display: block;
+                                            height: auto;
+                                            width: 100%;
+                                            position: relative;
+                                            background-color: transparent;
+                                        }
+            
+                                        &__ {
+                                            &content {
+                                                @include media-lg {
+                                                    padding: 0;
+                                                    border: none;
+                                                    overflow: auto;
+                                                    transition: unset;
+                                                }
+                                            }
+                                            &cta { 
+                                                @include media-lg {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &sort {
+                            @include media-lg { display: none; }
+        
+                            &__ {
+                                &details {
+                                    &__ {
+                                        &content {
+                                            text-align: left;
+                                            ul {
+                                                display: block;
+                                                padding: 0;
+                                                margin: 0;
+                        
+                                                li { 
+                                                    margin-bottom: 0.875em;
+                                                    &:last-child { margin-bottom: 0; }
+        
+                                                    .f-input__radio {
+                                                        input {
+                                                            &:checked {
+                                                                & ~ label { font-weight: 500; }
+                                                            }
+                                                        }
+                                                        label { margin-bottom: 0; }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+        
+                    &.c-slideMenu--sticky {
+                        .c-slideMenu__slider {
+                            &__toggle {
+                                pointer-events: auto;
+                                h5 { transform: translate(2em); }
+                            }
+                            &--right {
+                                .c-slideMenu__slider__toggle {
+                                    h5 { transform: translate(-2em); }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                &view {
+                    position: relative;
+                    grid-area: view;
+                    
+                    .l-gridFlex {
+                        padding: 1em;
+                        @include media-lg {
+                            padding: 0.5em $productGallery3-layout-gutter 0 0.750em;
+                        }
+
+                        &:last-child {
+                            @include media-lg {
+                                padding-bottom: $productGallery3-layout-gutter;
+                            }
+                        }
+                    }
+        
+                    &__ {
+                        &sort {
+                            width: 50%;
+                            position: sticky;
+                            top: 2.75em;
+                            left: 100%;
+                            transform: translateY(-100%);
+                            text-align: right;
+                            z-index: 3;
+        
+                            @include media-lg {
+                                width: auto;
+                                position: relative;
+                                top: 0;
+                                left: auto;
+                                padding: 0.5em 1em 0.5em 0;
+                                transform: unset;
+                            }
+                            
+                            &__{
+                                &display {
+                                    display: none;
+                                    margin-right: 3.5em; 
+                                    @include media-lg {
+                                        display: inline-flex;
+                                    }
+                                    .c-dropDown {
+                                        &__ {
+                                            &toggler {
+                                                span { 
+                                                    margin-right: 0.5em; 
+                                                    span { margin: 0; }
+                                                }
+                                            }
+                                            &panel {
+                                                border-radius: 3px;
+                                                li {
+                                                    &:hover {
+                                                        font-weight: 500;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &--active {
+                                            .c-dropDown__toggler {
+                                                svg { fill: $accordionArrow_color_active; }
+                                            }
+                                            .c-dropDown__panel {
+                                                padding: 0.5em 1em;
+                                            }
+                                        }
+                                    }
+                                    &:last-child { margin-right: 0; }
+                                }
+                                &filter {
+                                    .c-dropDown {
+                                        &__ {
+                                            &toggler {
+                                                &__selection {
+                                                    span { margin-right: 0.125em; }
+                                                }
+                                            }
+                                            &panel {
+                                                li {
+                                                    &:hover { font-weight: initial; }
+                                                }
+                                            }
+                                        }
+                                        &--active {
+                                            .c-dropDown__panel {
+                                                padding: 1em;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &loadMore {
+                            text-align: center;
+                            padding: 3em 1em 3em 0.75em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+
+        .l-tabView {
+
+            &__ {
+                &tabs {
+                    &__tab {
+                        margin-right: 0;
+                        margin-left: 0.5em;
+
+                        &:last-child { margin-left: 0; }
+
+                        &:before { 
+                            right: -0.25em;
+                            left: auto; 
+                        }
+                        &:after { 
+                            left: -0.25em; 
+                            right: auto
+                        }
+
+                        span {
+                            &:before { 
+                                right: -0.5em; 
+                                left: auto;
+                            }
+                            &:after { 
+                                left: -0.5em; 
+                                right: auto;
+                            }
+                        }
+                    }
+                    &--activateTabScroll {
+                        .l-tabView__tabs__tab {
+                            &:first-child { 
+                                margin-right: 1em; 
+                                margin-left: 0.5em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #{$root} {
+                &__filterLayout {
+                    &__slides {
+                        &.c-slideMenu {
+                            &:after { left: 1em; }
+                            .c-slideMenu__slider {
+                                &__ {
+                                    &toggle {
+                                        padding: 0.75em 1em;
+                                        @include media-lg { padding: 0 0 0.625rem 0; }
+                                    }
+                                    &panel {
+                                        right: 0;
+                                        left: auto;
+                                    }
+                                }
+                                &--right {
+                                    .c-slideMenu__slider__toggle {
+                                        svg { 
+                                            right: auto;
+                                            left: 1em;
+                                        }
+                                    }
+                                    .c-slideMenu__slider__panel {
+                                        left: 0;
+                                        right: auto;
+                                    }
+                                }
+                            }
+                        }
+                        &.c-slideMenu--sticky {
+                            &:after {
+                                left: 0;
+                            }
+                            .c-slideMenu__slider {
+                                &__toggle {
+                                    h5 { transform: translate(-2em); }
+                                }
+                                
+                                &--right {
+                                    .c-slideMenu__slider__toggle {
+                                        svg { 
+                                            right: auto;
+                                            left: 1em;
+                                        }
+                                        h5 { transform: translate(2em); }
+                                    }
+                                }
+                            }
+                            .c-slideMenu__slider--active {
+                                .c-slideMenu__slider__toggle {
+                                    padding-right: 1em;
+                                }
+                                .c-slideMenu__slider__panel {
+                                    left: 0;
+                                }
+                                &.c-slideMenu__slider--right {
+                                    right: auto;
+                                    left: 0;
+                                    .c-slideMenu__slider__toggle {
+                                        padding-left: 1em;
+                                        svg { left: 1em; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #{$root} {
+            &__ {
+                &filterLayout {
+                    &__ {
+                        &controls {
+                            @include media-lg {
+                                padding: 1em 1em 0 0.750em;
+                            }
+        
+                            ul { padding-right: 0; }
+        
+                            .c-searchCard {
+                                &__ {
+                                    &body { 
+                                        &__cta {
+                                            .f-input {
+                                                margin-right: 0;
+                                                margin-left: 1em;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &slides {
+                            @include media-lg {
+                                padding: 1em 1em 1em 0.750em;
+                            }
+        
+                            &__ {
+                                &filter {
+                                    .c-filterCard {
+                                        &__{
+                                            &details { 
+                                                @include media-lg {
+                                                    border: none;
+                                                    transform: translate(0); 
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+        
+                            &.c-slideMenu--sticky {
+                                .c-slideMenu__slider__toggle {
+                                    pointer-events: auto;
+        
+                                    .c-filterCard__title {
+                                        &:after {
+                                            content: attr(data-applied);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &view {
+                            .l-gridFlex {
+                                @include media-lg {
+                                    padding: 0.5em 0.750em $productGallery3-layout-gutter $productGallery3-layout-gutter;
+                                }
+                            }
+                
+                            &__ {
+                                &sort {
+                                    text-align: left;
+                
+                                    @include media-lg {
+                                        padding: 0.5em 0 0.5em 1em;
+                                    }
+                                    
+                                    &__{
+                                        &display {
+                                            margin-right: 0;
+                                            margin-left: 3.5em; 
+                                            &:last-child { margin-left: 0; }
+                                            svg { 
+                                                margin-left: 0;
+                                                margin-right: 0.5em;
+                                            }
+                                        }
+                                        &filter {
+                                            .c-dropDown {
+                                                &__{
+                                                    &panel {
+                                                        &__ {
+                                                            &clearBtn {
+                                                                float: left;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

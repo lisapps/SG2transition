@@ -1,0 +1,160 @@
+.c-accordion {
+  $root: &;
+  display: flex;
+  flex-direction: column;
+
+  @media (prefers-reduced-motion) {
+    .c-accordion__panel {
+      transition: none;
+    }
+  }
+
+  &__ {
+    &tab {
+      margin: 0;
+      border-radius: 0;
+      border-bottom: 1px solid #ccc;
+
+      button {
+        display: flex;
+        width: 100%;
+        position: relative;
+        background-color: transparent;
+        font-weight: inherit;
+        color: black;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+        line-height: inherit;
+        border: 0;
+        padding: 1.25rem;
+        margin: 0;
+        white-space: initial;
+        transition: color $textHoverSpeed;
+
+        &:hover,
+        &:focus {
+          color: $accordionTitle_color_active;
+          cursor: pointer;
+
+          #{$root}__tab__icon {
+            fill: $accordionArrow_color_active;
+          }
+        }
+      }
+
+      &__ {
+        &icon {
+          height: 1em;
+          width: 1em;
+          min-width: 1em; //-- prevent shrinking icon on small
+          margin-left: 1em;
+          fill: $accordionArrow_color;
+          transition: transform $accordionSpeed, fill $accordionSpeed;
+        }
+      }
+
+      &--active {
+        #{$root}__tab__icon {
+          fill: $accordionArrow_color_active;
+          transform: rotate(-180deg);
+        }
+        & + #{$root}__panel {
+          // height: auto; // is replaced with js height
+          max-height: 999vh;
+          visibility: visible;
+
+          transition-duration: $accordionSpeed, 0ms;
+          transition-delay: 0ms, 0ms;
+        }
+      }
+    }
+    &panel {
+      // height: 0;
+      height: auto;
+      max-height: 0;
+      background-color: $accordionTab_color;
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+
+      // transition: height, visibility;
+      transition: max-height, visibility;
+      transition-duration: $accordionSpeed, 0ms;
+      transition-delay: 0ms, $accordionSpeed;
+      transition-timing-function: ease-in, ease-in;
+
+      &__ {
+        &content {
+          padding: 1.25em;
+          > * {
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-- {
+    &iconBefore {
+      #{$root}__tab {
+        button {
+          justify-content: initial;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+        }
+        &__ {
+          &icon {
+            margin-right: 1em;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    &iconAfter {
+      #{$root}__tab {
+        button {
+          justify-content: initial;
+        }
+        &__ {
+          &icon {
+            margin-left: 1em;
+          }
+        }
+      }
+    }
+  }
+  html[dir="rtl"] & {
+    &__tab {
+      button {
+        text-align: right;
+        #{$root}__tab__icon {
+          margin-left: 0;
+          margin-right: 1em;
+        }
+      }
+    }
+
+    &#{$root}--iconBefore {
+      #{$root}__tab {
+        &__ {
+          &icon {
+            margin-right: 0;
+            margin-left: 1em;
+          }
+        }
+      }
+    }
+    &#{$root}--iconAfter {
+      #{$root}__tab {
+        &__ {
+          &icon {
+            margin-right: 1em;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

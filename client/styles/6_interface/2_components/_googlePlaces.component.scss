@@ -1,0 +1,66 @@
+.c-googlePlaces {
+	.f-input__icon {
+		cursor: pointer;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 500ms;
+	}
+
+	&__predictions {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background: #f9f9f8;
+		border-color: black $googleplaces-border;
+		border-width: 2px 1px 1px;
+		border-style: solid;
+		overflow: auto;
+		&::after {
+			content: "";
+			padding: 1px 1px 1px 0;
+			height: 18px;
+			box-sizing: border-box;
+			text-align: right;
+			display: block;
+			border-top: 1px solid $googleplaces-border;
+			background-color: white;
+			background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);
+			background-position: right;
+			background-repeat: no-repeat;
+			background-size: 120px 14px;
+		}
+		&:empty { display: none; }
+
+		li {
+			margin: 0;
+			padding: 0.25em 0.625em;
+			line-height: 1;
+			&:hover {
+				background-color: $accent-2;
+				color: white;
+				cursor: pointer;
+				user-select: none;
+			}
+			span {
+				&:first-child { font-weight: $font-1-weight-bold; }
+				&:last-child {
+					font-size: 0.825em;
+					padding-left: 0.25em;
+				}
+			}
+		}
+	}
+
+	&--active {
+		.f-input__icon {
+			visibility: visible;
+			opacity: 1;
+		}
+		.c-googlePlaces__predictions { visibility: visible; }
+	}
+}

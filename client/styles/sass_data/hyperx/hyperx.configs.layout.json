@@ -1,0 +1,34 @@
+{
+	"body-color": "$white",
+	
+
+	"hr-color": "$silver",
+	"h-margins": "1.25rem",
+
+	"margin-base-top": "0",
+    "margin-base-bottom": "1.5rem",
+
+
+	"screen-md": "32em",
+	"screen-lg": "50em",
+	"screen-xlg": "113em",
+
+
+	"screen-min": "20rem",
+
+	"breakpoints": "$screen-md, $screen-lg, $screen-xlg",
+    "breakpointsName": "'md', 'lg', 'xlg'",
+
+
+	"col-number": "12",
+	"gutters": "1em",
+	"max-content-width": "60rem",
+	"coreLayout-max-content-width": "60rem",
+
+
+
+	"pad-sm": "1.25em",
+	"pad-md": "1.875em",
+	"pad-lg": "3.125em"
+}
+	

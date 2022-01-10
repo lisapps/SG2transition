@@ -1,0 +1,62 @@
+// -- Navigation Background Colors
+$hx-nav-bg: #141414;
+$hx-nav-bg-alt: #2f2f32;
+// $hx-nav-bg-accent: blue;
+
+// -- nav breakpoints
+$hx-nav-md: 47.9em; //768px
+// $hx-nav-lg: 64em; //1152px
+$hx-nav-xlg: 72em;
+
+// Nav links
+$hx-nav-links: $dusty;
+$hx-nav-links-hover: white;
+// $hx-nav-secondary-links: #f00;
+
+// Nav Menu
+$hx-nav-menu-bg: rgba(47,47,50,.94);
+
+// Logo BG - Default to $hx-nav-bg
+$hx-nav-bg-logo: $hx-nav-bg;
+$hx-nav-bg-alt-links: white;
+$hx-nav-bg-alt-links-hover: $dusty;
+$hx-nav-bg-alt-font: $font-2-family;
+
+// Border Colors
+// $hx-nav-toggle: #00BAFD; // -- CERULEAN
+// $hx-nav-links-keyline: #E4EDF0; // -- MYSTIC
+$hx-nav-keyline: darken($hx-nav-bg-alt, 15%);
+
+// Panel Colors
+$hx-nav-bg-panel: #2f2f32;
+$hx-panel-border: 1px solid $hx-nav-keyline;
+$hx-panel-txt-color: white;
+$hx-panel-head-color: white;
+$hx-panel-links:  $hx-nav-links;
+$hx-panel-links-hover:  $hx-nav-links-hover;
+
+// Icon Colors
+$hx-nav-icon-color: $hx-nav-links;
+$hx-nav-icon-active: white;
+$hx-nav-icon-hover: lighten($hx-nav-bg-alt, 7%);
+// $hx-nav-icon-hover-bg: blue; // ~~ MYSTERY ~~
+$hx-nav-icon-bg-active: $hx-nav-bg-alt;
+$hx-nav-icon-container-size: 3.75rem; 
+
+// Search Card Colors
+$hx-searchCard-bg: $hx-nav-bg;
+$hx-searchCard-bg-body: $hx-nav-bg-alt;
+$hx-searchPanel-cta: $hx-nav-bg-alt;
+
+//Cart Colors
+$hx-cart-color: #A20520;
+$hx-cart-count-color: $white;
+$hx-cart-btn-bg-color: $hx-nav-bg;
+$hx-cart-btn-bg-color-hover: darken($hx-nav-bg, 10%);
+$hx-cart-btn-color: white;
+$hx-cart-field-bg: $hx-nav-bg-alt;
+$hx-cart-border-color: black;
+
+// Checkout Colors
+$hx-checkout-body: #434247;
+$hx-applePay-btn: $alto;

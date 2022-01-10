@@ -1,0 +1,33 @@
+/* ======================================== */
+/* =                                      = */
+/* =            Float Utilities           = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines float utilities
+.      
+*/
+
+
+// - - - - - - - - -
+// * Float Direction
+// - - - - - - - - -
+.u-fr { float: right; }
+.u-fl { float: left; }
+
+// - - - - - - - - -
+// * Clear
+// - - - - - - - - -
+.u-clr { clear: both; }
+
+.u-cf {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+

@@ -1,0 +1,11 @@
+// This doesn't seem to be doing anything?
+
+.s-articleGallery {
+      &__card {
+            background: $article-card-bg;
+            height: 100%;
+            .l-flexTiles__item--alternate > &{
+                  background: $article-card-bg-alt;
+            }
+      }
+}

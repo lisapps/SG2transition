@@ -1,0 +1,11 @@
+.c-headline {
+    font-size: 3.625em;
+    > * {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-1-family;
+        font-weight: $font-1-weight-bold;
+        margin: 0;
+        padding: 0;
+    }
+}

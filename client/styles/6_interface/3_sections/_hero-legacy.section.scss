@@ -1,0 +1,164 @@
+.s-hero-legacy {
+	padding-top: 0;
+	overflow: hidden;
+	background-color: $color-default-darker-bg;
+
+	@include media-md {
+		height: 45vw;
+		max-height: 34.375em;
+	}
+
+	&__ {
+
+		&inner {
+			padding-bottom: 0;
+			&__content {
+				text-align: center;
+				color: white;
+				
+				h1, h2, h3, h4, h5, h6,
+				.h1, .h2, .h3, .h4, .h5, .h6 {
+					color: white;
+				}
+
+				@include media-md {
+					color: inherit;
+					background-color: transparent;
+					text-align: left;
+					position: relative;
+					left: 0;
+					top: 45%;
+					width: auto;
+					max-width: 50%;
+					padding: 0;
+					transform: translateY(-50%);
+
+					h1, h2, h3, h4, h5, h6,
+					.h1, .h2, .h3, .h4, .h5, .h6 { 
+						color: black;
+					}
+				}
+				
+				.e-videoThumbnail {
+					@media screen and (max-width: $screen-md) {
+						position: absolute;
+						bottom: 1.5em;
+						left: 1.5em;
+						z-index: 3;
+						img { display: none; }
+					}
+				}
+			}
+
+			@include media-md {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+				max-width: 75em;
+			}
+
+			@media screen and (min-width: 60em) {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			@include media-lg {}
+		}
+
+		&background {
+			&::before {
+				content: '';
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+			video {
+				width: 100%;
+				height: auto;
+				display: block;
+				
+				&.s-hero-legacy__background__ {
+					&small {
+						@media screen and (min-width: $screen-md) {
+							display: none;
+						}
+					}
+					&medium {
+						display: none;
+						@media screen and (min-width: $screen-md) and (max-width: 1199px) {
+							display: block;
+						}
+					}
+					&large {
+						display: none;
+						@media screen and (min-width: 1200px) {
+							display: block;
+						}
+					}
+				}
+			}
+
+			@include media-md {
+				position: relative;
+				height: 100%;
+				img, video {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 100%;
+					height: auto;
+					max-width: none;
+					transform: translate(-50%, -50%);
+				}
+
+				.e-vimeoPlayer__player {
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: 145vw;
+					max-width: 103.5em;
+				}
+			}
+		}
+	}
+
+	&-- {
+		&dark {
+			color: white;
+
+			h1, h2, h3, h4, h5, h6,
+			.h1, .h2, .h3, .h4, .h5, .h6 { 
+				color: white;
+			}
+			.e-videoThumbnail { border-color: white; }
+		}
+		&alignRight {
+			@include media-md {
+				.s-hero-legacy__inner__content {
+					max-width: 24em;
+					width: auto;
+					float: right;
+				}
+			}
+		}
+		&homeMode {
+			.s-hero-legacy__background {
+				background-image: url("https://media.kingston.com/kingston/hero/ktc-hero-homepage-china-sm.jpg")
+			}
+
+			@include media-md {
+				max-height: 46.25em;
+				height: 65vw;
+				.s-hero-legacy__background {
+					background-image: url("https://media.kingston.com/kingston/hero/ktc-hero-homepage-china-lg.jpg")
+				}
+			}
+		}
+	}
+}

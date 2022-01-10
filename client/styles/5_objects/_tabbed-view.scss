@@ -1,0 +1,133 @@
+.l-tabView {
+	background-color: $tabbedview-bg-color;
+
+	&__ {
+		&externals {			
+			display: block;
+			padding: 0 1.5rem;
+			line-height: 2.75;
+
+			@include media-md { display: none; }	
+
+			svg { fill: $accent-3; }
+		}
+		&tabs {
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			max-height: 3.25em;
+			width: 100%;
+
+			@include media-md {
+				// padding: 0;
+				// height: auto;
+				padding: 0;
+				justify-content: center;
+				flex-direction: row;
+				position: relative;
+			}
+
+			&__ {
+				&tab {
+					@include media-md {
+						padding: 0.875em 4vw;
+						background-color: transparent;
+						&:hover, &:focus { background-color: $tabbedview-hover-bg-color; }
+					}
+					@include media-xlg {
+						padding: 0.875em 3.25vw;
+					}
+
+					margin: 0;
+					padding: 0.875em 1.5rem;
+					font-weight: $font-1-weight-bold;
+					background-color: $tabbedview-bg-color;
+					text-align: left;
+					transition: background-color 250ms ease;
+
+					svg { vertical-align: -0.125em; }	
+					&:hover { cursor: pointer; }
+					&[data-href] {
+						@include media-md { display: block; }
+						
+						background-color: $color-svg-dark-fill;
+						color: white;
+						display: none;
+
+						&:hover, &:focus { background-color: $tabbedview-hover-focus-bg-color; }
+						svg { fill: white; }
+					}
+
+					&--active {
+						@include media-md {
+							background-color: white;
+							display: block;
+						}
+
+						background-color: $tabbedview-active-bg-color;
+						color: black;
+						display: none;
+						svg { fill: black; }
+					}
+
+					&--filterBar {
+                        // -- modifier added via js -- //
+                        --block-hue: black;
+                        -webkit-box-shadow: inset 0px 5px 0px 0px var(--block-hue);
+                        -moz-box-shadow: inset 0px 5px 0px 0px var(--block-hue);
+                        box-shadow: inset 0px 5px 0px 0px var(--block-hue);
+                        transition: background-color, opacity;
+                        transition-duration: 250ms, 250ms;
+                        transition-timing-function: ease, ease;
+                    }
+					
+				}
+				&mobile {
+					@include media-md {
+						display: none;
+					}
+	
+					cursor: pointer;
+					background-color: black;
+					color: white;
+					padding: 0.875em 1.5rem;
+	
+					svg {
+						fill: white;
+						float: right;
+						transform: rotate(-90deg);
+						width: 1.25em;
+						height: 1.25em;
+					}
+				}
+			}
+			
+			&-- {
+				&active {
+					max-height: 100vh;
+					z-index: 999;
+
+					.l-tabView__tabsBlock__mobile svg { transform: rotate(90deg); }
+				}
+			}
+			
+		}
+		&panels {
+			background-color: white;
+			padding: 1.5em 0;
+			color: #282828;
+
+			@include media-md { padding: 2em 0; }
+			
+			&__ {
+				&panel {
+					display: none;
+					&--active { display: block; }
+				}
+			}
+		}
+	}
+}

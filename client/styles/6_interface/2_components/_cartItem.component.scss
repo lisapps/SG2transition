@@ -1,0 +1,68 @@
+.c-cartItem {
+    $root: &;
+    position: relative;
+    display: grid;
+    grid-gap: 1em 0.5em;
+    grid-template-columns: 100px auto auto auto;
+    grid-template-areas:
+        "image title title title"
+        "quant quant total total";
+
+    &__ {
+        &image {
+            grid-area: image;
+            align-self: center;
+            justify-self: center;
+            max-height: 3.5em;
+        };
+        &title {
+            grid-area: title;
+        };
+        &kit {
+            color: $cartItem-kit-color;
+            font-size: 0.875em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $cartItem-kit-bg;
+            border-radius: 0 6.25em 6.26em 0;
+            line-height: 1.4;
+            padding: 0 0.5em 0 0.5em;
+        }
+        &quantity {
+            grid-area: quant;
+            .f-quantity { 
+                width: 80%; 
+                input { padding: 0.5em; }
+            }
+        };
+        &total {
+            grid-area: total;
+            text-align: right;
+            align-self: flex-end;
+
+            &__trash {
+                background: $cartItem-trashcan-icon;
+                color: $cartItem-trashcan-color;
+                font-size: 0.75rem;
+                border-color: $cartItem-trashcan-border;
+                padding: 0.5em;
+                border-radius: 0;
+                margin: 0 0.5rem;
+
+                &:hover, &:focus { background: $cartItem-trashcan-hover; }
+            }
+        }
+    }
+    
+    html[dir="rtl"] & {
+        &__ {
+            &kit {
+                left: auto;
+                right: 0;
+                border-radius: 6.25em 0 0 6.25em;
+            }
+            &total { text-align: left; }
+        }
+    }
+}

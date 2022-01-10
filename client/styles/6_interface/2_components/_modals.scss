@@ -1,0 +1,110 @@
+.c-modal {
+    $root: &;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    // z-index: 1011;
+    z-index: 2147483638;
+    transition: visibility 0s linear 0.1s, opacity 0.3s ease;
+    
+    &__ {
+        &overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        &content {
+            display: inline-block;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            margin: 0 auto;
+            
+            .c-externalVideo {
+                &[data-type = "Youtube"] {
+                    display: flex;
+                    width: 100vw;
+                    justify-content: center;
+
+                    iframe {
+                        height: 56vw;
+                        width: 100%;
+                        max-height: 80vh;
+                        max-width: 1920px;
+                    }
+                }
+                &[data-type = "Vimeo"] {
+                    iframe {
+                        height: 42rem;
+                        width: 100vw;
+                    }  
+                }
+            }
+        }
+        &close {
+            height: 3.375em;
+            width: 3.375em;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $modal-closeBtn-backgroundColor;
+            align-self: auto;
+            padding: 0.375em;
+            margin: 0;
+            z-index: 1012;
+            
+            &:hover, &:focus { 
+                background-color: $modal-closeBtn-backgroundColor;
+                border-color: $modal-closeBtn-borderColor;
+                border-radius: 0;
+            }
+            
+            svg {
+                display: block;
+                height: 80%;
+                width: 80%;
+                fill: $modal-closeBtn-fill;
+                margin: auto;
+            }
+        }
+    }
+    
+    &-- {
+        &open[aria-hidden="false"] {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+  
+        &active {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
+  
+        &darkmode { 
+            #{$root}__overlay {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
+    
+    html[dir="rtl"] & {
+        &__content {
+            right: 50%;
+            left: 0;
+            transform: translateX(50%) translateY(-50%);
+        }
+    }
+}

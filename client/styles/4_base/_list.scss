@@ -1,0 +1,54 @@
+/* ======================================== */
+/* =                                      = */
+/* =               List Base              = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base styles for list elements
+.     ul | ol | li | dl | dt | dd
+.      
+*/
+
+
+// - - - - - - - - - -
+// * Unordered/ordered lists
+// - - - - - - - - - -
+ul,ol{
+      margin-top: $margin-base-top;
+      margin-bottom: $margin-base-bottom;
+      padding-left: 1rem;
+}
+ul{
+      // ul base styles
+}
+ol{
+      // ol base styles
+}
+
+
+// - - - - - - - - - -
+// * List Items
+// - - - - - - - - - -
+li{
+      line-height: $font-lh-base;
+      margin-bottom: .5rem;
+}
+
+
+// - - - - - - - - - -
+// * Definition Lists
+// - - - - - - - - - -
+dl{
+      margin: 0.5em 0;
+}
+dt, dd { line-height: $font-lh-base; }
+dt{
+      font-weight: $font-1-weight-bold;
+	padding: 0.5em 2em 0em 1em;
+}
+dd{
+      margin: 0;
+      padding: 0em 2em 0.5em 1em;
+}

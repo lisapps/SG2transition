@@ -1,0 +1,25 @@
+/* ----------------------------------------------------------- */
+/* Toastify component style fixes for main css conflicts
+/* ----------------------------------------------------------- */
+
+.Toastify__close-button {
+  width: auto;
+  &:hover {
+    background: transparent;
+  }
+  &:after {
+    background: transparent;
+  }
+}
+
+.Toastify__toast-body {
+  color: #353535;
+}
+
+// .Toastify__toast-container {
+//   position: absolute !important;
+// }
+
+.Toastify__progress-bar--default {
+  background: #c8102e !important;
+}

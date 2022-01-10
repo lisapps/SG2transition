@@ -1,0 +1,75 @@
+// ====== BEGIN BRAND COLORS ====== //
+
+$mainred:		#A20520;
+$darkred:	    #89041B;
+$textred:       #CA2026;
+$gold:		    #EEAA06;
+
+// ===== END BRAND COLORS ====== //
+// ### MONOCRHOME SWATCHES ### //
+
+$white					: #FFFFFF;
+$athensgray				: #F4F6F8;
+$faint					: #F4F4F4;
+$gallery				: #EFEFEF;
+$mercury				: #E4E4E4;
+$alto					: #DFDDDD;
+$silver					: #CCCCCC;
+$silverchalice			: #AEAEAE;
+$dusty					: #999999;
+$mineshaft				: #585858;
+$night					: #353535;
+$black					: #000000;
+
+$accent-1				: $mainred;
+$accent-2				: $darkred;
+$accent-3				: $gold;
+
+$color-main				: $accent-1;
+$color-main-dark		: white;
+$color-main-light		: black;
+
+$color-alt				: $color-main-dark;
+$color-state-active		: $color-main-light;
+$color-state-disabled	: $silver;
+
+$color-svg-default-fill : $gallery;
+$color-svg-dark-fill    : $mineshaft;
+
+$color-bg-light			: #EAEEF1;
+$color-bg-dark			: black;
+$color-page-default-bg  : "white";
+$color-card-default-bg  : #EAEEF1;
+
+$color-txt-light		: white;
+$color-txt-dark			: black;
+$color-txt-default      : $mineshaft;
+
+$color-kl-light			: $accent-3;
+$color-kl-dark			: $accent-1;
+
+$color-btn				: $silver;
+$color-btn-hover		: $dusty;
+$color-btn-disabled		: $alto;
+
+$color-default-bg       : $gallery;
+$color-default-light-bg : $faint;
+$color-default-med-bg   : $gallery;
+$color-default-darker-bg: $night;
+
+$color-btn-txt			: black;
+$color-btn-txt-hover	: black;
+
+$color-btn-light		: white;
+$color-btn-dark			: black;
+
+$link-color				: $textred;
+$link-color-dark		: $gold;
+$link-hover				: $textred;
+$link-hover-dark        : $gold;
+$link-active			: $black;
+
+$tag-bg-color: white;
+$tag-color: black;
+
+// ###### END OF CORE COLORS ###### //

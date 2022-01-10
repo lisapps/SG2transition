@@ -1,0 +1,52 @@
+.s-social {
+
+	padding: 3.125em;
+	.c-heading { padding-top: 0; }
+
+	&__links {
+		display: flex;
+		flex-flow: row wrap;
+		margin-bottom: 0;
+		list-style: none;
+		padding-left: 0;
+		justify-content: space-around;
+		@include media-md {
+			justify-content: center;
+		}
+	
+		li {
+			height: 3rem;
+			width: 3rem;
+			background-color: black;
+			margin-bottom: 0;
+			@include media-md {
+				margin-right: 2em;
+			}
+			&:last-child { margin-right: 0; }
+			a {
+				display: flex;
+				height: 100%;
+				align-items: center;
+				justify-content: center;
+				svg {
+					height: 2rem;
+					width: 2rem;
+					fill: white;
+				}
+			}
+		}
+	}
+
+	html[dir="rtl"] & {
+		&__links {
+			li {
+				@include media-md {
+					margin-right: 0;
+					margin-left: 2em;
+					&:last-child { margin-left: 0; }
+				}
+			}
+		}
+	}
+
+}

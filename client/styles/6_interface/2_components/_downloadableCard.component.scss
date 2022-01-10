@@ -1,0 +1,66 @@
+.c-downloadableCard {
+
+	overflow: hidden;
+	position: relative;
+	padding: 1.25em 1.25em 5.25em;
+	text-align: center;
+	height: 100%;
+
+	// ### CHILDREN ### //
+	&__ {
+		&img{
+			img {
+				display: block;
+				margin: 1em auto;
+				width: auto;
+				height: auto;
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+		&title, &copy {
+			position: relative;
+			z-index: 1;
+		}
+		&copy { margin: 0 0 1em; }
+		&blurb {
+			display: inline-grid;
+			grid-template-columns: 3.375em 1fr;
+			align-items: center;
+			grid-gap: 0 0.5em;
+			text-align: left;
+			margin: 0 0 1em;
+			max-width: 85%;
+			img {
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+			&:empty { display: none; }
+		
+			color: $link-color-dark;
+			:hover {
+				color: $link-hover-dark;
+			}
+
+		}
+		&cta {
+			position: absolute;
+			bottom: 1em;
+			left: 50%;
+			transform: translateX(-50%);
+			&:empty { display: none; }
+		}
+		&bg {
+			opacity: 0.1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: bottom right;
+			z-index: 0;
+		}
+	}
+
+}

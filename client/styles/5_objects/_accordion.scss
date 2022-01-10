@@ -1,0 +1,23 @@
+.c-accordion-legacy { // .o-accordion
+	&__tab {
+		padding: 0.75em 1.25em;
+		background-color: #aaa;
+		cursor: pointer;
+		position:relative;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__panel {
+		background-color: #ddd;
+		padding: 0 1.25em;
+		margin: 0;
+		max-height: 0;
+		overflow:hidden;
+		transition: max-height 200ms ease-out, padding 200ms ease-out;
+	}
+
+	&--active {
+		.c-accordion__tab { background-color: #ccc; }
+		.c-accordion__panel { padding: 1em 1.25em; }
+	}
+}

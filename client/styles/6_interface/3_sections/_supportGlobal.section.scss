@@ -1,0 +1,68 @@
+.s-supportGlobal {
+
+    .l-tabView {
+        $root: &;
+        &__tabs {
+            @media screen and (max-width: $screen-md) {
+                position: absolute;
+                padding: 1.25em;
+                width: 100%;
+                z-index: 10;
+            }
+        }
+        &__panels {
+            &__panel {
+                @media screen and (max-width: $screen-md) {
+                    padding: 5rem 1.5rem 0;
+                }
+            }
+            @media screen and (min-width: $screen-md) {
+                padding: 3em 0;
+            }
+        }
+        .c-table {
+            margin-bottom: 0;
+            &__main {
+                table {
+                    border: none;
+                    thead {
+                        font-size: 1.25em;
+                        border-bottom: 1px solid $color-default-bg;
+                        th {
+                            padding: .75rem 1rem;
+                        }
+                        @media screen and (max-width: $screen-md) {
+                            display: none; 
+                        }
+                    }
+                    tr {
+                        padding: 1em 0;
+                        border-bottom: 1px solid $color-default-bg;
+                        td {
+                            padding: 0.5rem 1rem;
+                            .list-unstyled { margin-bottom: 0; }
+                            @media screen and (max-width: $screen-md) {
+                                display: block;
+                                padding: 0;
+                            }
+                        }
+                        td:first-child {
+                            @media screen and (max-width: $screen-md) {
+                                font-weight: $font-1-weight-bold;
+                            }
+                        }
+                        @media screen and (max-width: $screen-md) {
+                            display: block; 
+                        }
+                    }
+                    tr:last-child { border-bottom: none; }
+                }
+            }
+        }
+        html[dir="rtl"] & {
+            .c-table {
+                th { text-align: right; }
+            }
+        }
+    }
+} 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://styleguide.kingston.com/css/kingston/"
+    />
+    <title>In page navigation</title>
+  </head>
+  <body id="iframe-body" style="overflow: hidden">
+    <section class="s-supportGlobal">
+      <div class="l-tabView" data-id="tab-kmbcfu">
+        <ul class="l-tabView__tabs" role="tablist">
+          <li class="l-tabView__tabs__mobile">
+            <span>tab1</span
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path d="M24 2L8 16l16 14" />
+            </svg>
+          </li>
+          <li
+            class="l-tabView__tabs__tab l-tabView__tabs__tab--active"
+            role="tab"
+            aria-controls="tabContent0_0"
+            id="tab0_0"
+            aria-selected="true"
+            tabindex="0"
+          >
+            Tab 1
+          </li>
+          <li
+            class="l-tabView__tabs__tab"
+            role="tab"
+            aria-controls="tabContent0_1"
+            id="tab0_1"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Tab 2
+          </li>
+          <li
+            class="l-tabView__tabs__tab"
+            role="tab"
+            aria-controls="tabContent0_2"
+            id="tab0_2"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Tab 3
+          </li>
+          <li
+            class="l-tabView__tabs__tab"
+            role="tab"
+            aria-controls="tabContent0_3"
+            id="tab0_3"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            Tab 4
+          </li>
+        </ul>
+        <div class="l-tabView__panels">
+          <div
+            class="l-tabView__panels__panel l-tabView__panels__panel--active"
+            role="tabpanel"
+            aria-labelledby="tab0_0"
+            id="tabContent0_0"
+          >
+            <div class="c-table c-table--sideKeys u-tableUnstyled">
+              <div class="c-table__main">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Column Title 1 (Tab 1)</th>
+                      <th>Column Title 2 (Tab 1)</th>
+                      <th>Column Title 3 (Tab 1)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TD 1</td>
+                      <td>TD 2</td>
+                      <td>TD 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="l-tabView__panels__panel"
+            role="tabpanel"
+            aria-labelledby="tab0_1"
+            id="tabContent0_1"
+          >
+            <div class="c-table c-table--sideKeys u-tableUnstyled">
+              <div class="c-table__main">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Column Title 1 (Tab 2)</th>
+                      <th>Column Title 2 (Tab 2)</th>
+                      <th>Column Title 3 (Tab 2)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TD 1</td>
+                      <td>TD 2</td>
+                      <td>TD 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div
+            class="l-tabView__panels__panel"
+            role="tabpanel"
+            aria-labelledby="tab0_2"
+            id="tabContent0_2"
+          >
+            <p>This is content for a tab in support global section</p>
+          </div>
+          <div
+            class="l-tabView__panels__panel"
+            role="tabpanel"
+            aria-labelledby="tab0_3"
+            id="tabContent0_3"
+          >
+            <div class="c-table c-table--sideKeys u-tableUnstyled">
+              <div class="c-table__main">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Column Title 1 (Tab 4)</th>
+                      <th>Column Title 2 (Tab 4)</th>
+                      <th>Column Title 3 (Tab 4)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>TD 1</td>
+                      <td>TD 2</td>
+                      <td>TD 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../rexusManager.component.js"></script>
+    <script src="../cuid.component.js"></script>
+    <script src="../dropDown.component.js"></script>
+    <script src="../tabs.layout.js"></script>
+  </body>
+</html>

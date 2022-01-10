@@ -1,0 +1,7 @@
+{
+    "dropshadow-base": "0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0.75em 0.125em rgba(0, 0, 0, 0)",
+    "dropshadow-visible": "0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0.5em 0 rgba(0, 0, 0, 0.20)",
+    "dropshadow-transition": "box-shadow",
+    "dropshadow-transition-timing": "ease-out",
+    "dropshadow-transition-delay": "0s"
+}

@@ -1,0 +1,38 @@
+// THIS NEEDS TO FOLLOW BEM FORMATTING. NEEDS REFORMATTING.
+.c-productCardLite {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;			
+
+    //PATCH FOR KCMS
+    &__ {
+        &links {
+            a:not(.btn):not(.e-btn) {
+                // display: inline-block;
+                display: block;
+                text-decoration: none;
+                padding-bottom: 1em;
+                &:hover { text-decoration: none; }
+                &:last-child { padding-bottom: 0; }
+                h4 { 
+                    display: inline;
+                    font-size: 1em; 
+                    font-weight: 300;
+                }
+            }
+        }
+        
+        &img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+            height: 5em;
+            svg {
+                fill: $font-base-color;
+                width: initial;
+                height: initial;
+            }
+        }
+    }
+}

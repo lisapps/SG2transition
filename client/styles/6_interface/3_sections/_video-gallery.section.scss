@@ -1,0 +1,55 @@
+.s-videoGallery {
+
+    padding: 1.5em 0 .75em; 
+	@media screen and (min-width: $screen-md) {
+		padding: 2em 0 1.25em; 
+	}
+	@media screen and (min-width: $screen-lg) {
+		padding: 3.125em 0 2.375em; 	
+    }
+    
+    .c-heading {
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+
+	.l-flexTiles {
+		&__item {
+			padding: 1em;
+			@media screen and (min-width: $videoGalleryQuery) {
+				padding: 0 1em;
+			}
+		}
+    }
+    
+    .c-videoCard{
+        &__img {
+            img {
+                @media screen and (min-width: $videoGalleryQuery) {
+                    width: auto;
+                }
+            }
+            @media screen and (min-width: $videoGalleryQuery) {
+                width: auto;
+            }
+        }
+        &__details {
+            @media screen and (min-width: $videoGalleryQuery) {
+                h5 { margin: initial; }
+            }
+        }
+    }
+    
+	// -- layout inner
+	.inner--max {
+		padding: 0 1.5rem;
+		@media screen and (min-width: $videoGalleryQuery) {
+			padding: 0 2rem;
+		}
+		@media screen and (min-width: $screen-lg) {
+			padding: 0 3.125rem;
+		}
+    }
+    
+}

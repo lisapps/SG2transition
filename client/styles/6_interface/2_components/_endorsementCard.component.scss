@@ -1,0 +1,66 @@
+.c-endorsementCard {
+	$root: &;
+	padding: 0 0.75em;
+	height: 100%;
+	
+
+	&__ {
+		&img {
+			display: block;
+			width: 100%;
+			max-height: 185px;
+			margin: 0 auto 1em;
+		}
+		&copy {
+			position: relative;
+	
+			&__ {
+				&name {
+					font-size: 1.125em;
+					font-weight: $font-1-weight-bold;
+					margin: 0;
+				}
+				&occ { 
+					display: block;
+					margin-bottom: 1em; 
+				}
+				&quote {
+					margin-bottom: 0;
+					&::before {
+						content: '\201C';
+						display: block;
+						float: left;
+						height: 2rem;
+						width: 2.5rem;
+						margin: 0.25rem 0.5rem 0 0;
+						font-size: 7rem;
+						line-height: 0.75em;
+						color: $endorsement-quote-before;
+					}
+					&::after {
+						content: '\201D';
+						display: block;
+						float: right;
+						height: 2rem;
+						width: 2.5rem;
+						margin: 0.25rem 0.5rem 0 0;
+						font-size: 7rem;
+						line-height: 0.75em;
+						color: $endorsement-quote-after;
+					}
+				}
+			}
+		}
+	}
+
+	html[dir="rtl"] & {
+		#{$root}__copy__quote {
+			&::before {
+				margin: 0.25rem 0 0 0.5rem;
+			}
+			&::after {
+				margin: 0.25rem 0 0 0.5rem;
+			}
+		}
+	}
+}

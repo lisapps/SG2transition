@@ -1,0 +1,83 @@
+// Figure Component
+.c-figure {
+    @mixin _figure {
+        margin: 0;
+        max-width: 100%;
+    }
+    @include _figure;
+    @at-root figure {
+        @include _figure;
+    }
+    &__gfx {
+        /* Container needed to position the overlay. Adjust the width as needed */
+        position: relative;
+        width: fit-content;
+        &:hover &__overlay {
+            opacity: .6;
+            cursor: pointer;
+        }
+        img {
+            @mixin _figImg {
+                display: block;
+                //width: 100%;
+                height: auto;
+                margin: 0 !important;
+            }   
+            @include _figImg;
+            @at-root figure img {
+                @include _figImg;
+            }
+        }
+        &__overlay {
+            /* The overlay effect - lays on top of the container and over the image */
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: 0.3s ease;
+            background-color: $figure-overlay-bg;
+            &__svg {
+                /* The icon inside the overlay is centered vertically and horizontally */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                svg {
+                    height: 3em;
+                    width: 3em;
+                    fill: $figure-overlay-bg;
+                }
+            }
+        }
+    }
+    &__caption {
+        @mixin _figcaption {
+            padding: 0.625rem 0 1.875rem;
+            font-style: italic;
+        }
+        @include _figcaption;
+        @at-root figcaption {
+            @include _figcaption;
+        }
+    }
+    &--right, &--left {
+        margin: 0;
+        figcaption {
+            padding: 0.875rem 0.875rem 0 0.875rem;
+        }
+    }
+    &--right {
+        @include media-md {
+            float: right;
+            margin: 0 0 0.5em 1em;
+        }
+    }
+    &--left {
+        @include media-md {
+            float: left;
+            margin: 0 1.875rem 0.5em 0;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+/* ======================================== */
+/* =                                      = */
+/* =              Layout Base             = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base Styles for layout elements
+.	html | body | nav | div | section | header | main | article | aside | footer 
+.      
+*/
+
+// - - - - - - - - - -
+// * Html
+// - - - - - - - - - -
+html{
+	// Base styles for html tag
+}
+
+
+// - - - - - - - - - -
+// * Body
+// - - - - - - - - - -
+body {
+	background: $body-color;
+	font-family: $font-1-family;
+	line-height: $font-lh-base;
+	color: $color-main-light; // MOVE TO HX SPECIFIC STYLES
+	font-weight: $font-base-weight;
+	letter-spacing: normal;
+	font-size: 1em;
+}
+
+
+// - - - - - - - - - -
+// * Nav
+// - - - - - - - - - -
+nav {
+	// Base styles for nav tags
+}
+
+
+// - - - - - - - - - -
+// * Div
+// - - - - - - - - - -
+div{
+	// Base styles for div tags
+}
+
+
+// - - - - - - - - - -
+// * Section
+// - - - - - - - - - -
+section {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+// - - - - - - - - - -
+// * Header
+// - - - - - - - - - -
+header{
+	// Base styles for header tags
+}
+
+
+// - - - - - - - - - -
+// * Main
+// - - - - - - - - - -
+main{
+	// Base styles for main tags
+}
+
+
+// - - - - - - - - - -
+// * Section
+// - - - - - - - - - -
+article{
+	// Base styles for article tags
+}
+
+
+// - - - - - - - - - -
+// * Section
+// - - - - - - - - - -
+aside{
+	// Base styles for aside tags
+}
+
+
+// - - - - - - - - - -
+// * Footer
+// - - - - - - - - - -
+footer{
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}

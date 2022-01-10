@@ -1,0 +1,15 @@
+.l-masonry {
+    position: relative;
+    &__ {
+        &container {
+            position: relative;
+        }
+    }
+    &-- {
+        &horizontal {}
+        &center {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

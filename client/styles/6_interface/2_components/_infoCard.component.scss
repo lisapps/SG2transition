@@ -1,0 +1,101 @@
+.c-infoCard {
+
+	$root: &;
+
+	overflow: hidden;
+	position: relative;
+	padding: 1.25em 1.25em 5.25em;
+	border-top: 1px solid #dfdddd;
+	text-align: center;
+
+	// ### CHILDREN ### //
+	&__ {
+		&img{
+			img {
+				display: block;
+				margin: 1em auto;
+				width: auto;
+				height: auto;
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+		&title {
+			font-family: $font-1-family;
+			font-size: 1.125em;
+			margin-bottom: 0.625em;
+			&:empty { display: none; }
+		}
+		&copy { margin: 0 0 1em; }
+		&profile {
+			display: inline-grid;
+			grid-template-columns: 54px 1fr;
+			align-items: center;
+			grid-gap: 0 0.5em;
+			text-align: left;
+			margin: 0 0 1em;
+			max-width: 85%;
+			img {
+				border-radius: 50%;
+				vertical-align: middle;
+			}
+			&:empty { display: none; }
+		}
+		&cta {
+			position: absolute;
+			bottom: 1em;
+			left: 50%;
+			transform: translateX(-50%);
+			&:empty { display: none; }
+		}
+	}
+
+	html[dir="rtl"] & {
+		&__profile { text-align: right; }
+		&--instructional {
+			#{$root}__copy { text-align: right; }
+		}
+	}
+
+
+	// #### MODIFIERS #### //
+	&-- {
+		&instructional {
+			#{$root}__copy { text-align: left; }
+		}
+		&profile {
+			background-color: rgba(53,53,53,0.85);
+			border-top: 0;
+			color: white;
+			#{$root}__title, #{$root}__copy, #{$root}__profile {
+				position: relative;
+				z-index: 1;
+			}
+			#{$root}__bg {
+				opacity: 0.1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: bottom right;
+				z-index: 0;
+			}
+			a:not(.e-btn) {
+				color: $link-color-dark;
+				:hover {
+					color: $link-hover-dark;
+				}
+			}
+			.l-flexTiles__item--alternate {
+				background-color: rgba(40,40,40,0.7);
+			}
+		}
+	}
+
+	// ### MEDIA QUERIES ### //
+	@media screen and (min-width: $screen-md) {
+		border-top: 0;
+	}
+}

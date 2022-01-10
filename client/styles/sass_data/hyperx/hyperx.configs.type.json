@@ -1,0 +1,61 @@
+{
+    "font-base-size": "1em",
+    "font-base-lineheight": "1.5",
+    "font-base-color": "$mineshaft",
+    "font-base-weight": "$font-1-weight-normal",
+
+   
+    "font-mega-family": "$font-2-family",
+    "font-mega-weight": "$font-2-weight-bold",
+    "font-mega-style": "normal",
+    "font-mega-marginbottom": "0.5rem",
+
+   
+    "font-hero-family": "$font-2-family",
+    "font-hero-weight": "$font-2-weight-bold",
+   
+    "heading-color": "$black",
+    "heading-lineheight": "1.125",
+    "heading-marginbottom": "0.625rem",
+
+   
+    "form-heading-font": "$font-1-family",
+
+   
+    "heading1-fontsize": "2.125em",
+    "heading1-lineheight": "1.25",
+    "heading1-marginbottom": "0.875em",
+    "heading1-fontfamily": "$font-2-family",
+
+   
+    "heading2-fontsize": "1.75em",
+    "heading2-lineheight": "1.125",
+    "heading2-marginbottom": "0.875em",
+    "heading2-fontfamily": "$font-2-family",
+
+   
+    "heading3-fontsize": "1.5em",
+    "heading3-lineheight": "1.125",
+    "heading3-marginbottom": "0.875em",
+    "heading3-fontfamily": "$font-2-family",
+
+   
+    "heading4-fontsize": "1.375em",
+    "heading4-lineheight": "1.125",
+    "heading4-marginbottom": "0.875em",
+
+   
+    "heading5-fontsize": "1.125em",
+    "heading5-lineheight": "1.125",
+    "heading5-marginbottom": "0.875em",
+
+   
+    "heading6-fontsize": "1em",
+    "heading6-lineheight": "1.125",
+    "heading6-marginbottom": "0.875em",
+
+   
+    "link-color": "$textred",
+    "link-hover": "$textred",
+    "link-active": "$black"
+}

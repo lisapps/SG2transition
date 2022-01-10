@@ -1,0 +1,76 @@
+// -- font imports
+@font-face {
+  font-family: "rbno";
+  src: url("../public/fonts/rbno3.1-book-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "rbno";
+  src: url("../public/fonts/rbno3.1-extrabold-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+// -- default font
+$font-1-family: "proxima-nova", sans-serif;
+$font-1-weight-normal: 300;
+$font-1-weight-bold: 500;
+$font-1-weight-extrabold: 800;
+
+$font-2-family: "rbno", Helvetica, sans-serif;
+$font-2-weight-normal: 300;
+$font-2-weight-bold: 500;
+$font-2-weight-extrabold: 800;
+
+$font-base-size: 1em;
+$font-base-lineheight: 1.5;
+$font-base-color: $mineshaft;
+$font-base-weight: $font-1-weight-normal;
+
+$font-mega-family: $font-1-family;
+$font-mega-weight: $font-1-weight-bold;
+$font-mega-style: normal;
+$font-mega-marginbottom: 0.5rem;
+
+$font-hero-family: $font-1-family;
+$font-hero-weight: $font-1-weight-bold;
+
+$font-size-xs: 0.875em;
+$font-size-sm: 0.937em;
+$font-size-base: 1em;
+$font-size-md: 1.125em;
+$font-size-lg: 1.25em;
+
+$font-lh-base: 1.5;
+
+$heading-color: $black;
+$heading-lineheight: 1.125;
+$heading-marginbottom: 0.625rem;
+
+$heading-font-weight: $font-1-weight-normal;
+$subHeading-font-weight: $font-1-weight-normal;
+
+$heading1-fontsize: 2.125em;
+$heading1-fontfamily: $font-1-family;
+$heading1-font-weight: $heading-font-weight;
+
+$heading2-fontsize: 1.75em;
+$heading2-fontfamily: $font-1-family;
+$heading2-font-weight: $heading-font-weight;
+
+$heading3-fontsize: 1.5em;
+$heading3-fontfamily: $font-1-family;
+$heading3-font-weight: $subHeading-font-weight;
+
+$heading4-fontsize: 1.375em;
+$heading4-fontfamily: $font-1-family;
+$heading4-font-weight: $subHeading-font-weight;
+
+$heading5-fontsize: 1.125em;
+$heading5-fontfamily: $font-1-family;
+$heading5-font-weight: $subHeading-font-weight;
+
+$heading6-fontsize: 1em;
+$heading6-fontfamily: $font-1-family;
+$heading6-font-weight: $subHeading-font-weight;

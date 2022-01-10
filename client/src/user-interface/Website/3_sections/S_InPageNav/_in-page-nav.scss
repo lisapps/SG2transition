@@ -1,0 +1,237 @@
+.s-inPageNav {
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    position: sticky !important;
+    top: 0;
+    left: 0;
+
+    background-color: $color-bg-light;
+    transition: top 400ms, background-color 500ms;
+    z-index: 1001;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        width: 100vw;
+        opacity: 0;
+        transition: opacity 500ms;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    &::after {
+        height: 1px;
+        width: 100%;
+        background-color: $color-default-med-bg;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .e-btn {
+        margin: 0.25em 0.25em 0.375em;
+        min-width: 7.25em;
+        align-self: stretch;
+        position: relative;
+        z-index: 20;
+    }
+
+    // ### CHILDREN ### //
+    &__ {
+
+        &product {
+            padding: 0 0.25em 0 1.25rem;
+            font-size: 1.125em;
+            background-color: $inPageNavColor; //$$
+            font-family: $font-1-family;
+            font-weight: $font-1-weight-normal;
+            // color: black;
+            white-space: nowrap;
+            overflow: hidden;
+
+            @media screen and (min-width: 48em) {
+                margin-right: 0;
+                overflow: unset;
+            }
+        }
+
+        &toggle {
+            display: flex;
+            flex-grow: 1;
+            cursor: pointer;
+
+            @media screen and (min-width: 48em) {
+                display: none;    
+            }
+        }
+
+        &links {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            max-height: 0;
+            overflow: auto;
+            background-color: $inPageNavColor;
+            transition: max-height 500ms, padding 500ms;
+            z-index: 2;
+
+            @media screen and (min-width: 48em) {
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                top: 0;
+                flex-grow: 1;
+                max-height: unset;
+            }
+
+            > *:first-child, > *:last-child {
+                display: none;
+                
+                @media screen and (min-width: 48em) {
+                    cursor: pointer;
+                    z-index: 2;
+                    position: absolute;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        fill: $accent-2;
+                        transition: fill 0.4s ease;
+                        transform-origin: center;
+                        vertical-align: text-top;
+                    }
+                }
+            }
+            > *:first-child {
+                left: 0;
+                background: linear-gradient(to right, $inPageNavColor 0%, $inPageNavColor 30%,rgba(255,255,255,0) 100%);
+                svg { transform: rotate(-90deg); }
+            }
+            > *:last-child {
+                right: 0;
+                background: linear-gradient(to left, $inPageNavColor 0%, $inPageNavColor 30%,rgba(255,255,255,0) 100%);
+                svg { transform: rotate(90deg); }
+            }
+
+            &__nav {
+                display: flex;
+                flex-direction: column;
+                // position: absolute;
+                // top: 100%;
+                // left: 0;
+                width: 80%;
+                margin: 0 10%;
+                padding: 0;
+                // padding: 0 1.75em;
+                list-style: none;
+
+                li {
+                    border-bottom: 1px solid $color-default-med-bg;
+                    a {
+                        display: block;
+                        padding: 0.5em 0;
+                        font-weight: 500;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+                
+                // background-color: $color-default-med-bg;
+
+                @media screen and (min-width: 48em) {
+                    flex-direction: row;
+                    flex-grow: 1;
+                    position: absolute;
+                    top: 0;
+                    margin: 0;
+                    max-height: unset;
+                    align-items: center;
+                    height: 100%;width: 100%;
+                    z-index: 1;
+                    transition: left 500ms;
+                    transition-timing-function: ease-in-out;
+
+                    li {
+                        white-space: nowrap;
+                        padding: 0 1em;
+                        border-bottom: 0;
+                        &:first-child { margin-left: 1em; }
+                        &:last-child { margin-right: 1em; }
+                    }
+                }                
+            }
+        }
+
+        &price {
+            // color: black;
+            font-family: $font-2-family;
+            font-size: 1em;
+            font-family: $inPageNav-price-font;
+            padding: 0 1rem;
+            white-space: nowrap;
+
+            @media screen and (min-width: 48em) {
+                font-size: 1.125em;
+            }
+
+            .u-txt-strike {
+                font-size: 90%;
+                color: $legal-list-color;
+            }
+        }
+    }
+
+
+    // ### MODIFIERS ### //
+    &-- {
+        &active {
+            @media screen and (max-width: 48em) {
+                &::before {
+                    opacity: 1;
+                    height: 100vh;
+                    width: 100%;
+                }
+                &.s-inPageNav--titleConflict {
+                    .s-inPageNav__product {
+                        top: 150%;
+                        opacity: 1;
+                        transition: top 500ms, opacity 200ms;
+                        transition-delay: 0ms, 110ms;
+                    }
+                    .s-inPageNav__links { padding: 3em 0 1.75em; }
+                }
+
+                .s-inPageNav__toggle {
+                    svg { transform: rotate(180deg); }
+                }
+                .s-inPageNav__links {
+                    padding: 1.75em 0;
+                    max-height: 100vh;
+                }
+            }
+        }
+
+        &titleConflict {
+            .s-inPageNav__product {
+                position: absolute;
+                top: 30%;
+                left: 0;
+                margin: 0 10%;
+                padding: 0;
+                z-index: 3;
+                opacity: 0;
+                // transition: top 500ms, opacity 200ms;
+            }
+            .s-inPageNav__toggle { padding: 0 1.125em; }
+        }
+    }
+}

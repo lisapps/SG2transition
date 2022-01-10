@@ -1,0 +1,28 @@
+.s-supportHeader {
+	padding-top: 0;
+	overflow: hidden;
+	background-color: black;
+	.l-inner {
+		padding-bottom: 0;
+		position: relative;
+		h1 {
+			margin-bottom: 0;
+			text-align: center;
+			padding: 1.375em 0;
+			line-height: 1;
+			color: white;
+		}
+		.svg-external {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			right: 5%;
+			transform: translateY(-50%);
+			svg {
+				width: 20em;
+				height: 20em;
+				* { stroke: #fff; }
+			}
+		}
+	}
+}

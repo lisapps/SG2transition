@@ -1,0 +1,54 @@
+// Viewer Variables
+$white: #fff;
+$mineshaft: #585858;
+$silver: #ccc;
+$accent-1: $silver;
+
+$v-mainBg: #1b1b1b;
+$v-altBg: #252525;
+$v-toggleBg: #323232;
+
+
+$hr-color: $silver;
+$h-margins: 1.25rem;
+
+$margin-base-top: 0;
+$margin-base-bottom: 1.5rem;
+
+$screen-md: 32em,;
+$screen-lg: 50em;
+$screen-xlg: 113em;
+$screen-min: 20em;
+
+$breakpoints: $screen-md, $screen-lg, $screen-xlg;
+$breakpointsName: md, lg, xlg;
+
+$col-number: 12;
+$coreLayout-max-content-width: 60rem;
+
+
+$font-1-family: "canada-type-gibson", "sans-serif";
+$font-1-weight-normal: 300;
+$font-1-weight-bold: 500;
+$font-base-color: $mineshaft;
+$font-mega-family: $font-1-family;
+$font-mega-weight: $font-1-weight-bold;
+$font-mega-marginbottom: 0.5rem;
+
+
+$body-color: #fff;
+$font-lh-base: 1.5;
+
+
+$vSpecs-borderWidth: 0.25em;
+$vSpecs-sectionColor: #d1d0c9;
+$vSpecs-layoutColor: #e39b4d;
+$vSpecs-componentColor: #ebdc15;
+$vSpecs-modifiersColor: #7bb2d1;
+$vSpecs-dynamicsColor: #679e33;
+$vSpecs-transparency: 0.7;
+
+$screen-md:32em;
+$screen-lg:50em;
+$screen-xlg:113em;
+$screen-min:20em;

@@ -1,0 +1,55 @@
+{
+    "kt-nav-bg": "white",
+    "kt-nav-bg-alt": "white",
+    "kt-nav-bg-accent": "white",
+
+    "kt-nav-md": "47.9em",
+    "kt-nav-lg": "64em",
+
+    "kt-nav-links": "white",
+    "kt-nav-links-hover": "$sky",
+    "kt-nav-secondary-links": "$sky",
+    "kt-nav-links-cDropdown-active": "$sky", 
+
+    "kt-c-icoPanels-cDropdown-active": "$slate",
+
+    "kt-nav-menu-bg": "rgba(89, 89, 89, 0.94)",
+    "kt-nav-links-border": "$gray",
+    "kt-nav-links-svg": "$gray",
+
+    "kt-nav-bg-logo": "white",
+    "kt-nav-bg-alt-links": "$coal",
+    "kt-nav-bg-alt-links-hover": "black",
+    "kt-nav-bg-alt-font": "$font-1-family",
+
+    "kt-nav-toggle": "$coal",
+    "kt-nav-links-keyline": "#E4EDF0",
+    "kt-nav-keyline": "$cloudy",
+    "kt-applepay-btn": "$cloudy",
+
+    "kt-nav-bg-panel": "$kt-nav-bg",
+    "kt-panel-border": "1px solid $kt-nav-keyline",
+    "kt-panel-txt-color": "black",
+    "kt-panel-head-color": "black",
+    "kt-panel-links": " $kt-nav-links",
+    "kt-panel-links-hover": " $kt-nav-links-hover",
+
+
+    "kt-nav-icon-color": "$coal",
+    "kt-nav-icon-hover": "white",
+    "kt-nav-icon-hover-bg": "$slate",
+
+    "kt-searchPanel-cta": "$slate",
+
+    "kt-cart-color": "black",
+    "kt-cart-count-color": "$link-color",
+    "kt-cart-btn-bg-color": "$stone",
+    "kt-cart-btn-bg-color-hover": "$silver",
+    "kt-cart-btn-color": "$coal",
+    "kt-cart-field-bg": "white",
+    "kt-cart-border-color": "$silver",
+
+    "kt-checkout-body": "white",
+    "kt-checkout-header": "$cloudy",
+    "kt-checkout-text": "$cloudy"
+}

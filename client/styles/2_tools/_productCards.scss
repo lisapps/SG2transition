@@ -1,0 +1,132 @@
+@mixin productCard4 {
+    padding: 0;
+    row-gap: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em 15em 1fr auto auto;
+    grid-template-areas: 
+        "header"
+        "image"
+        "details"
+        "footer"
+        "buyOptions";
+}
+
+@mixin productCard4__header {
+    height: 2.5em;
+    margin-bottom: 0;
+    overflow: initial;
+}
+
+@mixin productCard4__header__link {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75em 1em 0.5em;
+}
+
+@mixin productCard4__header__name {
+    position: absolute;
+    left: 0;
+    width: 75%;
+    font-size: 1.125em; 
+    padding-left: 1em;
+    overflow: hidden;
+    &:only-child { 
+        width: 100%; 
+        padding-right: 1em;
+    }
+}
+
+@mixin productCard4__image {
+    height: 15em;
+    width: 100%;
+    img { margin: auto; }
+}
+
+@mixin productCard4__details {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 0 1em 1em;
+}
+
+@mixin productCard4__footer {
+    text-align: center;
+    // align-self: center;
+    padding-bottom: 0;
+}
+@mixin productCard4__footer__cta {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 1em;
+}
+
+
+
+
+
+
+@mixin productCard {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+        "header"
+        "image"
+        "details";
+}
+
+@mixin productCard__header {
+    height: 2.5em;
+    margin-bottom: 0;
+    padding-top: 0;
+
+    white-space: initial;
+    overflow: initial;
+    text-overflow: initial;
+}
+
+@mixin productCard__header__link {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75em 1em 0.5em;
+}
+
+@mixin productCard__header__name {
+    display: -webkit-box;
+    position: absolute;
+    left: 0;
+    width: 75%;
+    padding-left: 1em;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    &:only-child { width: 100%; }
+}
+
+@mixin productCard__image {
+    height: 16em;
+    width: 100%;
+    justify-self: center;
+    align-items: flex-start;
+    padding: 0 1em 0.625em;
+    img { margin: 0 auto; }
+}
+
+@mixin productCard__details {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 0 1em 1em;
+}
+
+@mixin productCard__footer {
+
+    text-align: center;
+    // align-self: center;
+    padding-bottom: 0;
+}
+@mixin productCard__footer__cta {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 1em;
+}

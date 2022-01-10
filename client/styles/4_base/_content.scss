@@ -1,0 +1,159 @@
+/* ======================================== */
+/* =                                      = */
+/* =             Content Base             = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base styles for content elements
+.     h1 -> h6 | p | a | pre | strong | b | em | i | blockquote | hr
+.      
+*/
+
+// - - - - - - - - - -
+// * Headings
+// - - - - - - - - - -
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  margin-top: 0;
+  color: black;
+}
+h1,
+.u-h1 {
+  font-size: 2.125em;
+  line-height: 1.25;
+  margin-bottom: 2rem;
+  font-family: $heading1-fontfamily;
+  font-weight: $heading1-font-weight;
+}
+h2,
+.u-h2 {
+  font-size: 1.75em;
+  line-height: 1.154;
+  margin-bottom: 1.5rem;
+  font-family: $heading2-fontfamily;
+  font-weight: $heading2-font-weight;
+}
+h3,
+.u-h3 {
+  font-size: 1.5em;
+  line-height: 1.136;
+  margin-bottom: 1.5rem;
+  font-family: $heading3-fontfamily;
+  font-weight: $heading3-font-weight;
+}
+h4,
+.u-h4 {
+  font-size: 1.375em;
+  line-height: 1.12;
+  font-family: $heading4-fontfamily;
+  font-weight: $heading4-font-weight;
+}
+h5,
+.u-h5 {
+  font-size: 1.125em;
+  line-height: 1.1;
+  font-family: $heading5-fontfamily;
+  font-weight: $heading5-font-weight;
+}
+h6,
+.u-h6 {
+  font-size: 1em;
+  line-height: 1.1;
+  font-family: $heading6-fontfamily;
+  font-weight: $heading6-font-weight;
+}
+
+// - - - - - - - - - -
+// * Paragraphs
+// - - - - - - - - - -
+p {
+  margin-top: $margin-base-top;
+  margin-bottom: $margin-base-bottom;
+}
+
+// - - - - - - - - - -
+// * Links / Buttons
+// - - - - - - - - - -
+a {
+  text-decoration: none;
+  &:link {
+  }
+
+  &:visited {
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: black;
+  }
+}
+
+// - - - - - - - - - -
+// * Preformatted
+// - - - - - - - - - -
+pre {
+  margin: 0;
+  // margin-top: $margin-base-top;
+  // margin-bottom: $margin-base-bottom;
+}
+
+// - - - - - - - - - -
+// * Strong
+// - - - - - - - - - -
+strong {
+  // Base styles for strong tag
+}
+
+// - - - - - - - - - -
+// * Bold
+// - - - - - - - - - -
+b {
+  // Base styles for b tag
+}
+
+// - - - - - - - - - -
+// * Emphasis
+// - - - - - - - - - -
+em {
+  // Base styles for strong tag
+}
+
+// - - - - - - - - - -
+// * Italic
+// - - - - - - - - - -
+i {
+  // Base styles for i tag
+}
+
+// - - - - - - - - - -
+// * Blockquote
+// - - - - - - - - - -
+blockquote {
+  // Base styles for blockquote tag
+}
+
+// - - - - - - - - - -
+// * Horizontal Rule
+// - - - - - - - - - -
+hr {
+  margin-top: $margin-base-top;
+  margin-bottom: $margin-base-bottom;
+  border: 0;
+  height: 1px;
+  background: $color-default-med-bg;
+}

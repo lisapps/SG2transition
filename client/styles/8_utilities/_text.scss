@@ -1,0 +1,80 @@
+/* ======================================== */
+/* =                                      = */
+/* =             Text Utilities           = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines utilities used to modify text
+.     ! All text utilities must be prefixed with .u-txt
+.
+*/
+
+// -- font assignments
+.u-txt-font-1 { font-family: $font-1-family !important; }
+.u-txt-font-2 { font-family: $font-2-family !important; }
+.u-txt-font-2-bold{ font-weight: $font-2-weight-bold !important; }
+
+// - - - - - - - - -
+// * Alignment 
+// usage:  -left || -center || -right
+// - - - - - - - - -
+.u-txt-left { text-align: left !important; }
+.u-txt-center { text-align: center !important; }
+.u-txt-right { text-align: right !important; }
+
+// - - - - - - - - -
+// * Caps
+// usage:  -uppercase || -lowercase || -capitalize
+// - - - - - - - - -
+.u-txt-uppercase { text-transform: uppercase !important; }
+.u-txt-lowercase { text-transform: lowercase !important; }
+.u-txt-capitalize { text-transform: capitalize !important; }
+.u-txt-caps-default { text-transform: none !important; }
+
+// - - - - - - - - -
+// * Enhancement
+// usage:  -strike || -bold
+// - - - - - - - - -
+.u-txt-strike { text-decoration: line-through !important; }
+.u-txt-bold, .txt-bold { font-weight: $font-1-weight-bold !important; }
+
+// - - - - - - - - -
+// * Colors
+// usage:  -main || -alt
+// - - - - - - - - -
+.u-txt-main { color: $font-base-color !important; }
+.u-txt-white { color: white !important; }
+.u-txt-black { color: black !important; }
+
+// - - - - - - - - -
+// * Sizing
+// usage:  -copyright || -legal || -sm || -default || -lg || -mega
+// - - - - - - - - -
+.u-txt-copyright { font-size: 0.75rem !important; }
+.u-txt-legal { font-size: 0.75rem !important; }
+.u-txt-sm { font-size: 0.875em !important; }
+.u-txt-default { font-size: 1rem !important; }
+.u-txt-lg { font-size: 1.125rem !important; }
+
+// - - - - - - - - -
+// * Compound Utilities
+// - - - - - - - - -
+.u-txt-mega {
+    font-family: $font-mega-family !important;
+    font-weight: $font-mega-weight !important;
+    font-style: $font-mega-style !important;
+    font-size: 2.75em !important;
+    line-height: 1 !important;
+    margin-bottom: $font-mega-marginbottom;
+    @media screen and (min-width: $screen-md) {
+        font-size: 3em !important;
+    }
+}
+
+.u-txt-subhead {
+    font-size: 0.75em !important;
+    display: block !important;
+    margin: 0.875rem 0 !important;
+}

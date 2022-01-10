@@ -1,0 +1,73 @@
+/* ======================================== */
+/* =                                      = */
+/* =           Display Utilities          = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines display and visibility utilities
+.      
+*/
+
+// - - - - - - - - -
+// * Block 
+// prefix: .u-show
+// usage:  -sm || -md || -lg || -xlg
+// - - - - - - - - -
+
+.u-show{
+      &-sm {
+            display: block;
+            @media screen and (min-width: $screen-md) { display: none; }
+      }
+      &-md {
+            display: none;
+            @media screen and (min-width: $screen-md) { display: block; }
+            @media screen and (min-width: $screen-lg) { display: none; }
+      }
+      &-lg {
+            display: none;
+            @media screen and (min-width: $screen-lg) { display: block; }
+            @media screen and (min-width: $screen-md) { &.u-dsp-md { display: block; } }
+            @media screen and (min-width: $screen-xlg) { display: none; &.u-dsp-md { display: none; } }
+      }
+      &-xlg {
+            display: none;
+            @media screen and (min-width: $screen-xlg) { display: block; }
+            @media screen and (min-width: $screen-lg) { &.u-dsp-lg { display: block; } }
+            @media screen and (min-width: $screen-md) { &.u-dsp-md { display: block; } }
+      }
+}
+
+// - - - - - - - - -
+// * None
+// prefix: $hide
+// usage:  hide || -sm || -md || -lg || -xlg
+// - - - - - - - - -
+.u-hide {
+      display: none;
+      &-sm {
+            display: none;
+            @media screen and (min-width: $screen-md) { display: block; }
+      }
+      &-md {
+            display: block;
+            @media screen and (min-width: $screen-md) { display: none; }
+      }
+      &-lg {
+            display: block;
+            @media screen and (min-width: $screen-lg) { display: none; }
+      }
+}
+
+// - - - - - - - - -
+// * Visibility
+// usage:  invisible
+// - - - - - - - - -
+.u-invisible {
+	visibility: hidden;
+	position: absolute;
+}
+
+

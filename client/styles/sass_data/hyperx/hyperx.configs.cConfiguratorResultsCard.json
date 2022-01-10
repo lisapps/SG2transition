@@ -1,0 +1,6 @@
+{
+    "configuratorResultsCard-bg-color": "$faint",
+    "configuratorResultsCard-border-radius": "0.625em",
+    "configuratorResultsCard-header-color": "$night",
+    "configuratorResultsCard-bg-color-important": "white"
+}

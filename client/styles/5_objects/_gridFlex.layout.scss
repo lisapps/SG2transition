@@ -1,0 +1,55 @@
+.l-gridFlex {
+    $root: &;
+    display: grid;
+    grid-gap: $gutters;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: $gutters;
+
+    > * { 
+        position: relative; 
+        display: grid;
+        margin-bottom: 0;
+        // @media screen and (min-width: $screen-mobileBreak) {
+        //     display: flex;
+        // }
+    }
+
+    &--{
+        &center {
+            // -- modifier added via js -- //
+            display: flex;
+            grid-gap: 0;
+            justify-content: center; 
+
+            > * { 
+                display: flex;
+                width: 100%;
+                min-width: 16em;
+                max-width: 18.75em;
+                margin-right: $gutters;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &list {
+            @include media-md {
+                grid-template-columns: 100% !important;
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        &.l-gridFlex--center {
+            > * { 
+                margin-right: 0;
+                margin-left: $gutters;
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

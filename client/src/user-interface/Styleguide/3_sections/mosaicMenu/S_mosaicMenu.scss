@@ -1,0 +1,111 @@
+.s-mosaicMenu {
+  display: flex;
+  padding: 2em 0;
+  max-width: 75em;
+  perspective: 1000px;
+  perspective-origin: center;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    // &::before {
+    //   content: " ";
+    //   width: 0;
+    //   height: 0;
+    //   position: absolute;
+    //   display: block;
+    //   z-index: 200;
+    //   opacity: 0;
+    //   transition: width 250ms, height 250ms, opacity 250ms;
+    // }
+    // &:hover {
+    //   &::before {
+    //     width: 100%;
+    //     height: 100%;
+    //     left: 0;
+    //     top: 0;
+    //     opacity: 0.88;
+    //     background: black;
+    //   }
+    // }
+    @include media-lg {
+      flex-direction: row;
+      &:nth-child(2) {
+        flex: 1;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+  &__col {
+    display: flex;
+    position: relative;
+    background: #3b444c;
+    border-radius: 2px;
+    margin-bottom: 1em;
+    min-height: 20em;
+    align-items: flex-end;
+    padding-left: 1.5em;
+    transition: transform 250ms;
+    @include media-lg {
+      margin-bottom: 0;
+      margin-right: 1em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      @include media-lg {
+        margin-right: 0;
+      }
+    }
+    &__title {
+      z-index: 100;
+      color: white;
+    }
+    &__bg {
+      position: absolute;
+      max-width: none;
+      left: 0;
+      bottom: 0;
+      transform: none;
+      transition: transform 0.35s; // Replace w/ Speed Variable
+      transition-timing-function: ease-out;
+      transform-origin: center;
+    }
+    &:hover {
+      color: #addfff;
+      text-decoration: none;
+      transform: scale(1.025);
+      z-index: 999;
+      .s-mosaicMenu__col__bg {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__post {
+    margin-top: 0.5em;
+    ul {
+      margin-top: 1em;
+      justify-content: flex-start;
+      li {
+        margin: 0 1.5em;
+        img {
+          margin-right: 0.5em;
+          transition: transform 350ms ease-out;
+        }
+        a {
+          color: white;
+          &:hover {
+            color: #93d5ff;
+            text-decoration: underline;
+            img {
+              transform: translateX(4px);
+            }
+          }
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

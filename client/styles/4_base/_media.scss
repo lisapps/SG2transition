@@ -1,0 +1,51 @@
+/* ======================================== */
+/* =                                      = */
+/* =              Media Base              = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base Media Styles for media elements
+.     img | svg | figure | figcaption | canvas
+.      
+*/
+
+
+// - - - - - - - - - -
+// * Image
+// - - - - - - - - - -
+img{
+      // Base styles for img tag     
+}
+
+
+// - - - - - - - - - -
+// * Svg
+// - - - - - - - - - -
+svg{
+      // Base styles for svg tag     
+}
+
+
+// - - - - - - - - - -
+// * Figure
+// - - - - - - - - - -
+figure{
+      margin-top: $margin-base-top;
+      margin-bottom: $margin-base-bottom;
+}
+
+// - - - - - - - - - -
+// * Figure
+// - - - - - - - - - -
+figcaption{
+      // Base styles for figcaption tag
+}
+
+// - - - - - - - - - -
+// * Canvas
+// - - - - - - - - - -
+canvas{
+	// Base styles for canvas tags
+}

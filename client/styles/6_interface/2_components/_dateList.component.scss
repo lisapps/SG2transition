@@ -1,0 +1,30 @@
+.c-dateList {
+	list-style: none;
+	display: table;
+	width: 100%;
+	> * { display: table-row-group; }
+	&__listing {
+		display: table-row;
+		&:hover, &:focus {
+			background: #f9f9f9;
+			.c-dateList__listing__desc { color: $accent-1; }
+		}
+
+		> * {
+			padding: 0.5em 0;
+			display: table-cell;
+		}
+		&__title {
+			color: #282828;
+			font-weight: $font-1-weight-normal;
+			padding-left: 0.5em;
+			padding-right: 1em;
+			white-space: nowrap;
+		}
+		&__desc {
+			color: #282828;
+			width: 100%;
+			border-bottom: 1px solid $datelist-listing-desc;
+		}
+	}
+}

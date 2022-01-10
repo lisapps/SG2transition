@@ -1,0 +1,41 @@
+{
+    "font-base-size": "1em",
+    "font-base-lineheight": "1.5",
+    "font-base-color": "$coal",
+    "font-base-weight": "$font-1-weight-normal",   
+
+    "font-mega-family": "$font-1-family",
+    "font-mega-weight": "$font-1-weight-extrabold",
+    "font-mega-style": "normal",  
+    "font-mega-marginbottom": "0.5rem",
+
+    "font-hero-family": "$font-1-family",
+    "font-hero-weight": "$font-1-weight-normal",
+
+
+    "heading-color": "black",
+    "heading-lineheight": "1.125",
+    "heading-marginbottom": "0.625rem",
+
+    "heading1-fontsize": "2.125em",
+    "heading1-fontfamily": "$font-1-family",
+
+    "heading2-fontsize": "1.75em",
+    "heading2-fontfamily": "$font-1-family",
+
+    "heading3-fontsize": "1.5em",
+    "heading3-fontfamily": "$font-1-family",
+
+    "heading4-fontsize": "1.375em",
+    "heading4-fontfamily": "$font-1-family",
+
+    "heading5-fontsize": "1.125em",
+    "heading5-fontfamily": "$font-1-family",
+
+    "heading6-fontsize": "1em",
+    "heading6-fontfamily": "$font-1-family",
+
+    "link-color": "$denim",
+    "link-hover": "$denim",
+    "link-active": "black"
+}

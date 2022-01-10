@@ -1,0 +1,104 @@
+@mixin theme-dark(
+	// -- layout
+		$body-color: 		$black,
+		$hr-color: 			$alto,
+      // -- type
+            $font-base-color: 	$alto,
+            $heading-color: 	$white,
+            $link-color:    	$color-alt,
+            $link-hover:    	$color-alt,
+            $link-active:   	$white,
+      // -- buttons
+            // BTN1
+            $btn-1-bg-color:        null,
+            $btn-1-txt-color:       null,
+            $btn-1-border-color:    null,
+            // hover
+            $btn-1-bg-hover:        null,
+            $btn-1-txt-hover:       null,
+            $btn-1-border-hover:    null,
+            
+            // BTN2
+            $btn-2-bg-color:	    rgba(255,255,255,0.05),
+            $btn-2-txt-color:	    $white,
+            $btn-2-border-color:    rgba(255,255,255,0.6),
+            // hover
+            $btn-2-bg-hover: 	    rgba(255,255,255,0.15),
+            $btn-2-txt-hover: 	    $white,
+            $btn-2-border-hover:    rgba(255,255,255,0.6)
+) {
+	// ### BASE PROPERTIES ### //
+      color: $font-base-color !important;
+      background-color: $body-color !important;
+  
+      h1, h2, h3, h4, h5, h6 { color: $heading-color; }
+      a:not(.btn) {
+            color: $link-color;
+            &:hover, &:focus { color: $link-hover; }
+            &:active { color: $link-active; }
+      }
+      hr { background-color: $hr-color; }
+      svg { fill: $white; }
+      label { color: $night; }
+
+
+	// ### BUTTONS ### //
+      .btn, button {
+      @if $btn-1-bg-color {
+            // -- style properties
+            color: $btn-1-txt-color;	
+            border-color: $btn-1-border-color;	
+            background-color: $btn-1-bg-color;
+            svg { fill: $btn-1-txt-color; }	
+            
+            // -- state properties
+            &:hover, &:focus { 
+                  color: $btn-1-txt-hover;
+                  background-color: $btn-1-bg-hover;
+                  border-color: $btn-1-border-hover;
+                  svg { fill: $btn-1-txt-hover }
+            }
+      }
+            &.alternate, &--style2 {
+                  color: $btn-2-txt-color;
+                  background-color: $btn-2-bg-color;
+                  border-color: $btn-2-border-color;
+                  &:hover, &:focus { 
+                        color: $btn-2-txt-hover;
+                        background-color: $btn-2-bg-hover;
+                        border-color: $btn-2-border-hover;
+                        svg { fill: $btn-2-txt-hover }
+                  }
+      
+                  svg { fill: $btn-2-txt-color; }
+            }
+      }
+      &.btn-icon {
+            background: #1d1d1d;
+            border-color: $black;
+            svg { fill: $dusty; }
+            &:hover {
+                  background: darken(#1d1d1d, 5%);
+            }
+      }
+
+      .l-flexTiles__item{
+            &--alternate{
+                  background: rgba(255,255,255,.125);
+            }
+      }
+
+}
+
+@mixin theme-light() {
+	.accordion {
+		&__response {
+			background: darken($body-color, 8%);
+		}
+      }
+      .l-flexTiles__item{
+            &--alternate{
+                  background: rgba(0,0,0,.125);
+            }
+      }
+}

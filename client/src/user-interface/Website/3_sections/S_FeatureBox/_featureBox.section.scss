@@ -1,0 +1,27 @@
+.s-featureBox {
+    padding-top: 1em;
+
+    // ### CHILDREN ### //
+    &__ {
+        &list {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+
+            li {
+                margin-bottom: 0;
+                padding: 0 0.5em;
+                flex-grow: 1;
+                &:first-child { padding-left: 0; }
+                &:last-child { padding-right: 0; }
+            }
+            svg {
+                fill: $featurebox-svg-fill;
+                width: 100%;
+                height: auto;
+                max-height: 4.625em;
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+}

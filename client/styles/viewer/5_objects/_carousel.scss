@@ -1,0 +1,16 @@
+.BrainhubCarousel__container {
+  margin-left: -42px;
+  width: calc(100% + 84px);
+}
+.BrainhubCarousel__arrows {
+  background: #c8102e;
+}
+.BrainhubCarousel__arrows:hover {
+  background-color: #b9102a;
+}
+.BrainhubCarousel__arrows:hover:enabled {
+  background-color: #b9102a;
+}
+.BrainhubCarousel__arrows:hover:disabled {
+  background-color: #ccc;
+}

@@ -1,0 +1,26 @@
+{
+    "theme-body-color": "black",
+    "theme-hr-color": "$alto",
+
+    "theme-font-base-color": "$alto",
+    "theme-heading-color": "#fff",
+    "theme-link-color": "$gold",
+    "theme-link-hover": "$gold",
+    "theme-link-active": "#fff",
+
+    "theme-btn-1-bg-color": "null",
+    "theme-btn-1-txt-color": "null",
+    "theme-btn-1-border-color": "null",
+
+    "theme-btn-1-bg-hover": "null",
+    "theme-btn-1-txt-hover": "null",
+    "theme-btn-1-border-hover": "null",
+
+    "theme-btn-2-bg-color": "rgba(255,255,255,0.05)",
+    "theme-btn-2-txt-color": "#fff",
+    "theme-btn-2-border-color": "rgba(255,255,255,0.6)",
+
+    "theme-btn-2-bg-hover": "rgba(255,255,255,0.15)",
+    "theme-btn-2-txt-hover": "#fff",
+    "theme-btn-2-border-hover": "rgba(255,255,255,0.6)"
+}

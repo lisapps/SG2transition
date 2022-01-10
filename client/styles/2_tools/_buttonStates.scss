@@ -1,0 +1,23 @@
+@mixin btnStates($button) {
+    @each $state, $properties in $button {
+        @if $state=="hover" {
+            &:#{$state}, &:active, &:focus {
+                @each $property, $value in $properties {
+                    #{$property}: $value;
+                }
+                svg {
+                    fill: map-get($properties, "color");
+                    margin: 0 0.5em;
+                }
+            }            
+        } @else {
+            @each $property, $value in $properties {
+                #{$property}: $value;
+            }
+            svg {
+                fill: map-get($properties, "color");
+                margin: 0 0.5em;
+            }
+        }
+    }
+}

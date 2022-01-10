@@ -1,0 +1,56 @@
+.e-logoKingston {
+  display: block;
+  &__svg {
+    // Children
+    display: block;
+    &__logoMark {
+      &__ {
+        &bodyBg {
+          fill: black;
+        }
+        &bodyFg {
+          fill: #c8102e; // Replace w/ Kingston Red Var
+          transition: fill 350ms;
+        }
+        &eye {
+          fill: black;
+        }
+        &highlights {
+          fill: white;
+        }
+      }
+    }
+    &__logoType {
+      fill: black;
+    }
+  }
+  // Modifiers
+  &-- {
+    &white {
+      .e-logoKingston__svg__logoType {
+        fill: white;
+      }
+    }
+    &black {
+      .e-logoKingston__svg__logoType {
+        fill: black;
+      }
+    }
+    &monoWhite {
+      .e-logoKingston__svg__logoMark__bodyFg {
+        fill: white;
+      }
+      .e-logoKingston__svg__logoType {
+        fill: white;
+      }
+    }
+    &monoBlack {
+      .e-logoKingston__svg__logoMark__bodyFg {
+        fill: white;
+      }
+      .e-logoKingston__svg__logoType {
+        fill: black;
+      }
+    }
+  }
+}

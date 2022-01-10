@@ -1,0 +1,98 @@
+
+.l-tabMenu {
+	display: grid;
+	margin: 0;
+	grid-template:
+		"tabs"
+		"panels";
+	
+	//-- Children
+	&__ {
+		&tab {
+			background-color: $tabmenu-tab-backgroundColor;
+			grid-area: tabs;
+			grid-column: auto;
+			cursor: pointer;
+			text-align: center;
+			padding: 0;
+
+			.l-inner {
+				padding-top: 0.75em;
+				padding-bottom: 0.75em;
+			}
+						
+			&--active {
+				background-color: white;
+				+ .l-tabMenu__panel { display: initial; }
+			}
+
+			@media screen and (max-width: 799px) {
+				.l-inner { padding: 0.75em 0.125em; }
+			}
+		}
+		&panel {
+			background-color: white;
+			grid-area: panels;
+			grid-column-start: 1;
+			display: none;
+			padding: 1em 0;
+		}
+	}
+
+	//-- Modifiers
+	&-- {
+		&desktopOnly {
+			.l-tabMenu__tab {
+				padding-left: $pad-sm;
+				padding-right: $pad-sm;
+				@include media-lg {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+			@media screen and (max-width: $screen-lg) {
+				.l-tabMenu {
+					&__ {
+						&tab {
+							width: 100%;
+							cursor: unset;
+							text-align: initial;
+
+							&--active { background-color: $tabmenu-tab-desktop-active-backgroundColor; }
+						}
+						&panel {
+							width: 100%;
+							display: initial;
+						}
+					}
+				}
+			
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+		&mobileOnly {
+			@include media-lg {
+				.l-tabMenu {
+					&__ {
+						&tab {
+							width: 100%;
+							cursor: unset;
+							text-align: initial;
+
+							&--active { background-color: $tabmenu-tab-desktop-active-backgroundColor; }
+						}
+						&panel {
+							width: 100%;
+							display: initial;
+						}
+					}
+				}
+			
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+}

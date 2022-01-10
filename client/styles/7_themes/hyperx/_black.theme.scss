@@ -1,0 +1,137 @@
+.t-black {
+    @include theme-dark() {
+        .c-blogCard {
+            a {
+                color: $gold;
+            }
+        }
+        .c-profileCard {
+            &__title { background: rgba(0,0,0,0.8); }
+        }
+    
+        .c-searchDrop {
+            &__toggle { color: #fff; }
+        }
+        
+        .c-tooltip {
+            color: $link-color;
+            &__message {
+                h1, h2, h3, h4, h5, h6 {
+                    color: $night;
+                }
+            }
+        }
+
+        .f-input {
+            background-color: $body-color;
+            border-color: $color-default-med-bg;
+            .c-dropDown__toggler .f-input__icon:first-of-type svg { fill: $gold; }
+            .c-dropDown__panel {
+                ul, ol { background-color: lighten($body-color, 10%); }
+            }
+        }
+        
+        .f-quantity {
+            &__input {
+                border-color: black;
+                background-color: $night;
+                color: $night;
+            }
+            svg {fill: $night;}
+        }
+        
+        .replay {
+            svg {fill: black;}
+        }
+
+        &.s-decoder {
+            $parent : ".s-decoder";
+            #{$parent} {
+                &__numBlock {
+                    &__toggle {
+                            &__show, &__hide {
+                                color: $gold;
+                            }
+                    }
+                }
+                &__legend {
+                    .c-accordion {
+                        &__tab {
+                            button {
+                                color: #fff;
+                                &:hover, &:focus { color: $gold; }
+                                svg { fill: $gold; }
+                            }
+                        }
+                    }
+                } 
+            }  
+        }
+        
+        &.s-ecommerce {
+            $parent: ".s-ecommerce";
+            #{$parent} {
+                &__details__price__cost { color: #fff; }
+            }
+        }
+
+        &.s-endorsements {
+            .c-endorsementCard__copy {
+                &__quote {
+                    &::before { color: #fff }
+                    &::after { color: #fff; }
+                }
+            }
+        }
+
+        &.s-footer {
+            $parent : ".s-footer";
+            #{$parent} {
+                &__links {
+                    h6 { 
+                        a:not(.e-btn) { color: #fff; }
+                    }
+                    ul {
+                        li {
+                            a:not(.e-btn) {
+                                color: $dusty;
+                                &:hover { color: #fff; }
+                            }
+                        }
+                    }    
+                }
+            }
+            .nav-social {
+                svg { fill: $dusty; }
+            }
+        }
+
+        &.s-supportGlobal {
+            .l-tabView {
+                background-color: $dusty; 
+                &__ {
+                    &tabs { 
+                        color: black;
+                        &__tab {
+                            &--active {
+                                background-color: black;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    &panels {
+                        background-color: black;
+                        .c-table {
+                            table { 
+                                background-color: black;
+                                color: #fff;
+                                th, td { color: #fff; }
+                                tr { border-bottom: 1px solid $color-svg-dark-fill; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    };
+}

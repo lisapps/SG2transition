@@ -1,0 +1,18 @@
+.c-htmlTab {
+  button {
+    display: block;
+    margin: 10px 5px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &:hover {
+      .c-htmlTab_clipboard {
+        fill: white;
+        transition: fill 250ms ease-in;
+      }
+    }
+  }
+  pre {
+    border-radius: 6px;
+  }
+}

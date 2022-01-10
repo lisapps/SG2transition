@@ -1,0 +1,152 @@
+.c-search {
+  width: auto;
+  color: black;
+  display: flex;
+  margin: 0 1.25em;
+  position: relative;
+  align-items: center;
+  min-width: 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: border 300ms;
+
+  ::placeholder {
+    color: #888;
+  }
+
+  &:hover {
+    border-bottom: 1px solid white;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    transition: fill 350ms;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    right: 0;
+    transition: fill 350ms;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    svg {
+      height: 1em;
+      margin-left: 3px;
+    }
+  }
+  &__input {
+    color: #353535;
+    background-color: #fff;
+    right: 0.5em;
+    top: 1.5em;
+    height: 2em;
+    border: none;
+    border-radius: 2px;
+    transition: width 250ms ease-out;
+    padding-left: 0.75em;
+  }
+  &__panel {
+    display: none;
+    color: #353535;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 2em;
+    margin-top: 5px;
+    ul {
+      margin: 0;
+      padding: 0;
+      a {
+        color: #353535;
+        font-weight: bold;
+        width: 100%;
+        display: block;
+        border: 1px solid #cacaca;
+        padding: 0.5em 0.75em;
+        border-top: 0;
+        &:hover {
+          background: #e9e9e9;
+        }
+      }
+      li {
+        list-style: none;
+      }
+    }
+  }
+  &--minimal {
+    //Move to Inline Component Level:
+    position: absolute;
+    right: 0;
+    @media screen and (max-width: 68.75em) {
+      background: #141514;
+      padding: 1em;
+      margin: 0;
+      display: flex;
+      padding: 0;
+    }
+    .c-search {
+      &__input {
+        color: white;
+        background: none;
+        width: 0 !important;
+        opacity: 0;
+        padding: 0;
+      }
+      &__panel {
+        @media screen and (max-width: 68.75em) {
+          top: 4.5em;
+        }
+        ul {
+          a {
+            border-color: #000000;
+            background: #2f2f2f;
+            color: white;
+            font-weight: 300;
+            @media screen and (max-width: 68.75em) {
+              text-align: center;
+            }
+            &:hover {
+              background: #525252;
+            }
+          }
+        }
+      }
+      &__icon {
+        fill: white;
+        @media screen and (max-width: 68.75em) {
+          height: 4.5em;
+          width: 4em;
+          align-items: center;
+        }
+      }
+    }
+  }
+  &--active {
+    border-bottom: 1px solid white;
+    @media screen and (max-width: 68.75em) {
+      justify-content: flex-end;
+      width: 100vw;
+    }
+    .c-search__input {
+      width: 18em !important;
+      opacity: 1;
+      padding-left: 0.25em;
+      outline: none;
+      @media screen and (max-width: 68.75em) {
+        padding-left: 4em;
+        width: 29em !important;
+      }
+      &:focus-visible,
+      &:focus {
+        outline: none;
+      }
+    }
+    .c-search__panel {
+      display: block;
+      background-color: #fff;
+    }
+  }
+}

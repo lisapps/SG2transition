@@ -1,0 +1,8 @@
+{
+    "footer_font_size": "95%",
+    "footer-sectionTitle-color": "$black",
+    "footer-sectionTitle-hoverColor": "$accent-3",
+    "email-container-background": "$mercury",
+    "footer-links-color": "$night",
+    "footer-links-color-hover": "$link-color"
+}

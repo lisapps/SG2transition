@@ -1,0 +1,23 @@
+/* ======================================== */
+/* =                                      = */
+/* =            Box Model Tools           = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines Mixins and Functions that relate to the CSS Box Model: Margins / Borders / Padding / Content Box
+.      
+*/
+
+// - - - - - - - - -
+// * Width & Height
+// Mixins and functions that affect width and height
+// usage: .c-exampleComponent{ 
+//          @include box(1em);
+//        }
+// - - - - - - - - -
+@mixin box($size){
+	width: $size;
+	height: $size;
+}

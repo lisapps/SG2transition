@@ -1,0 +1,42 @@
+.s-systemScanResults {
+    $root: &;
+    background-color: $systemScanResults-bg-color;
+    padding: 0 0 1em;
+    
+    &__ {
+        &layout {
+            display: grid;
+            grid-gap: $systemScanResults-gutter;
+            grid-template-areas:
+                "item1"
+                "item2"
+                "item3";
+            @include media-md {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas:
+                "item1 item1"
+                "item2 item3"
+            }
+
+            > * {
+                &:nth-child(1) { grid-area: item1; }
+                &:nth-child(2) { grid-area: item2; }
+                &:nth-child(3) { grid-area: item3; }
+            }
+        }
+    }
+
+    &-- {
+        &noResults {
+            display: flex;
+            min-height: 26.625em;
+            justify-content: center;
+            padding-bottom: 0;
+            #{$root}__layout {
+                display: block;
+            }
+        }
+    }
+
+    html[dir="rtl"] & {}
+}

@@ -1,0 +1,24 @@
+.e-vimeoPlayer {
+	&__ {
+		&player {
+			position: relative;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+		}
+
+		&audio {
+			position: absolute;
+			right: 1.5em;
+			bottom: 1.5em;
+			z-index: 2;
+
+			svg:last-child { display: none; }
+
+			&--muted {
+				svg:last-child { display: inline; }
+				svg:first-child { display: none; }
+			}
+		}
+	}
+}

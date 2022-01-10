@@ -1,0 +1,49 @@
+// THIS IS ACTUALLY A SECTION. NEED TO REFORMAT.
+.c-heading {
+	padding: 1.5em;
+	background-size: cover;
+
+	// ### CHILDREN ### //
+	&__{
+		&block {
+			max-width: 60em;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+
+			> *:last-child { flex-grow: 1; }
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+				line-height: 1;
+			}
+			p {
+				margin: 1.25em 0 0;
+			}
+			svg {
+				width: 0.75em;
+				height: 0.75em;
+			}
+
+			@media screen and (min-width: $screen-md) {
+				flex-direction: row;
+				&__header {
+					width: 65%;
+					@media screen and (min-width: $screen-md) {
+						&:last-child {
+							text-align: center;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// ### MEDIA QUERIES ### //
+	@media screen and (min-width: $screen-md) {
+		padding: 2em;
+	}
+	@media screen and (min-width: $screen-lg) {
+		padding: 3.125em 1.125em;
+	}
+}

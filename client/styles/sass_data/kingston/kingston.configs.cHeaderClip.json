@@ -1,0 +1,11 @@
+{
+    "headerClip-fontSize": "1.625em",
+    "headerClip-borderRadius": "5px",
+
+    "headerClip-title-bg-default": "rgba(0,0,0,0.8)",
+    "headerClip-title-bg-light": "rgba(255,255,255,.8)",
+    "headerClip-title-bg-dark": "rgba(0,0,0,0.8)",
+
+    "headerClip-cta-bg-default": "$rex",
+    "headerClip-cta-bg-alt": "$denim"
+}

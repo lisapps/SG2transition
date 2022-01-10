@@ -1,0 +1,341 @@
+.s-ecommerce {
+	$root: &;
+	padding-bottom: 3.125em;
+	@media screen and (min-width: $screen-md) {
+		padding: 3.125em 0;	
+	}
+
+	&__{
+		&image {
+			display: none;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin: auto;
+			margin-bottom: 1.5em;
+			cursor: pointer;
+			@media screen and (min-width: $screen-md) {
+				display: block;
+			}
+			@media screen and (min-width: $screen-lg) {
+				height: 100vw;
+				max-width: 26rem;
+				max-height: 26rem;
+			}
+
+			svg { display: block; }
+			img, video { border: 1px solid $color-default-med-bg; }
+			video {
+				width: 100%;
+				height: auto;
+				~ .s-ecommerce__image__zoom { display: none; }
+			}
+			img ~ .s-ecommerce__image__replay { display: none; }
+			&__loader {
+				display: none;
+				background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iOC4wNDIlIiB4Mj0iNjUuNjgyJSIgeTE9IjAlIiB5Mj0iMjMuODY1JSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSI2My4xNDYlIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9Ii42MzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiPjxwYXRoIHN0cm9rZT0idXJsKCNhKSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMzYgMThjMC05Ljk0LTguMDYtMTgtMTgtMTgiLz48Y2lyY2xlIGN4PSIzNiIgY3k9IjE4IiByPSIxIiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==) no-repeat 100%;
+				position: absolute;
+				top: 45%;
+				left: 45%;
+				width: 3em;
+				height: 3em;
+				animation: loading 1.5s infinite linear;
+				&--dark { background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iOC4wNDIlIiB4Mj0iNjUuNjgyJSIgeTE9IjAlIiB5Mj0iMjMuODY1JSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSI2My4xNDYlIiBzdG9wLW9wYWNpdHk9Ii42MzEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiPjxwYXRoIHN0cm9rZT0idXJsKCNhKSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMzYgMThjMC05Ljk0LTguMDYtMTgtMTgtMTgiLz48Y2lyY2xlIGN4PSIzNiIgY3k9IjE4IiByPSIxIiBmaWxsPSIjMDAwIi8+PC9nPjwvc3ZnPg==) no-repeat 100%; }
+			}
+			&.loading {
+				.s-ecommerce__image__loader{ display: block; }
+			}
+			
+			&__zoom, &__replay {
+				display: none;
+				position: absolute;
+				bottom: 0.5em;
+				left: 0.5em;
+				padding: 0.5em;
+				@media screen and (min-width: $screen-md) {
+					display: block;
+				}
+			}
+			&__disclaimer {
+				position: absolute;
+				right: 0.75em;
+				bottom: .75em;
+				max-width: 19.125rem;
+				text-align: right;
+			}
+		}
+		&thumbnails {
+			display: none;
+			padding: 0;
+			text-align: center;
+			margin-bottom: 0;
+			@media screen and (min-width: $screen-md) {
+				display: flex;
+				max-width: 26rem;
+				margin: 0 auto;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			li {
+				border: 1px solid $color-default-med-bg;
+				float: left;
+				line-height: 1;
+				list-style: none;
+				position: relative;
+				margin: 0;
+				cursor: pointer;
+				@media screen and (min-width: $screen-md) {
+					margin: 0 0.125em 0.25em;
+				}
+				svg {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					height: 70%;
+					width: 70%;
+					transform: translate(-50%,-50%);
+					fill: white;
+					background-color: rgba(0,0,0,0.4);
+					border-radius: 50%;
+				}
+				a { display: block; }
+				img { 
+					display: block;
+					width: 3em;
+					height: 3em;
+				}
+				&.active, &.active:hover { border: 1px solid $color-default-darker-bg; }
+				&:hover { border: 1px solid $accent-1; }
+			}
+		}
+		&details {
+			&__{
+				&selections { 
+					display: flex;
+					flex-wrap: wrap;
+					margin-bottom: 0.25rem; 
+					label {
+						margin: 0 0.75rem 0.75rem 0;
+					}
+				}
+				&features {
+					margin-bottom: 1em;
+					&__pdf {
+						margin-left: 0.5em;
+						&:before { content: "("; }
+						&:after { content: ")"; }
+					}
+				}
+				&price {
+					margin-bottom: 1em;
+					font-size: 1.125em;
+					> span {
+						display: inline-block;
+						font-size: 1rem;
+						padding: 0 0.25em;
+						&:first-of-type { padding: 0 0.125em 0 0;}
+					}
+					&__{
+						&cost {
+							color: $ecommerce-price-cost;
+							font-weight: $font-1-weight-bold;
+							&__dollar { font-size: 1.5em; }
+						}
+						&discount {
+							text-decoration: line-through;
+							color: $ecommerce-price-discount;
+							&:before { content: "("; }
+							&:after { content: ")"; }
+						}
+						&save {
+							color: $ecommerce-price-save;
+							font-weight: $font-1-weight-bold;
+						}
+						@media screen and (min-width: $screen-lg) { font-size: 1em; }
+					}
+				}
+				&default {
+					display: grid;
+					grid-gap: 0.5em 1em;
+					grid-template-columns: 6.125em auto;
+					grid-template-areas:
+						"label label"
+						"quant btn";
+					@media screen and (min-width: $screen-lg) { 
+						max-width: 80%; 
+					}
+					label { 
+						margin-bottom: 0;
+						grid-area: label; 
+					}
+					.f-quantity { grid-area: quant; }
+					.e-btn {
+						margin: 0;
+						white-space: initial;
+						grid-area: btn;
+						svg { transform: scale(1.5); }
+					}
+				}
+				&partners {
+					.l-grid {
+						grid-row-gap: 0.375em;
+						grid-column-gap: 0.375em;
+					}
+					&__group {
+						padding: 0;
+						margin: 0 0 0.75em 0;
+						list-style: none;
+						&__item {
+							margin: 0;
+							text-align: center;
+							a {
+								display: block;
+								height: 3.3em;
+								border: 1px solid $ecommerce-partners-border;
+								position: relative;
+							}
+							&--noStock {
+								a {
+									img { opacity: 0.5; }
+									&:after {
+										content: "out of stock";
+										background: rgba(0, 0, 0, 0.7);
+										display: block;
+										color: $ecommerce-partners-noStock-color;
+										position: absolute;
+										bottom: 0;
+										left: 0;
+										width: 100%;
+										line-height: 1.125;
+									}	
+								}
+							}
+							img { 
+								display: block;
+								padding: 1em 0;
+								max-width: 112px;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%,-50%);
+							}
+						}
+					}
+				}
+				&aee {
+					display: inline-block;
+					margin-bottom: 1rem;
+					svg {
+						height: 1.125rem;
+						width: 1.125rem;
+						margin-right: 0.5em;
+					}
+				}
+				&location {
+					@media (min-width: $screen-lg) { max-width: 100%; }
+					&__btns { 
+						.e-btn {
+							margin: 0 0.75rem 0 0;
+							@media screen and (max-width: $screen-lg) {
+								width: 100%;
+								margin-right: 0;
+								&:first-child { margin-bottom: 0.5rem; }
+								&:only-child { margin-bottom: 0; }
+							}
+							svg {
+								height: 1rem;
+								width: 1rem;
+							}
+							&:only-child { margin: 0; }
+						}
+					}
+				}
+				&buy {
+					@media (min-width: $screen-lg) { max-width: 80%; }
+					> *:not(:last-child) { margin-bottom: 1rem; }
+					.e-btn { 
+						width: 100%; 
+						margin: 0;
+					}
+					&__ {
+						&qty {
+							display: grid;
+							grid-gap: 0.5em 1em;
+							grid-template-columns: auto auto;
+							grid-template-areas:
+								"label label"
+								"quant btn";
+							label { grid-area: label; margin-bottom: 0; }
+							.f-quantity { grid-area: quant; }
+							.e-btn { grid-area: btn; }
+						}
+					}
+				}
+				&string {
+					font-weight: $font-1-weight-bold;
+					> * {
+						&:last-child { margin-bottom: 0; }
+					}
+				}
+			}
+		}
+	}
+	//Slick JS
+	.slick-slider {
+		margin-bottom: 1.25em;
+		@media screen and (min-width: $screen-md) {
+			display: none;
+		}
+		video, img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.slick-slide { line-height: 0; }
+	.slick-dots {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		background: rgba(0,0,0,0.6);
+		> li { line-height: 2; }
+		.slick-active svg { fill: $slick-svg-fill; }
+	}
+
+	html[dir="rtl"] & {
+        &__{
+            &details {
+				&__{
+					&selections { 
+						label {
+							margin: 0 0 0.75rem 0.75rem;
+							&:last-child {
+								margin-left: 0;
+							}
+						}
+					}
+					&features {
+						padding-right: 1rem;
+						padding-left: 0;
+					}
+					&partners {
+						&__group {
+							padding-right: 0;
+						}
+					}
+					&aee {
+						svg {
+							margin-right: 0;
+							margin-left: 0.5em;
+						}
+					}
+				}
+			}
+        }
+    } 
+}
+
+//ANIMATIONS
+@keyframes loading {
+    from { transform: rotateZ(0); }
+    to { transform: rotateZ(360deg); }
+}

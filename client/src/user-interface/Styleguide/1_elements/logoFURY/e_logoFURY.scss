@@ -1,0 +1,42 @@
+.e-logoFURY {
+  display: block;
+  &__svg {
+    // Children
+    display: block;
+    &__FURY {
+      fill: #ba0c2f;
+    }
+    &__kingston {
+      fill: black;
+    }
+  }
+  // Modifiers
+  &-- {
+    &white {
+      .e-logoFURY__svg__kingston {
+        fill: white;
+      }
+    }
+    &black {
+      .e-logoFURY__svg__kingston {
+        fill: black;
+      }
+    }
+    &monoWhite {
+      .e-logoFURY__svg__FURY {
+        fill: white;
+      }
+      .e-logoFURY__svg__kingston {
+        fill: white;
+      }
+    }
+    &monoBlack {
+      .e-logoFURY__svg__FURY {
+        fill: black;
+      }
+      .e-logoFURY__svg__kingston {
+        fill: black;
+      }
+    }
+  }
+}

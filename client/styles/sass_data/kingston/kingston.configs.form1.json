@@ -1,0 +1,9 @@
+{
+    "form1-radioBtn-disabled-label-color": "$coal",
+    "form1-radioBtn-disabled-label-borderColor": "$cloudy",
+    "form1-inputGroup-pw-borderColor": "$cloudy",
+    "color-radio-bg": "$silver",
+    "color-radio-border": "$coal",
+    "color-btn-quant-hover": "$gray"
+
+}

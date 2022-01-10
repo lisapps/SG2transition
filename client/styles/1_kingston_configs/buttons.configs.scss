@@ -1,0 +1,58 @@
+$btn-font-family: $font-1-family;
+$btn-font-weight: $font-1-weight-bold;
+$btn-font-size: $font-base-size;
+$btn-border-size: 1px;
+$btn-corners: 5px;
+$btn-padding: 0.375em 1.25em 0.5em;
+$btn-margin: 0 0.125rem 0.5rem;
+$glass-bg-color: rgba(255, 255, 255, 0.05);
+$glass-filter: blur(4px);
+$glass-bg-color-hover: rgba(255, 255, 255, 0.1);
+$glass-filter-hover: blur(5px);
+$btn1_normal: (
+  "color": white,
+  "background-color": $rex,
+  "border-color": $rex,
+);
+$btn1_hover: (
+  "color": white,
+  "background-color": #a60b16,
+  "border-color": #a60b16,
+  "text-decoration": none,
+);
+$button1: (
+  "normal": $btn1_normal,
+  "hover": $btn1_hover,
+);
+$btn2_normal: (
+  "color": $white,
+  "background-color": $font-base-color,
+  "border-color": $font-base-color,
+);
+$btn2_hover: (
+  "color": $white,
+  "background-color": #1b1b1b,
+  "border-color": #1b1b1b,
+);
+$button2: (
+  "normal": $btn2_normal,
+  "hover": $btn2_hover,
+);
+$btn3_normal: (
+  "color": $font-base-color,
+  "background-color": $glass-bg-color,
+  "backdrop-filter": $glass-filter,
+  "border-color": $font-base-color,
+);
+$btn3_hover: (
+  "color": white,
+  "background-color": $font-base-color,
+  "backdrop-filter": none,
+  "border-color": $font-base-color,
+);
+$button3: (
+  "normal": $btn3_normal,
+  "hover": $btn3_hover,
+);
+$buttons: $button1, $button2, $button3;
+$btn-paypal-txt-color: $coal;

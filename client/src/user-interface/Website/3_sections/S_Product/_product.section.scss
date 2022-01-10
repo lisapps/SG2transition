@@ -1,0 +1,176 @@
+.s-product {
+	padding: 3.125em 0;
+
+	.intro {     
+		margin: 1.5em 0;
+		@media screen and (min-width: $screen-md) {
+			font-size: 1.125em;
+		} 
+	}
+	//features
+	.intro {
+		margin: 1.5em 0; 
+		@media screen and (min-width: $screen-md) {
+			font-size: 1.125em;
+		} 
+	}
+	.features {
+
+		.slider-wrapper {
+			position: relative;
+			overflow: hidden;
+			video, .replay { display: none; }
+			&[data-video] {
+				.feature-image-slides { display: none; }
+				video {
+					display: block;
+					width: 100%;
+					height: auto;
+					margin-bottom: 0.5rem;
+					cursor: pointer;
+					~ .replay { display: block; }
+				}
+				.replay {
+					position: absolute;
+					bottom: 2.5em;
+					right: 0.5em;
+					padding: 0.5em;
+					cursor: pointer;
+				}
+			}
+		}
+		
+		@media screen and (min-width: $screen-md) {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: "features product";
+			grid-gap: 1.5em;
+
+			.slider-wrapper {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: product;
+			}
+			.features-list-wrapper {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: features;
+			}
+		}
+	}
+
+	//Features Listing
+	.features-list {
+		padding: 0;
+		margin: 0 0 2rem;
+		li {
+			position: relative;
+			padding-left: 2.85rem;
+			margin: 2rem 0;
+		}
+		.svg-bullet {
+			position: absolute;
+			top: 0;
+			left: 0;
+			line-height: 0;
+		}
+		svg {
+            width: 1.75rem;
+            height: 1.75rem;
+		}
+	}
+
+	//Feature Bugs (Icons below listing)
+	.featureBug-list {
+		@extend .u-list-horizontal;
+		li {
+			padding: 0 0.8rem;
+		}
+		img {
+			width: auto;
+			margin: auto;
+		}
+	}
+
+	.c-heading{
+		padding-top:0;
+		padding-bottom: 0;
+	}
+
+	// ####################### //
+	// ----SLICK JS: START---- //
+	// ####################### //
+	.js .item .slidetitle {
+		display: none;
+	}
+	.feature-image-slides img { margin: auto; }
+	.lineart-container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 50;
+		background-color: #fff;
+		svg {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+	}
+	.indicators button:hover,
+	.indicators .slick-active button {
+		box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #000;
+	}
+	.indicators {
+		text-align: center;
+		margin: 0.9rem 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			position: relative;
+			margin: 0 0.18rem;
+			> * {
+				width: 1.5rem;
+				height: 1.5rem;
+				display: inline-block;
+				margin: 5px;
+				border-radius: 50%;
+				cursor: pointer;
+				&:hover {
+					-webkit-box-shadow: 0px 0px 0px 3px #fff, 0px 0px 0px 5px #666;
+					box-shadow: 0px 0px 0px 3px #fff, 0px 0px 0px 5px #666;
+				}
+			}
+			&.slick-active * { box-shadow: 0px 0px 0px 2px #ccc; }
+		}
+	}
+	.feature-image-title {
+		text-align: center;
+		color: $productGallery-img-title;
+	}
+	.slick-slide svg {
+		width: 100%;
+		height: auto;
+	}
+	// ##################### //
+	// ----SLICK JS: END---- //
+    // ##################### //
+    
+    html[dir="rtl"] & {
+        .features-list {
+            li {
+                padding-left: 0;
+                padding-right: 2.85rem;
+
+                .svg-bullet {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

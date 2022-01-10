@@ -1,0 +1,8 @@
+{
+    "tooltipMessage-color": "$coal",
+    "tooltipMessage-backgroundColor": "$cloudy",
+    "tooltipMessage-backgroundColor-helper": "$sky",
+    "tooltipMessage-backgroundColor-error": "$rex",
+    "tooltipMessage-borderRadius": "0.125rem",
+    "tooltipMessage-maxWidth": "21.875rem"
+}

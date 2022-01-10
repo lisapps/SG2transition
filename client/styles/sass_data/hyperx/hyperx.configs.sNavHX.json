@@ -1,0 +1,49 @@
+{
+    "hx-nav-bg": "#141414",
+    "hx-nav-bg-alt": "#2f2f32",
+
+    "hx-nav-md": "47.9em",
+
+    "hx-nav-xlg": "72em",
+
+    "hx-nav-links": "$dusty",
+    "hx-nav-links-hover": "white",
+
+    "hx-nav-menu-bg": "rgba(47,47,50,.94)",
+
+
+    "hx-nav-bg-logo": "$hx-nav-bg",
+    "hx-nav-bg-alt-links": "white",
+    "hx-nav-bg-alt-links-hover": "$dusty",
+    "hx-nav-bg-alt-font": "$font-2-family",
+
+    "hx-nav-keyline": "darken($hx-nav-bg-alt, 15%)",
+
+    "hx-nav-bg-panel": "#2f2f32",
+    "hx-panel-border": "1px solid $hx-nav-keyline",
+    "hx-panel-txt-color": "white",
+    "hx-panel-head-color": "white",
+    "hx-panel-links": "$hx-nav-links",
+    "hx-panel-links-hover": "$hx-nav-links-hover",
+
+    "hx-nav-icon-color": "$hx-nav-links",
+    "hx-nav-icon-active": "white",
+    "hx-nav-icon-hover": "lighten($hx-nav-bg-alt, 7%)",
+
+    "hx-nav-icon-bg-active": "$hx-nav-bg-alt",
+    "hx-nav-icon-container-size": "3.75rem", 
+
+    "hx-searchCard-bg": "$hx-nav-bg",
+    "hx-searchCard-bg-body": "$hx-nav-bg-alt",
+    "hx-searchPanel-cta": "$hx-nav-bg-alt",
+
+    "hx-cart-color": "#A20520",
+    "hx-cart-count-color": "$white",
+    "hx-cart-btn-bg-color": "$hx-nav-bg",
+    "hx-cart-btn-bg-color-hover": "darken($hx-nav-bg, 10%)",
+    "hx-cart-btn-color": "white",
+    "hx-cart-field-bg": "$hx-nav-bg-alt",
+    "hx-cart-border-color": "black",
+
+    "hx-checkout-body": "#434247"
+}

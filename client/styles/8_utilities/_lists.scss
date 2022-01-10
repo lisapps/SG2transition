@@ -1,0 +1,42 @@
+/* ======================================== */
+/* =                                      = */
+/* =             List Utilities           = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines utilities used to modify list elements
+.     ! All list utilities must be prefixed with .u-list
+.
+*/
+
+// - - - - - - - - -
+// * List Style 
+// usage:  -square || -horizontal || -unstyled
+// - - - - - - - - -
+.u-list-unstyled {
+    list-style: none !important;
+}
+.u-list-horizontal {
+    > * { 
+        display: inline-block !important;
+    }      
+}
+.u-list-square {
+    list-style-type: square !important;
+}
+.u-list-commas {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    li {
+        display: inline;
+        &:after {
+            content: ", ";
+        }
+        &:last-child::after {
+            content: "";
+        }
+    }
+}

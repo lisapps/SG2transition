@@ -1,0 +1,97 @@
+.c-searchCard {
+    $root: &;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $searchcard-border;
+    > * { padding: 1.2rem 1.875rem }
+
+    form { margin: 0; }
+
+    &__ {
+        &heading {
+            background: $searchcard-header;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        &body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            background: $searchcard-body;
+
+            p { margin-bottom: 0; }
+
+            &__cta {
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+                margin: 0;
+                @include media-md { 
+                    flex-direction: row;
+                } 
+                .f-input {
+                    flex: 1;
+                    width: 100%;
+                    margin-bottom: 1em;
+                    @include media-md { 
+                        margin-right: 1em;
+                        margin-bottom: 0;
+                    } 
+                }
+                .e-btn, .btn {
+                    width: 100%;
+                    margin: 0;
+                    @include media-md { 
+                        width: auto;
+                    } 
+                }
+            }
+        }
+    }
+
+    &-- {
+        &singleBar {
+            border: none;
+            form {
+                padding: 0;
+                .f-input {
+                    max-width: 50em;
+                    margin: 0 auto 0.75em auto;
+                    padding: $searchcard-singleBar-padding;
+                    @include media-md {
+                        margin-bottom: 0;
+                    }
+    
+                    &__ {
+                        &cta {
+                            margin: $searchcard-singleBar-margin;
+                            button { margin: 0; }
+                        }
+                    }
+    
+                    &-- {
+                        &outlined { border-radius: $searchcard-outlined-radius; }
+                    }
+                }
+                #{$root}__mBtn { width: 100%; }
+            }
+        }
+    }
+    html[dir="rtl"] & {
+        &__body {
+            &__cta {
+                .f-input {
+                    @include media-md { 
+                        margin-left: 1em;
+                        margin-right: 0;
+                    } 
+                }    
+            }
+        }
+        &--singleBar {
+            .f-input { padding: $searchcard-singleBar-padding-rtl; }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.c-bannerCard {
+
+	$root: &;
+	display: flex;
+	height: 100%;
+	position: relative;
+	flex-flow: column;
+
+	&__ {
+		&img {
+			display: block;
+			overflow: hidden;
+
+			&:after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			&:hover, &:focus {
+				img {
+					transform: scale(1.05);
+					cursor: pointer;
+				}
+			}
+			
+			img {
+				display: block;
+				// height: 11rem; 
+				height: 12.5em;
+				width: 100%;
+				object-fit: cover;
+				transform: scale(1);
+				transition: transform 500ms ease;
+			}
+		}
+		&details {
+			background-color: $color-default-light-bg;
+			flex-grow: 1;
+			padding: 0.875rem 1.250rem;
+			h3, p {
+				display: block; /*fall back*/
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			h3 {
+				font-size: 1.125rem; 
+				-webkit-line-clamp: 3;
+			}
+			p {
+				font-size: 0.875em;
+				-webkit-line-clamp: 5;
+				&:last-child { margin-bottom: 0; }
+			}
+		}
+	}
+
+	&-- {
+		&dark {
+			#{$root}__details { 
+				background-color: $bannercard-bg-dark; 
+				color: white;
+
+				h3 { color: white; }
+			}
+		}
+	}
+}

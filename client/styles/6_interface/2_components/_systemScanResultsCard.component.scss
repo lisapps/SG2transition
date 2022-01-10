@@ -1,0 +1,325 @@
+.c-systemScanResultsCard  {
+
+    $root: &;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: $systemScanResultsCard-bg-color;
+    padding: 1.5em;
+    border-radius: $systemScanResultsCard-border-radius;
+    
+    &__ {
+        &header {
+            display: flex;
+            color: $systemScanResultsCard-header-color;
+            text-transform: uppercase;
+            align-items: center;
+            margin-bottom: 0;
+            @include media-md { pointer-events: none; }
+            
+            button {
+                font-family: inherit;
+                font-size: 1em;
+                padding: 0;
+                text-transform: uppercase;
+                justify-content: initial;
+
+                &:hover, &:focus {
+                    @include media-md {
+                        color: initial;
+                        cursor: default;
+                        pointer-events: none;
+                    }
+                }
+
+                .c-accordion__tab__icon { 
+                    margin-left: auto; 
+                    @include media-md {
+                        display: none;
+                    }
+                }
+            }
+
+            & + #{$root}__content { 
+                display: flex;
+                height: calc(100% - 1.5em);
+                padding-top: 1em;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            & + #{$root}__content.c-accordion__panel { 
+                padding-top: 0; 
+                @include media-md { padding-top: 1em; }
+            }
+
+            &__ {
+                &icon { 
+                    height: 1.5em;
+                    width: 1.5em;
+                    fill: black;
+                    margin-right: 0.5em; 
+                }
+
+                &total { 
+                    display: none;
+                    font-weight: $systemScanResultsCard-total-font-weight;
+                    @include media-md {
+                        display: block;
+                        margin-left: auto; 
+                    }
+
+                    &__value { margin-right: 0.125em; }
+                }
+            }
+        }
+        
+        &content {
+
+            p { margin-bottom: 1em; }
+
+            .l-row__col {
+                &:first-child {
+                    p {
+                        &:last-child {
+                            @include media-md {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    p {
+                        &:last-child { margin-bottom: 0; }
+                    }
+                }
+            }
+
+            .c-accordion__panel__content { 
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+                @include media-md { padding-top: 0; }
+            }
+
+            h6 { margin-bottom: 0.125em; }
+
+            &__ {
+                &section {
+                    margin-bottom: 1.5em;
+                    &__ {
+                        &item {
+                            display: grid;
+                            width: 100%;
+                            grid-template-columns: 2fr 1fr;
+                            grid-column-gap: 0.5em;
+                            border-bottom: 1px solid $silver;
+                            padding: 1em 0;
+                            align-items: center;
+                            justify-content: space-between;
+                            &:first-child { padding-top: 0; }
+                            // &:hover, &:focus {
+                            //     cursor: pointer;
+                            //     #{$root}__content__section__item__info__checkBox {
+                            //         label { border: 1px solid $systemScanResultsCard-radioBtn-hover; }
+                            //     }
+                            // }
+
+                            h6 { 
+                                margin-bottom: 0.5em; 
+                                &:only-child { margin-bottom: 0; }
+                            }
+                            p { margin: 0; }
+                            img { margin-left: auto; }
+
+                            .c-progressBar {
+                                justify-self: flex-end;
+
+                                &__ {
+                                    &bar { 
+                                        max-width: 3.5em;
+                                        margin-left: auto;
+                                        @include media-md {
+                                            max-width: 10.125em;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &__{
+                                &info {
+                                    // display: flex;
+                                    display: block;
+                                    align-items: center;
+
+                                    //-- Check Box Styling: Looks like Radio with Check in it. Save for future feature
+
+                                    // &__ {
+                                    //     &checkBox {
+                                    //         height: 1.125em;
+                                    //         width: 1.125em;
+                                    //         position: relative;
+                                    //         margin-right: 0.875em;
+
+                                    //         input {
+                                    //             visibility: hidden;
+
+                                    //             &:checked + label {
+                                    //               background-color: $systemScanResultsCard-radioBtn-checked;
+                                    //               border-color: $systemScanResultsCard-radioBtn-checked;
+                                    //             }
+                                                
+                                    //             &:checked + label:after {
+                                    //               opacity: 1;
+                                    //             }
+                                    //         }
+
+                                    //         label {
+                                    //             height: 1.125em;
+                                    //             width: 1.125em;
+                                    //             position: absolute;
+                                    //             top: 0;
+                                    //             left: 0;
+                                    //             background-color: $systemScanResultsCard-radioBtn-default;
+                                    //             border: 1px solid $systemScanResultsCard-radioBtn-border-color;
+                                    //             border-radius: 50%;
+                                    //             cursor: pointer;
+                                    //             transition: border, background-color;
+                                    //             transition-duration: $systemScanResultsCard-radioBtn-speed, $systemScanResultsCard-radioBtn-speed; 
+                                    //             transition-timing-function: ease, ease;
+                                                
+                                    //             &:after {
+                                    //                 content: "";
+                                    //                 height: 0.375em;
+                                    //                 width: 0.5em;
+                                    //                 position: absolute;
+                                    //                 top: 0.25em;
+                                    //                 left: 0.25em;
+                                    //                 border: 0.125em solid white;
+                                    //                 border-top: none;
+                                    //                 border-right: none;
+                                    //                 opacity: 0;
+                                    //                 transform: rotate(-45deg);
+                                    //             }
+                                    //         }
+                                    //     }
+                                    //     &name {}
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                }
+                &upgrade {
+                    margin-top: auto;
+                    &__ {
+                        &header {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 1em;
+
+                            &__icon { 
+                                min-height: 1.5em;
+                                min-width: 1.5em;
+                                fill: black;
+                                margin-right: 0.5em; 
+                            }
+                        }
+                    }
+                }
+                &cta {
+                    text-align: center;
+
+                    .e-btn {
+                        svg {
+                            height: 1.5em;
+                            width: 1.5em;
+                            margin-right: 0.25em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-- {
+        &noResult {
+            height: max-content;
+        }
+        &noScanResult {
+            max-width: 23.50em;
+            #{$root}__content__cta {
+                .e-btn {
+                    width: 100%;
+                    white-space: initial;
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__{
+            &header {
+                svg:not(.c-accordion__tab__icon) {
+                    margin-right: 0;
+                    margin-left: 0.5em;
+                }
+                h5 { text-align: right; }
+
+                &__total { 
+                    margin-left: initial;
+                    margin-right: auto;
+                }
+            }
+            &content {
+                ul { padding-right: 0; }
+                &__ {
+                    &section {
+                        &__ {
+                            &item {
+                                img { 
+                                    margin-left: initial;
+                                    margin-right: auto; 
+                                }
+
+                                .c-progressBar {
+                                    &__ {
+                                        &bar { 
+                                            margin-left: initial;
+                                            margin-right: auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &upgrade {
+                        &__ {
+                            &header {
+                                &__icon { 
+                                    margin-right: 0;
+                                    margin-left: 0.5em; 
+                                }
+                            }
+                        }
+                    }
+                    &cta {
+                        .e-btn {
+                            svg {
+                                margin-right: 0;
+                                margin-left: 0.25em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &--noResults {
+            #{$root}__header {
+                &__icon {
+                    margin-left: 0.5em;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

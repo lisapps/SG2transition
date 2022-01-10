@@ -1,0 +1,13 @@
+.s-socialIntl {
+    &__ {
+        &icon {
+            vertical-align: -0.5em;
+            @include media-lg { margin-right: 0.5em; }
+        }
+        &name {
+            color: $socialIntl-name-color;
+            display: none;
+            @include media-lg { display: initial; }
+        }
+    }
+}

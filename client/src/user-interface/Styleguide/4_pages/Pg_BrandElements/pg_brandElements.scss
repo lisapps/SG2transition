@@ -1,0 +1,199 @@
+.pg-brandElements {
+  .s-content {
+    .l-row > .l-row__col {
+      padding: 1em;
+      padding-right: 0;
+      @include media-lg {
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &__logo {
+    padding: 12vw 9vw;
+    // border: 1px solid black;
+    border-bottom: 2px solid white;
+    transition: background 350ms;
+    @include media-lg {
+      padding: 8em 6em;
+    }
+  }
+  &__logoSelect {
+    // border-top: 1px solid black;
+    .l-row__col {
+      padding: 1em !important;
+      opacity: 0.25;
+      transition: opacity 350ms;
+      border-right: 2px solid white;
+      &:last-of-type {
+        border-right: none;
+      }
+      &:hover {
+        opacity: 0.6;
+      }
+      &.-active {
+        opacity: 1;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    > * {
+      padding: 0.5em 1em;
+      // border: 1px solid black;
+      border-top: none;
+    }
+    svg {
+      width: 100%;
+    }
+
+    &__barContainer {
+      position: relative;
+      margin-top: 5px;
+      transition: left 500ms cubic-bezier(0, 0, 0, 1.04);
+      width: 25%;
+      border: 0;
+      padding: 0;
+      &__bar {
+        background: #c8102e;
+        background-position: center;
+        height: 4px;
+        position: relative;
+        transform: scale(1);
+        opacity: 0.35;
+      }
+    }
+
+    // SVGS
+    &__dot {
+      margin: -0.75em 0em;
+      position: absolute;
+      width: 0.75em !important;
+      height: 1em !important;
+      left: -0.3125em;
+      opacity: 1;
+      transform-origin: center;
+    }
+    &__donut {
+      margin: -0.75em 0em;
+      position: absolute;
+      width: 0.75em !important;
+      height: 1em !important;
+      right: -0.3125em;
+      opacity: 1;
+      transform-origin: center;
+      z-index: 200;
+    }
+  }
+
+  &__guidance {
+    ul li {
+      margin-bottom: 0.5em;
+      > strong:first-child {
+        min-width: 20px;
+        display: inline-block;
+        text-align: end;
+        margin-right: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__toneChecklist {
+    padding: 1.25em;
+    background: #f7f9fa;
+    margin-bottom: 1em;
+    ul {
+      padding-left: 1.5em;
+      li {
+        margin-top: 0.75em;
+        &:hover * {
+          cursor: pointer;
+        }
+      }
+      label {
+        position: relative;
+        p {
+          margin: 0;
+        }
+        input {
+          position: absolute;
+          left: -1.5em;
+          top: 0.075em;
+        }
+      }
+    }
+  }
+  &__examples {
+    margin: 2em 0;
+    li {
+      margin-bottom: 1em;
+      background: white;
+      padding: 0.5em;
+      text-align: center;
+    }
+  }
+  &__values {
+    li {
+      display: inline-block;
+    }
+  }
+
+  &__colors {
+    &__ratios {
+      border: 1px solid black;
+      margin: 1em;
+      &:first-child {
+        margin: 0 1em 1em 0;
+      }
+    }
+    &__ratio {
+      &.-white {
+        background: white;
+      }
+      &.-black {
+        background: black;
+      }
+      &.-red {
+        background: #c8102e;
+      }
+    }
+    &__swatches {
+      //border: 1px solid black;
+      &__swatch {
+        height: 240px;
+        &.-bordered {
+          border: 1px solid black;
+        }
+      }
+    }
+    &__accent {
+      // padding: 0 !important;
+      @include media-lg {
+        padding-left: 2em !important;
+      }
+    }
+  }
+}
+.e-emojiList {
+  padding-left: 1.5em;
+  li {
+    margin-bottom: 1em;
+  }
+}
+.u-bgBlack {
+  background: black;
+}
+.u-bgRed {
+  background: #c8102e;
+}
+.u-bgGrey {
+  background: #555;
+}
+.u-bgGreyL {
+  background: #dadada;
+}
+.u-bgDarkGrey {
+  background: #333;
+}

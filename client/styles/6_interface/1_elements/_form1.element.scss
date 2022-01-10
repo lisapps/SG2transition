@@ -1,0 +1,564 @@
+
+
+
+
+
+
+// @@@@@@@ LEGACY CODE BELOW @@@@@@@@ //
+
+
+
+
+
+
+
+
+.radio-button {
+	display: none;
+	+ label {
+		display: inline-block;
+		cursor: pointer;
+		margin: 0 0.25em 0.25em 0;
+		padding: 0.25em 0.75em;
+		border: 1px solid $color-radio-border;
+		background: #dedede;
+		&:hover {
+			color: $accent-1;
+			background: $color-radio-bg;
+			border: 1px solid $accent-1;
+		}
+	}
+	&:checked + label, &:checked + label:hover {
+		color: white;
+		background: $color-radio-border;
+		border: 1px solid $color-radio-border;
+	}
+	&:disabled + label {
+		color: $form1-radioBtn-disabled-label-color;
+		border: 1px dashed $form1-radioBtn-disabled-label-borderColor;
+		background: #f9f9f8;
+		&:hover {
+			border: 1px $accent-1 dashed;
+			background: $color-radio-bg;
+			color: $accent-1;
+		}
+	}
+}
+
+fieldset {
+	legend, h5 {
+		font-family: $form-heading-font;
+		font-size: 1.125em;
+		color: black;
+		margin: 0;
+	}
+}
+
+// ##### SPECIFIC FORM STYLING :: START ##### //
+[class*="forms-"] {
+	padding: 0 1.428rem;
+	max-width: 29.3rem;
+	margin: auto;
+	h5 {
+		padding: 1em 0;
+		margin: 0;
+	}
+	.footer {
+		text-align: center;
+		margin: 1.5rem 0 1rem;
+		.e-btn { margin-bottom: 1rem; }
+	}
+	@media screen and (min-width: $screen-md) { padding: 0; }
+	//@media screen and (min-width: $screen-lg) { padding: 0 3.125rem; }
+}
+.form-signin, .form-create_account {
+	.checkout-signin { text-align: center; }
+	.signin-ftr {
+		text-align: center;
+		margin: 1.5rem 0 1rem;
+		.e-btn { margin-bottom: 1rem; }
+	}
+}
+// ##### SPECIFIC FORM STYLING :: END ##### //
+
+.input-group {
+	margin-bottom: 1rem;
+	padding-top: 1.25em;
+	position: relative;
+	box-sizing: border-box;
+	&.hide { display: none; }
+
+	/*
+		##### TEMPORARY FIX FOR PASSWORDS #####
+		=======================================
+		The reason for this duct tape is due to
+		the fact that the form classes is in need
+		to be re-written, but due to time restraint
+		this fix will do for the password field
+	*/
+	&[data-type="pw"] {
+		border-bottom: 1px solid $form1-inputGroup-pw-borderColor;
+		input {
+			border-bottom: 0;
+			width: 90%;
+		}
+	}
+	// ##### TEMPORARY FIX :: END ##### //
+
+	.input-cta {
+		font-size: 0.875em;
+		position: absolute;
+		right: 0;
+		bottom: 0.9em;
+		z-index: 10;
+		&.reactive {
+			opacity: 0;
+			transition: opacity 0.25s;
+		}
+		@media (min-width: $screen-md) {
+			bottom: 0.4em;
+		}
+	}
+	&.form-focus {
+		label.placeholder {
+			top: 0.375em;
+			color: #282828;
+		}
+		input, textarea {
+			&::-webkit-input-placeholder {
+				color: #b0b0b0 !important;
+			}
+
+			&::-moz-placeholder {
+				color: #b0b0b0 !important;
+			}
+
+			&:-ms-input-placeholder {
+				color: #b0b0b0 !important;
+			}
+
+			&::placeholder {
+				color: #b0b0b0 !important;
+			}
+		}
+		.message {
+			display: block;
+			&.error {
+				display: none;
+			}
+		}
+	}
+
+	&.form-active {
+		.reactive { opacity: 1; }
+		label.placeholder {
+			top: 0.375em;
+		}
+	}
+	/*Validation error*/
+	&.error {
+		label,
+		label.placeholder {
+			color: $accent-1;
+		}
+		&.form-active {
+			label.placeholder {
+				color: $accent-1;
+			}
+		}
+		.message {
+			display: none;
+			&.error { display: block; }
+		}
+		input, textarea {
+			border-bottom-color: $accent-1;
+		}
+	}
+
+	&.alert {
+		label,
+		label.placeholder {
+			color: $accent-1;
+		}
+
+		&.form-active {
+			label.placeholder {
+				color: $accent-1;
+			}
+		}
+
+		input, textarea {
+			border-bottom-color: $accent-1;
+		}
+	}
+	&.dark {
+		&.form-focus label.placeholder { color: #b0b0b0; }
+		input { color: white; }
+	}
+	input, textarea {
+		border: none;
+		background-color: transparent;
+		border-radius: 0;
+		line-height: 1.5rem;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
+		width: 100%;
+		border-bottom: 1px solid #999;
+		&:focus { outline: none; }
+		&::-webkit-input-placeholder {
+			color: #b0b0b0;
+			font-size: 14px;
+		}
+		&::-moz-placeholder {
+			color: #b0b0b0;
+			font-size: 14px;
+		}
+		&:-ms-input-placeholder {
+			color: #b0b0b0;
+			font-size: 14px;
+		}
+		&::placeholder {
+			color: #b0b0b0;
+			font-size: 14px;
+		}
+		&[disabled], &[readonly] {
+			background-color: #eee;
+		}
+	}
+	select:focus { outline: none; }
+	input { height: 37px; }
+	textarea { display: block; }
+	input[type=radio], input[type=checkbox] {
+		height: auto;
+		width: auto;
+		margin-right: .2rem;
+	}
+	.validator {
+		padding-left: 2rem;
+		margin-left: -2rem;
+	}
+	.validator::before {
+		content: "";
+		font-size: 16px;
+		margin-left: -1.6rem;
+		margin-top: 10px;
+		float: left;
+		vertical-align: top;
+		opacity: 0;
+		transition: opacity 300ms ease-in;
+	}
+
+	.validator.top::before {
+		margin-top: 0;
+	}
+
+	label {
+		color: #282828;
+		display: block;
+		font-size: 14px;
+
+		&.checkbox, &.radio {
+			padding-left: 20px;
+
+			input[type=checkbox],
+			input[type=radio] {
+				margin-left: -20px;
+			}
+		}
+
+		&.inline-radio,
+		&.inline-checkbox {
+			display: inline-block;
+			margin-right: 1.5rem;
+		}
+
+		&.placeholder {
+			position: absolute;
+			top: 1.7rem;
+			color: #b0b0b0;
+			transition: all 150ms ease-in;
+			z-index: 1;
+
+			& + .validator {
+				input, textarea {
+					&::-webkit-input-placeholder {
+						color: #fff;
+						transition: color 300ms linear;
+					}
+
+					&::-moz-placeholder {
+						color: #fff;
+						transition: color 300ms linear;
+					}
+
+					&:-ms-input-placeholder {
+						color: #fff;
+						transition: color 300ms linear;
+					}
+
+					&::placeholder {
+						color: transparent;
+						transition: color 300ms linear;
+					}
+				}
+			}
+
+			& + input, & + textarea {
+				&::-webkit-input-placeholder {
+					color: #fff;
+					transition: color 300ms linear;
+				}
+
+				&::-moz-placeholder {
+					color: #fff;
+					transition: color 300ms linear;
+				}
+
+				&:-ms-input-placeholder {
+					color: #fff;
+					transition: color 300ms linear;
+				}
+
+				&::placeholder {
+					color: #fff;
+					transition: color 300ms linear;
+				}
+			}
+		}
+	}
+}
+
+
+// =============================== //
+// ### FORM TOOLTIPS :: BEGIN ### //
+.f-input + .c-tooltip__group {
+    display: none;
+}
+.f-input--active + .c-tooltip__group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: .5em;
+}
+
+
+// ### FORM TOOLTIPS :: END ### //
+// ============================ //
+
+// =============================== //
+// ### QUANTITY INPUT :: BEGIN ### //
+.f-quantity {
+	// -- elements -- //
+	&__ {
+		&label { 
+			display: block;
+			font-size: 0.875em;
+			margin-bottom: 0.5em;
+		}
+		&counter {
+			display: flex;
+			height: 100%;
+			> * {
+				flex-grow: 1;
+				width: 33.3%;
+			}
+			input { width: 33%; }
+			&__ {
+				&input {
+					border-style: solid none;
+					border-width: 1px;
+					border-color: $form1-fquantity-border;
+					text-align: center;
+					padding: 0;
+					border-radius: 0;
+					-webkit-appearance: none;
+				}
+				&btn {
+					position: relative;
+					padding: 0;
+					border: 1px solid $form1-fquantity-border;
+					svg {
+						height: 0.75rem;
+						width: 0.75rem;
+						fill: $form1-quantity-svg-color;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+					&:focus {
+						.f-quantity__counter__btn__inner {
+							background-color: $color-btn-quant-hover;
+						}
+					}
+					// &:hover, &:focus {
+					// 	background: $color-btn-quant-hover;
+					// 	cursor: pointer;
+					// }
+
+					&:first-child {
+						border-right: 0;
+						border-top-left-radius: 5px;
+						border-bottom-left-radius: 5px;
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+						-webkit-border-top-left-radius: 5px;
+						-webkit-border-bottom-left-radius: 5px;
+						-moz-border-radius-topleft: 5px;
+						-moz-border-radius-bottomleft: 5px;
+						.f-quantity__counter__btn__inner {
+							border-right: 0;
+							border-top-left-radius: 4px;
+							border-bottom-left-radius: 4px;
+							border-top-right-radius: 0;
+							border-bottom-right-radius: 0;
+							-webkit-border-top-left-radius: 4px;
+							-webkit-border-bottom-left-radius: 4px;
+							-moz-border-radius-topleft: 4px;
+							-moz-border-radius-bottomleft: 4px;
+						}
+					}
+					&:last-child {
+						border-left: 0;
+						border-top-right-radius: 5px;
+						border-bottom-right-radius: 5px;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+						-webkit-border-top-right-radius: 5px;
+						-webkit-border-bottom-right-radius: 5px;
+						-moz-border-radius-topright: 5px;
+						-moz-border-radius-bottomright: 5px;
+						.f-quantity__counter__btn__inner {
+							border-left: 0;
+							border-top-right-radius: 4px;
+							border-bottom-right-radius: 4px;
+							border-top-left-radius: 0;
+							border-bottom-left-radius: 0;
+							-webkit-border-top-right-radius: 4px;
+							-webkit-border-bottom-right-radius: 4px;
+							-moz-border-radius-topright: 4px;
+							-moz-border-radius-bottomright: 4px;
+						}
+					} 
+					&__ {
+						&inner {
+							height: 100%;
+							width: 100%;
+							position: absolute;
+							background-color: $form1-fquantity-bg-color; 
+							transition: background-color $transitionFast ease-out;
+							&:hover {
+								background: $color-btn-quant-hover;
+								cursor: pointer;
+							}
+							&:focus { outline: 0; }
+						}
+					}
+					&--disable {
+						cursor: not-allowed;
+						svg { fill: $form1-quantity-svg-color-disable; }
+						&:focus > .f-quantity__counter__btn__inner,
+						.f-quantity__counter__btn__inner:hover {
+							background-color: transparent;
+							cursor: not-allowed;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	&--tooltip {
+		& + .c-tooltip__group {
+			display: flex;
+			position: absolute;
+			flex-direction: column;
+			transform: translateY(75%);
+			z-index: 1;
+			.c-tooltip__message { 
+				background-color: black; 
+				border-top: 0.5rem solid black;
+				border-bottom: 0.5rem solid black;
+				color: white;
+			}
+			.c-tooltip__arrow { border-color: transparent transparent black transparent;}
+		}
+	}
+}
+
+html[dir="rtl"] {
+	.f-quantity {
+		&__counter__btn {
+			&:first-child {
+				border-left: 0;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				-webkit-border-top-left-radius: 0;
+				-webkit-border-bottom-left-radius: 0;
+				-moz-border-radius-topleft: 0;
+				-moz-border-radius-bottomleft: 0;
+
+				border-right: 1px solid $form1-fquantity-border;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				-webkit-border-top-right-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+				-moz-border-radius-topright: 5px;
+				-moz-border-radius-bottomright: 5px;
+
+				.f-quantity__counter__btn__inner {
+					border-left: 0;
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+					-webkit-border-top-left-radius: 0;
+					-webkit-border-bottom-left-radius: 0;
+					-moz-border-radius-topleft: 0;
+					-moz-border-radius-bottomleft: 0;
+
+					border-top-right-radius: 4px;
+					border-bottom-right-radius: 4px;
+					-webkit-border-top-right-radius: 4px;
+					-webkit-border-bottom-right-radius: 4px;
+					-moz-border-radius-topright: 4px;
+					-moz-border-radius-bottomright: 4px;
+				}
+			}
+			&:last-child {
+				border-right: 0;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				-webkit-border-top-right-radius: 0;
+				-webkit-border-bottom-right-radius: 0;
+				-moz-border-radius-topright: 0;
+				-moz-border-radius-bottomright: 0;
+
+				border-left: 1px solid $form1-fquantity-border;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				-webkit-border-top-left-radius: 5px;
+				-webkit-border-bottom-left-radius: 5px;
+				-moz-border-radius-topleft: 5px;
+				-moz-border-radius-bottomleft: 5px;
+
+				.f-quantity__counter__btn__inner {
+					border-right: 0;
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+					-webkit-border-top-right-radius: 0;
+					-webkit-border-bottom-right-radius: 0;
+					-moz-border-radius-topright: 0;
+					-moz-border-radius-bottomright: 0;
+
+					border-top-left-radius: 4px;
+					border-bottom-left-radius: 4px;
+					-webkit-border-top-left-radius: 4px;
+					-webkit-border-bottom-left-radius: 4px;
+					-moz-border-radius-topleft: 4px;
+					-moz-border-radius-bottomleft: 4px;
+				}
+			}
+		}
+	}
+}
+
+// ### QUANTITY INPUT :: END ### //
+// =============================== //

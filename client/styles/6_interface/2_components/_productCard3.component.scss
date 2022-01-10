@@ -1,0 +1,1141 @@
+.c-productCard3 {
+    $root: &;
+    display: grid;
+    min-height: 8em;
+    max-height: 10em;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0);
+    padding: 0.5em 0.25rem 0.5rem 1rem;
+    grid-template-areas:
+        "header image"
+        "details image";
+    
+    /*  Animation for hover, open and close state.
+        box-shadow and border - hover
+        min-height - close
+        max-height - open
+
+        Note - Max height is used instead of only min-height or height is because
+        min-height does not give the smooth transition when opening, and height does have
+        the smooth opening transition but not all cards are the same height and using height cut off 
+        the bottom of some cards
+    */
+
+    transition: box-shadow, min-height, max-height;
+    transition-duration: 400ms, $transitionSpeed, $transitionSpeed;
+    transition-timing-function: ease-out, ease-in, ease-in;
+    transition-delay: 0s, 0s, 0s;
+
+    @include media-md {
+        @include productCard;
+        min-height: 33rem;
+        max-height: 40rem;
+
+        transition: box-shadow, max-height;
+        transition-duration: 400ms, $transitionSpeed;
+        transition-timing-function: ease-out, ease-in;
+        transition-delay: 0s, 0s;
+    }
+
+    &:hover { 
+        -webkit-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 1), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 1), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 1), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.5);
+    }
+
+    // -- RTL
+    html[dir="rtl"] & {
+        padding: 0.125em 1rem 0.125rem 0.25rem;
+        @include media-md {
+            padding: 0;
+        }
+        &__{
+            &header { 
+                &__ {
+                    &link {
+                        &__ {
+                            &name { 
+                                @include media-md {
+                                    right: 0;
+                                    padding-right: 1rem;
+                                    padding-left: 0;
+                                }
+                            } 
+                            &tag { 
+                                transform: translateX(-400%);
+                                @include media-md {
+                                    transform: translateX(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &image {
+                img {
+                    right: auto;
+                    transform-origin: top left;
+                    -webkit-animation: imageCloseAnimationRTL;
+                        animation: imageCloseAnimationRTL;
+                    -webkit-animation-duration: $transitionSpeed;
+                        animation-duration: $transitionSpeed;
+                    @include media-lg {
+                        animation: unset;
+                    }
+                }
+            }
+            &details {
+                &__{
+                    &content {
+                        &__{
+                            &longDesc {
+                                ul {
+                                    padding-right: 1rem;
+                                    padding-left: 0;
+                                    li {
+                                        &::before {
+                                            margin-left: 0;
+                                            margin-right: -0.81em;
+                                        }    
+                                    }
+                                }
+                            }
+                            &selections {
+                                .f-input {
+                                    &__radio {
+                                        padding-left: 0.75em;
+                                        padding-right: 0;
+                                        &:last-child { padding-left: 0; }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &shortDesc {
+                        margin-right: 0;
+                        margin-left: 0.5rem;
+                    }
+                    &footer {
+                        &__ {
+                            &price {
+                                display: flex;
+                                align-self: center;
+                                &--strike { 
+                                    @include media-md {
+                                        text-align: left;
+                                    } 
+                                }
+                            }
+                            &cta {
+                                .f-quantity {
+                                    input { order: 2; }
+                                    &__btn {
+                                        &:first-child { order: 3; }
+                                        &:last-child { order: 1; }
+                                    }
+                                }
+                            }
+                        }  
+                    }
+                }
+            }
+        }
+        &-- {
+            &active {
+                padding: 0;
+                .c-productCard3__header {
+                    &__ {
+                        &link {
+                            &__ {
+                                &name { 
+                                    right: 0;
+                                    padding-right: 1rem;
+                                    padding-left: 0;
+                                }
+                                &tag { 
+                                    transform: translateX(0); 
+                                    left: 0.625rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .c-productCard3__image {
+                    img  { 
+                        top: 2.75em;
+                        left: 50%;
+                        height: 10rem;
+                        transform: scale(1.5) translate(-50%);
+                        
+                        /* Animation for image to be small to active card */
+                        -webkit-animation: imageOpenAnimationRTL;
+                            animation: imageOpenAnimationRTL;
+                        -webkit-animation-duration: $transitionSpeed;
+                            animation-duration: $transitionSpeed;
+                    }
+                }
+            }
+            &listView {
+                padding: 0.5em 0.750em;
+                &.c-productCard3--filterBar {
+                    border-left: none;
+                    border-right: 5px solid var(--block-hue);
+                }
+            }
+        }
+    }
+
+    &__{
+        &header {
+            position: relative;
+            padding-top: 0.250rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            grid-area: header;
+            @include media-md {
+                @include productCard__header;
+            }
+
+            &__ {
+                &link {
+                    cursor: pointer;
+                    @include media-md {
+                        @include productCard__header__link;
+                    }
+                    
+                    &:not(.e-btn):hover {
+                        text-decoration: none;
+                    }
+
+                    &__ {
+                        &name {
+                            font-family: $font-2-family;
+                            font-weight: $font-2-weight-normal;
+                            font-size: 1.125rem; 
+                            color: $productCard3-header-link-name;
+                            margin-bottom: 0;
+                            z-index: 1;
+                            @include media-md {
+                                @include productCard__header__name;
+                            }
+                        }
+                        &tag {
+                            height: 1.25rem;
+                            position: absolute;
+                            font-size: 0.75rem;
+                            font-weight: 300;
+                            background-color: $productCard3-header-link-name;
+                            color: white;
+                            padding: 0.125rem 0.5rem 0 0.5rem;
+                            border-radius: 0.625rem; 
+                            line-height: 1.4;
+                            transform: translateX(400%);
+                            opacity: 0;
+                            @include media-md {
+                                display: relative;
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &image {
+            display: flex;
+            height: 100%;
+            width: 7rem;
+            justify-self: flex-end;
+            align-items: center;
+            grid-area: image;
+            @include media-md {
+                @include productCard__image;
+            }
+
+            img  { 
+                max-width: 7em;
+                position: absolute;
+
+                /* Setting up top and right because when imageActive starts, this will be it's
+                starting point in the animation instead of having an weird jump */
+                top: auto;
+                right: 0.25em;
+
+                transform-origin: top right;
+                transform: scale(1) translate(0,0);
+
+                -webkit-animation: imageCloseAnimation;
+                    animation: imageCloseAnimation;
+                -webkit-animation-duration: $transitionSpeed;
+                    animation-duration: $transitionSpeed;
+
+                @include media-md {
+                    max-height: 15em;
+                    max-width:  none;
+                    position: relative;
+                    right: auto;
+                    margin: auto;
+                    -webkit-animation: unset;
+                        animation: unset;
+                }
+            }
+
+            &__list { display: none; }
+        }
+        &details {
+            display: grid;
+            grid-area: details;
+            @include media-md {
+                @include productCard__details;
+            }
+
+            &__ {
+                &content {
+                    position: relative;
+                    > * {
+                        position: absolute;
+                        opacity: 0;
+                        transition: opacity;
+                        transition-duration: 300ms;
+                        transition-delay: 0s;
+                        @include media-md {
+                            position: relative;
+                            top: auto;
+                            opacity: 1;
+                        }
+                    }
+                    &__ {
+                        &longDesc {
+                            width: 80%;
+                            top: 21rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            @include media-md {
+                                width: auto;
+                                top: auto;
+                                left: auto;
+                                transform: none;
+                            }
+                            &:first-child { 
+                                top: 18rem; 
+                                @include media-md {
+                                    top: auto;
+                                }
+                            }
+
+                            > * {
+                                p {
+                                    &:last-child { margin-bottom: 0; }
+                                }
+                            }
+
+                            li {
+                                list-style-type: none;
+                                line-height: 1.2;
+                                margin-bottom: 0.125em;
+                                /* 
+                                    List in a List soo the bullet is empty inside.
+                                    Styled like this, so the bullet point is filled 
+                                */
+                                &::before { 
+                                    content: "•"; 
+                                    color: $productCard3-content-longDesc; 
+                                    font-size: 1.25em;
+                                    font-weight: $font-1-weight-bold;
+                                    display: inline-block;
+                                    width: 0.75em;
+                                    margin-left: -0.75em;
+                                }    
+                            }
+                        }
+                        &selections {
+                            top: 18rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            @include media-md {
+                                top: auto;
+                                left: auto;
+                                transform: none;
+                                margin-bottom: 1rem;
+                            }
+
+                            .f-input { 
+                                margin: 0; 
+                                border-bottom: none;
+                            }
+
+                            .e-btn { 
+                                width: 9.75em;
+                                font-family: $font-1-family;
+                                font-size: 0.75rem;
+                                margin: 0 auto; 
+                            }
+
+                            &__btnSelect {
+                                display: block;
+                            }
+                            
+                            &__btnClose {
+                                display: none;
+                                background-color: white;
+                                color: black;
+                                &:hover {
+                                    background-color: white;
+                                    color: black;
+                                }
+                            }
+
+                            &__type, &__color { justify-content: center; }
+                            &__type {
+                                .f-input__radio {
+                                    label {
+                                        background-color: white;
+                                        color: black;
+                                        border-color: rgba(0, 0, 0, 0.15);
+                                        font-size: 0.75rem;
+                                        padding-left: 0.75rem;
+                                        margin-right: 1rem;
+                                        margin-bottom: 0; 
+                                        border-radius: 0.25rem;
+                                        &:last-child {
+                                            margin-right: 0;
+                                        }
+                                        &:before { display: none; }
+                                    }
+                                    .radio-button:checked + label {
+                                        background-color: black;
+                                        color: white;
+                                    }
+                                }    
+                            }
+                            
+                            &__color {
+                                .f-input__radio {
+                                    input {
+                                        &:checked ~ label { 
+                                            &:before { box-shadow: 0 0 0 0.125em $productCard3-image-backgroundColor, 0 0 0 0.25rem $productCard3-cont-selection; }
+                                        }
+                                        & ~ label {
+                                            &:before {
+                                                height: 1rem;
+                                                width: 1rem;
+                                                transform: translateY(-0.25rem);
+                                                border: none;
+                                                box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 0 0.125em $productCard3-image-backgroundColor;
+                                            }    
+                                        }
+                                    }
+                                    label {
+                                        display: inline;    
+                                    }
+                                }
+                                &__pink {
+                                    input {
+                                        & ~ label, &:checked ~ label {
+                                            &:before { background-color: $scPink; }    
+                                        }
+                                    }
+                                }
+                                &__black {
+                                    input {
+                                        & ~ label, &:checked ~ label {
+                                            &:before {  background-color: $scBlack; }    
+                                        }
+                                    }
+                                }
+                                &__yellow {
+                                    input {
+                                        & ~ label, &:checked ~ label {
+                                            &:before { background-color: $scYellow; }    
+                                        }
+                                    }
+                                }
+                                &__red {
+                                    input {
+                                        & ~ label, &:checked ~ label{
+                                            &:before { background-color: $scRed; }    
+                                        }
+                                    }
+                                }
+                                &__white {
+                                    input {
+                                        & ~ label, &:checked ~ label {
+                                            &:before { background-color: $scWhite; }    
+                                        }
+                                    }
+                                }
+                            }
+
+                            &__options {
+                                opacity: 0;
+                                max-height: 0;
+                                overflow: hidden;
+                                transition: max-height, opacity;
+                                transition-duration: 200ms, 100ms;
+                                .c-productCard3__details__content__selections__type {
+                                    justify-content: left;
+                                    margin-bottom: 1.25em;
+                                }
+                            }
+                        }
+                    }
+                }
+                &shortDesc {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;  
+                    line-height: 1.2;
+                    overflow: hidden;
+                    margin-bottom: 0.5rem;
+                    margin-right: 0.5rem;
+                    opacity: 1;
+
+                    /* Animation for short description to fade out or in */
+                    transition: opacity 200ms ease-in-out;
+                    transition-delay: 300ms;
+
+                    @include media-md {
+                        display: none;
+                    }
+                }
+                &footer {
+                    padding-bottom: 0.375rem;
+                    align-self: center;
+                    @include media-md {
+                        @include productCard__footer;
+                    }
+                    &__price { 
+                        font-family: $font-2-family;
+                        font-size: 1.125rem; 
+                        color: $productCard3-header-link-name;
+                        opacity: 1;
+
+                        /* Animation for price to fade out or in */
+                        transition: opacity $transitionSpeed;
+
+                        @include media-md {
+                            display: none;
+                        }
+                        &--range {
+                            &:only-child { 
+                                opacity: 1; 
+
+                                -webkit-animation: fadeInAndOut2;
+                                    animation: fadeInAndOut2;
+                                -webkit-animation-duration: $transitionSpeed;
+                                    animation-duration: $transitionSpeed;
+
+                                @include media-md {
+                                    display: block;
+                                    -webkit-animation: unset;
+                                        animation: unset;
+                                }
+                            }
+                        }
+                        &--strike {
+                            @include media-md {
+                                text-align: right;
+                            } 
+                            span {
+                                &:first-child { 
+                                    display: inline; 
+                                    @include media-md {
+                                        display: none;
+                                    }
+                                }
+                                &:last-child { 
+                                    font-size: 0.875rem;
+                                    color: $productCard3-foot-price-strike; 
+                                }
+                            }
+                            &:not(:only-child) {
+                                display: block;
+                            }
+                        }
+                    }
+                    &__cta {
+                        position: absolute;
+                        opacity: 0;
+                        
+                        @include media-md {
+                            position: relative;
+                            opacity: 1;
+                        }
+
+                        .e-btn {
+                            display: flex;
+                            height: 2.25em;
+                            justify-content: center;
+                            font-size: 1.125rem;
+                            margin: 0;
+                            align-items: center;
+                            svg {
+                                height: 1.5em;
+                                width: 1.625em;
+                            }
+                        }
+
+                        .c-tooltip__group {
+                            display: none;
+                            @include media-md {
+                                display: block;
+                            }
+                        }
+                    }
+                    &--fQuantity {
+                        align-self: auto;
+                        .c-productCard3__details__footer__cta {
+                            @include productCard__footer__cta;
+                        }
+
+                        .f-quantity {
+                            &:first-child + .e-btn {
+                                display: none;
+                            }
+                            &__btn {
+                                background-color: white; 
+                                svg {
+                                    height: 0.75rem;
+                                    width: 0.75rem;
+                                    fill: black;
+                                }
+                                &:first-child {
+                                    border-right: 0;
+                                    border-top-left-radius: 3px;
+                                    border-bottom-left-radius: 3px;
+                                    -webkit-border-top-left-radius: 3px;
+                                    -webkit-border-bottom-left-radius: 3px;
+                                    -moz-border-radius-topleft: 3px;
+                                    -moz-border-radius-bottomleft: 3px;
+                                }
+                                &:last-child {
+                                    border-left: 0;
+                                    border-top-right-radius: 3px;
+                                    border-bottom-right-radius: 3px;
+                                    -webkit-border-top-right-radius: 3px;
+                                    -webkit-border-bottom-right-radius: 3px;
+                                    -moz-border-radius-topright: 3px;
+                                    -moz-border-radius-bottomright: 3px;
+                                } 
+                                &--disable {
+                                    cursor: not-allowed;
+                                    svg { fill: $color-default-med-bg; }
+                                }
+                            }
+                        }
+                    }
+                    &--btnCTA {
+                        align-self: auto;
+                        .c-productCard3__details__footer__cta {
+                            @include productCard__footer__cta;
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                }    
+            }
+        }
+    }
+    &--{
+        &filterBar {
+            // -- modifier added via js -- //
+            --block-hue: black;
+            border-top: 5px solid var(--block-hue);
+            #{$root}__header__link {
+                padding-top: 0.5rem;
+            }
+        }
+        &expandOpts {
+            // // -- modifier added via js -- //
+            height: auto;
+            position: absolute;
+            z-index: 1;
+
+            min-height: 30em;
+            max-height: 99999px;
+
+            transition: box-shadow, max-height;
+            transition-duration: 400ms, $transitionSpeed;
+
+            -webkit-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+
+            @include media-md {
+                -webkit-animation: unset;
+                    animation: unset;
+            }
+            #{$root}__details {
+                &__content {
+                    &__selections {
+                        &__btnSelect { display: none; }
+                        &__btnClose { 
+                            display: block; 
+                            background-color: white;
+                            color: black;
+                            margin-bottom: 1rem;
+                        }
+                        &__options {
+                            opacity: 1;
+                            max-height: 100vh;  
+                            overflow: auto; 
+                            transition: max-height, opacity;
+                            transition-duration: 200ms, $transitionSpeed;
+                            .c-productCard3__details__content__selections__type {
+                                margin-bottom: 1.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &listView {
+            position: relative;
+            min-height: 0;
+            padding: 0.5em 0.750em; 
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "header" 
+            "details";
+
+            @include media-md {
+                grid-template-columns: 0.5fr 1fr;
+                grid-template-areas: "header details";
+            }
+
+            @include media-lg {
+                grid-template-columns: 12.125em minmax(auto, 17.375em) 1fr;
+                grid-template-areas: "image header details";
+            }
+
+            #{$root}__{
+                &header {
+                    @include media-md {
+                        height: auto;
+                        padding-top: 0;
+                        margin-bottom: 0;
+                        align-self: center;
+                    }
+        
+                    &__ {
+                        &link {
+                            padding: 0;
+                            &__ {
+                                &name { 
+                                    @include media-md {
+                                        width: 100%;
+                                        position: relative;
+                                        padding-left: 0; 
+                                    }
+                                }
+                                &tag { 
+                                    @include media-md {
+                                        display: none; 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &image {
+                    display: none;
+                    height: auto;
+                    align-self: center;
+                    padding: 0;
+                    @include media-lg {
+                        display: block;
+                    }
+        
+                    img  { 
+                        display: flex;
+                        height: auto;
+                        max-width: 9em;
+                        margin: 0;
+                        &:first-child { display: none; }
+                        &:only-child { display: block; }
+                    }
+                    &__list { display: block; }
+                }
+                &details {
+                    @include media-md {
+                        padding: 0;
+                        align-self: center;
+                    }
+        
+                    &__ {
+                        &content {
+                            &__ {
+                                &longDesc {
+                                    ul {
+                                        @include media-md {
+                                            padding-left: 0;
+                                            margin-bottom: 0;
+                                        }
+                                        li {
+                                            @include media-md {
+                                                display: inline;
+                                                &:after { content: ","; } 
+                                                &:before, &:last-child::after { content: ""; }
+                                            }
+                                        }
+                                    }
+                                    p { display: none; }
+                                }
+                                &selections { 
+                                    @include media-md {
+                                        display: none; 
+                                    }
+                                }
+                            }
+                        }
+                        &shortDesc { margin-right: 0; }
+                        &footer { display: none; }    
+                    }
+                }
+            }
+            &.c-productCard3--active {
+                #{$root}__{
+                    &header {
+                        &__ {
+                            &link {
+                                &__ {
+                                    &name {}
+                                    &tag { display: block; }
+                                }
+                            }
+                        }
+                    }
+                    &image {
+                        display: flex;
+            
+                        img  { 
+                            &:first-child { display: block; }
+                        }
+    
+                        &__list { display: none; }
+                    }
+                    &details {
+                        &__ {
+                            &footer { display: block; }    
+                        }
+                    }
+                }  
+            }
+            &.c-productCard3--filterBar {
+                border-top: none;
+                border-left: 5px solid var(--block-hue);
+            }
+        }  
+        &active {
+            @include productCard;
+            min-height: 30em;
+            max-height: 60em;
+
+            -webkit-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0), 0 0 0.75rem 0.125rem rgba(0, 0, 0, 0.3);
+
+            #{$root}__header {
+                @include productCard__header;
+                &__ {
+                    &link {
+                        @include productCard__header__link;
+                        &__ {
+                            &name {
+                                @include productCard__header__name;
+                            }
+                            &tag { 
+                                opacity: 1;
+                                transform: translateX(0);
+
+                                /* Animation for tag to appear from the right and move left onto the card with a fade in */
+                                transition: transform $transitionSpeed, opacity;
+                                transition-duration: $transitionSpeed, $transitionSpeed;
+                                transition-delay: 0s, 300ms;
+                            }
+                        }
+                    }
+                }
+            }
+            #{$root}__image {
+                @include productCard__image;
+                height: 16rem;
+
+                img  { 
+                    max-height: 10em;
+                    max-width: 10em;
+                    position: absolute;
+                    top: 2.75em;
+                    right: 50%;
+                    transform: scale(1.5) translate(50%);
+                    
+                    /* Animation for image to be small to active card */
+                    -webkit-animation: imageOpenAnimation;
+                        animation: imageOpenAnimation;
+                    -webkit-animation-duration: $transitionSpeed;
+                        animation-duration: $transitionSpeed;
+                    -webkit-animation-timing-function: linear;
+                        animation-timing-function: linear;
+
+                }
+            }
+            #{$root}__details {
+                padding: 0 1rem 1rem;
+                &__ {
+                    &content {
+                        > * {
+                            position: relative;
+                            transition: opacity $transitionSpeed;
+                            transition-delay: 400ms;
+                            opacity: 1;
+                        }
+                        &__ {
+                            &longDesc { 
+                                width: auto;
+                                top: auto; 
+                                left: auto;
+                                transform: none;
+                            }
+                            &selections {
+                                top: auto;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+                    &shortDesc { 
+                        width: 50%;
+                        position: absolute;
+                        top: 2.5em;
+                        left: 1em;
+                        opacity: 0;
+                        transition: opacity;
+                        transition-duration: 250ms;
+                        transition-delay: 0s;
+                        // z-index: -1;
+                    }
+                    &footer {
+                        @include productCard__footer;
+                        display: grid;
+                        &__price { 
+                            position: absolute;
+                            top: 6.5rem;
+                            // left: 1rem;
+                            opacity: 0;
+                            transition: opacity 300ms;
+                            &--range {
+                                &:only-child {
+                                    position: relative;
+                                    top: initial;
+                                    opacity: 1; 
+
+                                    /* Animation for price. Small card fades out first then active goes on, the price fades back in */
+                                    -webkit-animation: fadeInAndOut;
+                                        animation: fadeInAndOut;
+                                    -webkit-animation-duration: $transitionSpeed;
+                                        animation-duration: $transitionSpeed;
+
+                                }
+                            }
+                            &--strike {
+                                text-align: right;
+                                span {
+                                    &:first-child { 
+                                        display: inline; 
+                                        @media screen and (max-width: 32em) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                &:not(:only-child) {
+                                    display: block;
+                                }
+                            }
+                        }
+                        &__cta {
+                            display: inline-block;
+                            position: relative;
+                            transition: opacity $transitionSpeed;
+                            transition-delay: 400ms;
+                            opacity: 1;
+                        }
+                        &--fQuantity {
+                            .c-productCard3__details__footer__cta {
+                                @include productCard__footer__cta;
+                                grid-template-columns: 1fr 3fr;
+                                .f-quantity { 
+                                    display: none; 
+                                    &:first-child + .e-btn { display: flex; }
+                                }
+                            }
+                        }
+                        &--btnCTA {
+                            .c-productCard3__details__footer__cta {
+                                @include productCard__footer__cta;
+                                grid-template-columns: 1fr 1fr;
+                            }
+                        }
+                    }
+                }
+            }
+            &.c-productCard3--expandOpts {
+                height: auto;
+                max-height: initial;
+                position: relative;
+            }
+        } 
+        &preload {
+            -webkit-animation-duration: 0s !important;
+                animation-duration: 0s !important;
+            #{$root}__image {
+                img  { 
+                    -webkit-animation-duration: 0s !important;
+                        animation-duration: 0s !important;
+                }
+            }
+            #{$root}__details {
+                &__ {
+                    &footer {
+                        &__price { 
+                            &--range {
+                                &:only-child {
+                                    -webkit-animation-duration: 0s !important;
+                                        animation-duration: 0s !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+@keyframes fadeInAndOut {
+    0% { 
+        position: absolute;
+        top: 6.5rem;
+        left: 1rem;
+        opacity: 1;
+    }
+    35% { opacity: 0; }
+    50% { opacity: 0; }
+    64% { opacity: 0; }
+    70% { opacity: 0.25; }
+    100% { 
+        position: relative;
+        top: initial;
+        opacity: 1; 
+    }
+}
+
+@keyframes fadeInAndOut2 {
+    0% { 
+        position: absolute;
+        bottom: 1em;
+        left: 50%; 
+        transform: translateX(-50%);
+        opacity: 1; 
+    }
+    15% {
+        position: absolute;
+        bottom: 1em;
+        left: 50%; 
+        transform: translateX(-50%); 
+        opacity: 0; 
+    }
+    75% { opacity: 0; }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+// /* Image Animation from small card to active card */
+@keyframes imageOpenAnimation {
+    0% {
+        top: 1.75em;
+        right: 0.25em;
+        transform: scale(0.75) translate(0, 0);
+    }
+    100% {
+        top: 2.75em;
+        transform: scale(1.5) translate(50%, 0);
+    }
+}
+
+@-webkit-keyframes imageOpenAnimation {
+    0% {
+        top: 1.75em;
+        right: 0.25em;
+        -webkit-transform: scale(0.75) translate(0, 0);
+    }
+    100% {
+        top: 2.75em;
+        -webkit-transform: scale(1.5) translate(50%, 0);
+    }
+}
+
+@keyframes imageCloseAnimation {
+    0% {
+        top: 2.75em;
+        right: 50%;
+        transform: scale(2) translate(50%);
+    }
+    25% { top: 4em; }
+    50% { top: 4em; }
+    100% {
+        top: 4em;
+        right: 0.25em;
+        transform: scale(1) translate(0, -50%);
+    }
+}
+
+@-webkit-keyframes imageCloseAnimation {
+    0% {
+        top: 2.75em;
+        right: 50%;
+        -webkit-transform: scale(2) translate(50%);
+    }
+    25% { top: 4em; }
+    50% { top: 4em; }
+    100% {
+        top: 4em;
+        right: 0.25em;
+        -webkit-transform: scale(1) translate(0, -50%);
+    }
+}
+
+
+//RTL Image animation
+@keyframes imageOpenAnimationRTL {
+    0% {
+        top: 1.75em;
+        left: 0.25em;
+        transform: scale(0.75) translate(0, 0);
+    }
+    100% {
+        top: 2.75em;
+        transform: scale(1.5) translate(-50%, 0);
+    }
+}
+
+@keyframes imageCloseAnimationRTL {
+    0% {
+        top: 2.75em;
+        left: 50%;
+        transform: scale(2) translate(-50%);
+    }
+    25% { top: 4em; }
+    50% { top: 4em; }
+    100% {
+        top: 4em;
+        left: 0.25em;
+        transform: scale(1) translate(0, -50%);
+    }
+}

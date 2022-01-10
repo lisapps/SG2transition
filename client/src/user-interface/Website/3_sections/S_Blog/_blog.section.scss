@@ -1,0 +1,145 @@
+.s-blog {	
+	background-color: white;
+	&__ {
+		&layout {
+			display: grid;
+			padding-top: 1em;
+			grid-template-columns: 100%;
+			//gap should be 16px
+			grid-gap: 1em;
+			li { margin-bottom: 0; min-width: 0;}
+
+			transition: box-shadow, opacity;
+			transition-duration: 400ms, 400ms;
+			transition-timing-function: ease-out, ease;
+			transition-delay: 0ms, 0ms;
+
+			.c-blogCard {
+				-webkit-box-shadow: $dropshadow-base;
+				-moz-box-shadow: $dropshadow-base;
+				box-shadow: $dropshadow-base;
+
+				transition: $dropshadow-transition, border;
+				transition-duration: $transitionNormal, $transitionNormal;
+				transition-timing-function: $dropshadow-transition-timing, $dropshadow-transition-timing;
+				transition-delay: $dropshadow-transition-delay, $dropshadow-transition-delay;
+
+				&:hover, &:focus, &:active {
+					-webkit-box-shadow: $dropshadow-visible;
+					-moz-box-shadow: $dropshadow-visible;
+					box-shadow: $dropshadow-visible;
+				}
+			}
+
+			@include media-lg { padding-top: 0; }
+			@media screen and (max-width: 32em) {
+				li {
+					&:nth-child(n+3) {
+						@include smallBlogCard;
+					}
+				}
+			}
+			@media screen and (min-width: 32em) {
+				grid-template-columns: repeat(4, 1fr);
+				> li:nth-child(-n+4) {
+					grid-column: span 2;
+					@include largeBlogCard;
+				}
+			}
+		}
+	}
+
+	.c-slideMenu {
+		background-color: transparent;
+		@include media-lg {
+			position: relative;
+			max-width: 75em;
+			padding: 0 $h-margins;
+			margin: auto;
+		}
+
+		.c-slideMenu__slider {
+			&__{
+				&toggle {
+					background: transparent;
+					border: none;
+					outline: none;
+
+					svg {
+						fill: black;
+						@include media-lg {
+							opacity: 1;
+							transition: unset;
+						}
+					}
+
+					h5 { 
+						@include media-lg {
+							transform: translate(2em); 
+							transition: unset;
+						}
+					}
+
+					&:hover, &:focus {
+						svg { fill: $link-color; }
+						h5 { color: $link-color; }
+					}
+				}
+				&panel {
+					@include media-lg {
+						left: 1.25em;
+					}
+
+					.f-input { border: none; }
+					
+					&__content {
+						@include media-lg {
+							overflow-y: auto;     
+						}
+					}
+				}
+			}
+			&-- {
+				&active {
+					.c-filterCard__results {
+						display: block; 
+						@include media-lg {
+							display: none;
+						}
+					}
+				}
+				&right {
+					.c-slideMenu__slider__toggle {
+						h5 { 
+							@include media-lg {
+								transform: translate(-1.5em); 
+								transition: unset;
+							}
+						}
+
+						svg { 
+							height: 1.125em;
+							width: 1.125em;
+						}
+					}
+					.c-slideMenu__slider__panel {
+						@include media-lg {
+							left: auto;
+							right: 1.25em;
+						}
+					}
+				}
+			}
+			}
+		&--activeLeft, &--activeRight { z-index: 2147483638; }
+	}
+
+	.c-slideMenu__slider--active {
+		.c-filterCard__results {
+			display: block; 
+			@include media-lg {
+				display: none;
+			}
+		}
+	}
+}

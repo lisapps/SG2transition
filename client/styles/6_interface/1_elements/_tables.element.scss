@@ -1,0 +1,173 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    width: 100%;
+    margin: 0;
+    background: white;
+    color: $font-base-color;
+    border: 1px solid $table-border-color;
+    
+    caption {
+        color: black;
+        font: italic 85%/1 arial, sans-serif;
+        padding: 1em 0;
+        text-align: center;
+    }
+    thead {
+        background-color: $table-heading-background;
+        color: black;
+        text-align: left;
+        vertical-align: bottom;
+        tr{
+            border-bottom: 0;
+        }
+    }
+    tr{
+        border-bottom: 1px solid #efefef;
+        &:first-child{
+            td{
+                border-top: 0;
+            }
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+    th, td {
+        border-width: 0 0 0 1px;
+        font-size: inherit;
+        margin: 0;
+        overflow: visible; /* To make ths where the title is really long work. Should this be the solution? */
+    }
+    th {
+        padding: .75rem 1rem;
+        border-right: 1px solid white;
+        vertical-align: top;
+        text-align: left;
+        font-weight: 500;
+        font-size: 1em;
+        &:last-child{
+            border-right: 0;
+        }
+    }
+    td { 
+        vertical-align: top;
+        background-color: transparent;
+        padding: 1.1rem 1.1rem;
+        border-right: 1px solid #efefef;
+        &:last-child{
+            border: 0;
+        }
+    }
+    tbody:first-child{
+        tr:first-child{
+            border-top: 1px solid #efefef;
+        }
+    }
+}
+
+.c-table {
+    margin-bottom: 3.125em;
+    background: white;
+    color: $font-base-color;
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    // ### children ###
+    &__ {
+        &main{
+            overflow-x: auto;
+            &:not(:last-child){
+                table{
+                    tbody{
+                        tr{
+                            &:last-child{
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &cta{
+            background: $table-cta-background;
+            padding: 1em;
+            text-align: center;
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__main {
+            table {
+                thead {
+                    tr {
+                        th { text-align: right; }
+                    }
+                }
+            }
+        }
+    }
+
+    // ### modifiers ###
+    &-- {
+        &striped{
+            table{
+                tr{
+                    border: 0;
+                    &:nth-child(2n){
+                        background: $table-striped-background;
+                        &:last-child{
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+            td{
+                border-top: 0;
+                border-bottom: 0;
+            }
+            tbody:first-child{
+                tr{
+                    &:first-child{
+                        border: 0;
+                    }
+                    &:nth-child(2n){
+                        background: #FFF;
+                        &:last-child{
+                            border-bottom: 1px solid #efefef;
+                        }
+                    }
+                    &:nth-child(odd){
+                        background: $table-striped-background;
+                        &:last-child{
+                            border-bottom: 0;
+                        }
+                    }
+                    &:last-child{
+                        border-bottom: 1px solid #efefef;
+                    }
+                }
+            }
+        }
+        &2col{
+            th,td{
+                &:first-child{
+                    width: 50%;
+                    @media (min-width: $screen-md) {
+                        width: 33%;
+                    }
+                }
+            }
+        }
+        &sideKeys {
+            td{
+                &:first-child {
+                    font-weight: 500;
+                    color: black;
+                }
+            }
+        }
+    }
+}

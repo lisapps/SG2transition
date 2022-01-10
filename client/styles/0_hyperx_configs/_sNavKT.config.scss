@@ -1,0 +1,64 @@
+// -- Navigation Background Colors
+$kt-nav-bg: white;
+$kt-nav-bg-alt: #00BAFD; // -- CERULEAN
+$kt-nav-bg-accent: #00BAFD; // -- CERULEAN
+
+// -- nav breakpoints
+$kt-nav-md: 47.9em; //768px
+$kt-nav-lg: 64em; //1152px
+
+// Nav links
+$kt-nav-links: purple;
+$kt-nav-links-hover: darken($kt-nav-links, 5%);
+$kt-nav-secondary-links: #FD4300; // -- VERMILION
+$kt-nav-links-cDropdown-active: #FD4300; 
+
+$kt-c-icoPanels-cDropdown-active: #FD4300;
+
+// Nav Menu
+$kt-nav-menu-bg: rgba(89, 89, 89, 0.94);
+$kt-nav-links-border: $mercury;
+$kt-nav-links-svg: $silver;
+
+// Logo BG - Default to $nav-bg
+$kt-nav-bg-logo: black;
+$kt-nav-bg-alt-links: white;
+$kt-nav-bg-alt-links-hover: black;
+$kt-nav-bg-alt-font: $font-1-family;
+
+// Border Colors
+$kt-nav-toggle: #00BAFD; // -- CERULEAN
+$kt-nav-links-keyline: #E4EDF0; // -- MYSTIC
+$kt-nav-keyline: $silverchalice;
+
+// Panel Colors
+$kt-nav-bg-panel: $kt-nav-bg;
+$kt-panel-border: 1px solid $kt-nav-keyline;
+$kt-panel-txt-color: black;
+$kt-panel-head-color: black;
+$kt-panel-links:  $kt-nav-links;
+$kt-panel-links-hover:  $kt-nav-links-hover;
+
+// Icon Colors
+$kt-nav-icon-color: white;
+$kt-nav-icon-hover: black;
+$kt-nav-icon-hover-bg: #00BAFD; // -- CERULEAN
+
+// Search Card Colors
+// $kt-searchCard-bg: #F5F8FA; // -- CATSKILL
+// $kt-searchCard-bg-body: $kt-nav-bg;
+$kt-searchPanel-cta: $white;
+
+//Cart Colors
+$kt-cart-color: black;
+$kt-cart-count-color: $link-color;
+$kt-cart-btn-bg-color: $faint;
+$kt-cart-btn-bg-color-hover: $gallery;
+$kt-cart-btn-color: $mineshaft;
+$kt-cart-field-bg: $white;
+$kt-cart-border-color: $gallery;
+
+// Checkout Colors
+$kt-checkout-body: white;
+$kt-checkout-header: $dusty;
+$kt-checkout-text: $silverchalice;

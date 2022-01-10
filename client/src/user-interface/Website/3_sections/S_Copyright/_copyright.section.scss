@@ -1,0 +1,81 @@
+.s-copyright {
+    padding: 1em 0;
+    
+    // ### CHILDREN ### //
+    &__ {
+        &text {
+            
+            > * {
+                font-size: 0.875rem;
+                &:last-child { margin-bottom: 0.5rem; }
+            }
+
+            @media screen and (max-width: $screen-lg) {
+                padding-bottom: 1em;
+            }
+        }
+
+        // -- links disabled until allowed in CMS -- //
+        // &links {
+        //     li {
+        //         padding: 0 0.5em;
+        //         border-right: 1px solid $font-base-color;
+        //         &:first-child { padding-left: 0; }
+        //         &:last-child { border-right: 0; }
+        //         a {
+        //             white-space: nowrap;
+        //             &:hover, &:active {
+        //                 color: $color-bg-dark;
+        //                 text-decoration: none;
+        //             }
+        //         }
+        //     }
+        // };
+        
+        &social {
+            padding-left: 2.375em;
+            @include media-lg { padding-left: 0; }
+
+            li {
+                margin: 0 .5em;
+                &:first-child { margin-left: 0; }
+                a { display: block; }
+            }
+            svg {
+                height: 1.375em;
+                width: 1.375em;
+                position: relative;
+                fill: $copyright-social-svg;
+                transition: fill $transitionFast;
+                &:hover {
+                    fill: $copyright-social-svg-hover;
+                }
+            }
+        };
+    }
+
+    html[dir="rtl"] & {
+        &__ {
+            &text {
+                ul {
+                    padding-right: 0;
+                    li {
+                        &:first-child { 
+                            padding-right: 0;
+                            padding-left: 0.5em;
+                            border-right: 0; 
+                        }
+                        &:last-child {
+                            border-right: 1px solid white;
+                        }
+                    }
+                }
+            }
+            &social {
+                padding-left: 0;
+                padding-right: 2.375em;
+                @include media-lg { padding-right: 0; }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+.s-supportContact {
+    $root: &;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+
+    @include media-md {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    @include media-lg {
+        padding-top: 3.125em;
+        padding-bottom: 3.125em;
+    }
+
+    .l-grid {
+        grid-row-gap: 0.8750em;
+    }
+
+    &__ {
+        &card {
+            &:last-child {
+                .c-accordion {
+                    &__ {
+                        &tab {
+                            button { 
+                                padding-top: 0.5em; 
+                                @include media-md { padding-top: 1.25em; }
+                            }
+                        }
+                    }
+                }
+            }
+            .c-accordion {
+                &__ {
+                    &tab { 
+                        border-bottom: 1px solid $color-default-med-bg;
+                        transition: border-bottom 250ms ease;
+
+                        @include media-md {
+                            border-bottom: 1px solid transparent;
+                            pointer-events: none;
+                        }
+
+                        button { 
+                            display: block;
+                            font-family: $supportContact-tab-font-family;
+                            border: none;
+                            padding: 1.25em 0;
+
+                            > * {
+                                &:last-child { margin-bottom: 0; }
+                            }
+
+                            svg {
+                                float: right;
+                                @include media-md { display: none; }
+                            }
+
+                            p { 
+                                font-size: initial;
+                                font-weight: $supportContact-font-weight;
+                                color: $supportContact-font-color; 
+                                margin-top: 1em;
+                            }
+                        }
+                        
+                        &--active {
+                            border-bottom: 1px solid transparent;
+                            @include media-md {
+                                border-bottom: 1px solid transparent;
+                            }
+
+                            & + .c-accordion__panel {
+                                border-bottom: 1px solid $color-default-med-bg;
+                                @include media-md {
+                                    border-bottom: 1px solid transparent;
+                                }
+                            }
+                        }
+                    }
+                    &panel {
+                        border-bottom: 1px solid transparent;
+                        transition: border-bottom 250ms ease;
+
+                        .l-grid {
+                            grid-column: 0.750em;
+                            grid-row-gap: 2.125em;
+                        }
+
+                        &__content { padding: 1.25em 0; }
+                    }
+                }
+            }
+
+            &__ {
+                &item {
+                    &__{
+                        &icon {
+                            svg {
+                                height: 2rem;
+                                width: 2rem;
+                            }
+                        }
+                        &info {
+                            > *:last-child { margin-bottom: 0; }
+                            &__number { 
+                                font-weight: $supportContact-number-font-weight;
+                                color: $supportContact-number-color;
+                            }
+                        }
+                    }
+                }  
+            }
+
+            &--{
+                &inactive {
+                    #{$root}__card__item__info {
+                        &__{
+                            &chat, &chat:hover, &chat:focus {
+                                cursor: not-allowed;
+                                color: $supportContact-inactive-color;
+                                background-color: rgba(0, 0, 0, 0.05);
+                                border-color: $color-default-darker-bg;
+                            }
+                            &number {
+                                color: $supportContact-inactive-color;
+                                &:after {
+                                    content: " (closed)";
+                                    font-weight: normal;
+                                }
+                            }    
+                        }
+                    }
+                }
+            }
+        }
+    }
+    html[dir="rtl"] & {
+        &__ {
+            &card {
+                .c-accordion {
+                    &__ {
+                        &tab { 
+                            svg { float: left; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

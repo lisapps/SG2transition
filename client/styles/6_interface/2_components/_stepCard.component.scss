@@ -1,0 +1,37 @@
+.c-stepCard {
+
+	overflow: hidden;
+	position: relative;
+	padding: 1.25em 1.25em 5.25em;
+	border-top: 1px solid #dfdddd;
+	height: 100%;
+
+	// ### CHILDREN ### //
+	&__ {
+		&img{
+			img {
+				display: block;
+				margin: 1em auto;
+				width: auto;
+				height: auto;
+				max-height: 100%;
+				max-width: 100%;
+			}
+		}
+		&copy {
+			margin: 0 0 1em;
+		}
+		&cta {
+			position: absolute;
+			bottom: 1em;
+			left: 50%;
+			transform: translateX(-50%);
+			&:empty { display: none; }
+		}
+	}
+
+	// ### MEDIA QUERIES ### //
+	@media screen and (min-width: $screen-md) {
+		border-top: 0;
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "accordionArrow_color": "black",
+    "accordionArrow_color_active": "$mainred",
+    "accordionTitle_color_active": "$mainred",
+    "accordionTab_color": "transparent",
+    "textHoverSpeed": "400ms",
+    "accordionSpeed": "200ms"
+}

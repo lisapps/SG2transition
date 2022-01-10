@@ -1,0 +1,80 @@
+.v-sourceCode {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 100;
+
+	.v-sourceCode__open { display: initial; }
+	.v-sourceCode__close { display: none; }
+
+
+	&__{
+		&toggle{
+			content: 'View Markup';
+			display: block;
+			background: none;
+			color: #ccc;
+			padding: 0;
+			text-align: center;
+			border-radius: 5px 0 0 0;
+			cursor: pointer;
+			position: fixed;
+			left: 1.5em;
+			bottom: 28px;
+			margin-left: auto;
+			width: 42px;
+			height: 28px;
+			&:hover{
+				color: white;
+			}
+		}
+		&markup{
+			margin: 0;
+			padding: 0;
+			transition: max-height 250ms ease-out;
+			width: 100%;
+			display: block;
+			max-height: 50vh;
+
+			&__controls {
+				position: absolute;
+				width: 100%;
+				top: 2em;
+				padding: 0 2em;
+			}
+		}
+	}
+
+	&-- {
+		&active {
+			.v-sourceCode__open { display: none; }
+			.v-sourceCode__close { display: initial; }
+		}
+	}
+
+	svg{
+		width: auto;
+		height: auto;
+		vertical-align: middle;
+		&:hover{
+			rect{
+				fill: #5d5d5d;
+			}
+		}
+	}
+	code{
+		display: block;
+		white-space: pre-wrap;
+		margin: 0 auto 1.5em;
+		max-height: 400px;
+		padding: 2em 0;
+	}
+}
+
+.c-markup{
+	margin-bottom: 0;
+	padding: 0;
+	transition: max-height 250ms ease-out;
+	width: 100%;
+	display: block;
+}

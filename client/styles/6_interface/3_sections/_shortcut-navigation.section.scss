@@ -1,0 +1,16 @@
+.s-shortcutNavigation {
+	padding: 1.875em 0;
+	.c-heading{
+		padding-bottom: 0;
+	}    
+
+	.c-productCardLite {
+		&:hover {
+			.c-productCardLite__img { opacity: 0.8; }
+		}
+		.c-productCardLite__img {
+			opacity: 1;
+			transition: opacity $transitionFast ease-out;
+		}
+	}
+}

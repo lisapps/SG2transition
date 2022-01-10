@@ -1,0 +1,6 @@
+.t-polyGrey {
+    background-image: url("/images/themes/ktc-theme-light-poly-medium.jpg");
+    @include media-lg {
+        background-image: url("/images/themes/ktc-theme-light-poly-large.jpg");
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "form2-svg-fill": "$dusty",
+
+    "form2-borderColor": "$dusty",
+    "form2-color-disabled": "$alto",
+
+    "form2-outline-borderRadius": "0",
+    "form2-outline-textarea-padding": "0.3em 0.75em",
+
+    "form2-reactive-margin-bottom": "0"
+}

@@ -1,0 +1,19 @@
+.s-searchConfigurator {
+      padding: 1.25em;
+      @include media-md { padding: 1.875em; }
+      @include media-lg { padding: 3.125em; }
+
+      .c-heading { 
+            padding-top: 0; 
+            padding-bottom: 1.75em; 
+      }
+
+      &__ {
+            &body {
+                  &:not(:last-child) {
+                        padding-bottom: 1.75em;
+                  }
+            }
+      }
+      html[dir="rtl"] & {}
+}

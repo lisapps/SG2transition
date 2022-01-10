@@ -1,0 +1,166 @@
+/* ======================================== */
+/* =                                      = */
+/* =             Content Base             = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base styles for content elements
+.     h1 -> h6 | p | a | pre | strong | b | em | i | blockquote | hr
+.      
+*/
+
+// - - - - - - - - - -
+// * Headings
+// - - - - - - - - - -
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: 0;
+}
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-family: "breuer text", "proxima-nova", sans-serif;
+  font-weight: 300;
+}
+h3,
+h4,
+h5,
+h6,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.8rem;
+  // font-weight: $subHeading-font-weight; //$font-1-weight-bold;
+}
+h1,
+.h1 {
+  font-size: 2em;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+h2,
+.h2 {
+  font-size: 1.75em;
+  line-height: 1.154;
+  margin-bottom: 1.5rem;
+}
+h3,
+.h3 {
+  font-size: 1.5em;
+  line-height: 1.136;
+}
+h4,
+.h4 {
+  font-size: 1.375em;
+  line-height: 1.12;
+}
+h5,
+.h5 {
+  font-size: 1.125em;
+  line-height: 1.1;
+}
+h6,
+.h6 {
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+// - - - - - - - - - -
+// * Paragraphs
+// - - - - - - - - - -
+p {
+  // margin-top: $margin-base-top;
+  // margin-bottom: $margin-base-bottom;
+}
+
+// - - - - - - - - - -
+// * Links / Buttons
+// - - - - - - - - - -
+a {
+  $_color-contentLink: #93d5ff;
+  text-decoration: none;
+  transition: color 250ms;
+  &:link {
+    color: $_color-contentLink;
+  }
+  &:visited {
+    color: darken($_color-contentLink, 5);
+  }
+  &:hover {
+    color: lighten($_color-contentLink, 5);
+    text-decoration: none;
+  }
+  &:active {
+    color: $_color-contentLink;
+  }
+}
+
+// - - - - - - - - - -
+// * Preformatted
+// - - - - - - - - - -
+pre {
+  // margin-top: $margin-base-top;
+  // margin-bottom: $margin-base-bottom;
+}
+
+// - - - - - - - - - -
+// * Strong
+// - - - - - - - - - -
+strong {
+  // Base styles for strong tag
+}
+
+// - - - - - - - - - -
+// * Bold
+// - - - - - - - - - -
+b {
+  // Base styles for b tag
+}
+
+// - - - - - - - - - -
+// * Emphasis
+// - - - - - - - - - -
+em {
+  // Base styles for strong tag
+}
+
+// - - - - - - - - - -
+// * Italic
+// - - - - - - - - - -
+i {
+  // Base styles for i tag
+}
+
+// - - - - - - - - - -
+// * Blockquote
+// - - - - - - - - - -
+blockquote {
+  // Base styles for blockquote tag
+}
+
+// - - - - - - - - - -
+// * Horizontal Rule
+// - - - - - - - - - -
+hr {
+  // margin-top: $margin-base-top;
+  // margin-bottom: $margin-base-bottom;
+  border: 0;
+  height: 1px;
+  // background: $color-default-med-bg;
+}

@@ -1,0 +1,49 @@
+.s-landingGates {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  @include media-lg {
+    flex-direction: row;
+  }
+  &__col {
+    position: relative;
+    background: #3b444c; //Replace w/ Color Var
+    border-radius: 2px;
+    width: 100%;
+    margin-bottom: 1em;
+    min-height: 14em;
+    transition: transform 500ms;
+    @include media-lg {
+      margin-bottom: 0;
+      margin-right: 1em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      @include media-lg {
+        margin-right: 0;
+      }
+    }
+    &__title {
+      margin: 0;
+      color: tomato;
+      z-index: 100;
+      color: white;
+    }
+    &__bg {
+      position: absolute;
+      max-width: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 250ms;
+      transition-timing-function: ease-out;
+    }
+    &:hover {
+      transform: scale(1.025);
+      .s-landingGates__col__bg {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+  }
+}

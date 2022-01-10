@@ -1,0 +1,8 @@
+{
+  "transformers": {
+    "*.{jpg,png,svg}": ["@parcel/transformer-raw"]
+  },
+    "extends": ["@parcel/config-default"],
+    "reporters":  ["...", "parcel-reporter-static-files-copy"],
+    "resolvers": ["@parcel/resolver-glob", "..."]
+}

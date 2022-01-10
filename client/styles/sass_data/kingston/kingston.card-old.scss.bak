@@ -1,0 +1,9 @@
+{
+    $card-boxShadow: $dropshadow;
+    $card-boxShadow-visible: $dropshadow-visible;
+
+    $card-boxShadow-transition: $dropshadow-transition;
+    $card-boxShadow-transition-duration: $dropshadow-transition-duration;
+    $card-boxShadow-transition-timing: $dropshadow-transition-timing;
+    $card-boxShadow-transition-delay: $dropshadow-transition-delay;
+}

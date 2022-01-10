@@ -1,0 +1,33 @@
+.s-productGallery {
+
+	.l-flexTiles {
+		background: white;
+		
+		&__item {
+			padding: 1.5em;
+			background-color: white;
+			position: relative;
+			overflow: hidden;
+			margin-top: -1px;
+			@media screen and (min-width: 37.5em) {
+				/*
+					// ^^ SHOULD BE 50em ^^ //
+					but can't because the minimum width allowed per card is 300
+					so somehow the JS needs to recognize when the flextiles should
+					activate on responsiveness
+				*/
+				padding: 1.75em;
+			}
+		}
+		&:not(.l-flexTiles--checkered) {
+			.l-flexTiles__item {
+				border-top: 1px solid $color-default-bg;
+				border-right: 1px solid $color-default-bg;
+				border-bottom: 1px solid $color-default-bg;
+				&:first-child {
+					border-left: 1px solid $color-default-bg;
+				}
+			}
+		}
+	}
+}

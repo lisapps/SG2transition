@@ -1,0 +1,94 @@
+html {
+  min-height: 100%;
+}
+body {
+  background: $v-mainBg;
+  font-family: "canada-type-gibson", sans-serif;
+}
+table {
+  background: none !important;
+}
+input {
+  color: black;
+}
+
+.v-main {
+  display: flex;
+  position: relative;
+  &__content {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.v-view {
+  font-family: $font-1-family;
+  background: white;
+  overflow: hidden;
+  position: relative;
+
+  iframe {
+    display: block;
+    // height: 100px;
+    // max-height: 0;
+  }
+
+  &__ {
+    &specsBar {
+      position: absolute;
+      display: none;
+      font-family: monospace;
+      background: rgba(70, 119, 166, 0.8);
+      color: white;
+      right: 0;
+      bottom: 0;
+      padding: 0.25em 1em;
+      z-index: 100;
+      user-select: none;
+      border-radius: 2px 0 0 0;
+      svg {
+        vertical-align: text-top;
+      }
+      span {
+        margin-left: 0.5em;
+        br {
+          display: none;
+        }
+      }
+      &--active {
+        display: inline-block;
+      }
+    }
+  }
+  &-- {
+    &active {
+      max-height: 1000px;
+    }
+  }
+}
+
+.v-lineSpacer {
+  width: 1px;
+  display: inline-block;
+  background: white;
+  &:last-child {
+    visibility: hidden;
+  }
+}
+
+.v-pill {
+  border: 1px solid white;
+  border-radius: 500px;
+}
+
+.v-bubble {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 0.75em;
+  border-radius: 100%;
+  top: -1px;
+  position: relative;
+  vertical-align: middle;
+  border: 1px solid #a3a3a3;
+}

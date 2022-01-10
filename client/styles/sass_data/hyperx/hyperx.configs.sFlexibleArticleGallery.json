@@ -1,0 +1,23 @@
+{
+    "screen-md2": "43em",
+    "screen-lg2": "64em",
+    "screen-lg3": "85.375em",
+    "screen-xlg2": "120em",
+
+    "rssGutter": "1em",
+    "postPadding": "0 $rssGutter $rssGutter",
+
+    "flexibleArticleGalleryBreakpoints": "$screen-md, $screen-md2, $screen-lg, $screen-lg2, $screen-lg3, $screen-xlg2",
+    "flexibleArticleGalleryBreakpointsName": "'md', 'md2', 'lg', 'lg2', 'lg3', 'xlg2'",
+
+    "centerPoint1": "52em",
+    "centerEndPoint1": "64.5em",
+
+    "centerPoint2": "78em",
+    "centerEndPoint2": "85.313em",
+
+    "centerPoint3": "104em",
+    "centerEndPoint3": "119.938em",
+
+    "centerPoint4": "130em"
+}

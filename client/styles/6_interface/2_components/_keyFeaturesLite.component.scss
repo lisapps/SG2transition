@@ -1,0 +1,37 @@
+.c-features {
+    $root: &;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__ {
+        &item {
+            width: 100%;
+            padding: 1em 0.5em 0;
+            @include media-md { width: 50%; }
+            
+            h4 {
+                display: flex;
+                align-items: middle;
+
+                svg {
+                    margin-right: 0.5em;
+                    min-width: 2rem;
+                    min-height: 2rem;
+                }
+            }				
+            p { clear: left; }
+
+        }
+    }
+
+	html[dir="rtl"] & {
+        &__item {
+            h4 {
+                svg {
+                    margin-right: 0;
+                    margin-left: 0.5em;
+                }
+            }	
+        }
+    }
+}

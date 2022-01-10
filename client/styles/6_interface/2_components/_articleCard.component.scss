@@ -1,0 +1,84 @@
+.c-articleCard {
+	
+	display: flex;
+	overflow: hidden;
+	max-height: 7.5rem;
+	
+	@include media-md{
+		max-height: none;
+	}
+
+	&__img {
+		position: relative;
+		overflow: hidden;
+		@include media-md{
+			height: 9rem;
+			overflow: hidden;
+		}
+
+		.e-picture {
+			display: inline-block;
+			width: 8rem;
+			height: 7.5rem;
+			overflow: hidden;
+		}
+		img {
+			position: relative;
+			max-width: none;
+			display: block;
+			left: 50%;
+			transform: translateX(-50%) scale(1);
+			transition: transform 500ms ease;
+
+			@include media-md{
+				position: absolute;
+				height: auto;
+				top: 0;
+			}
+
+			&:hover, &:focus { transform: translateX(-50%) scale(1.05); }
+
+		}
+	}
+
+	&__details {
+		
+		padding: 0.875em 1.5em;
+		color: $article-color-content;
+		h5 {
+			margin: 0;
+			overflow: hidden;
+			display: -webkit-box;
+			box-sizing: border-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			font-size: $headline-font-size;
+		}
+		p {
+			margin: 0;
+			overflow: hidden;			
+			display: -webkit-box;
+			box-sizing: border-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			max-height: 4.45em;
+			@include media-md{
+				-webkit-line-clamp: 3;
+			}
+		}
+		a{
+			color: $article-color-link;
+		}
+		@include media-md{
+			padding: 1.75em;
+			h5 { -webkit-line-clamp: 2; }
+		}
+
+	}
+
+	@include media-md{
+
+		flex-direction: column;
+
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "hero-home-title-bg": "$denim",
+    "hero-home-cta-bg": "black",
+
+    "hero-cta-bg-alt": "$denim",
+    "hero-cta-bg-theme-alt": "$rex",
+    "hero-cta-bg-combo-alt": "$denim"
+}

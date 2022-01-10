@@ -1,0 +1,20 @@
+.s-bio {
+	$root: &;
+    padding: 3.125em 0;
+    overflow: auto;
+
+    &__icon {
+        float: left;
+        margin-right: 0.75em;
+	}
+	
+	html[dir="rtl"] & {
+        #{$root} {
+            &__icon {
+                float: right;
+                margin-left: 0.75em;
+                margin-right: 0;
+            }
+        }
+    }
+}

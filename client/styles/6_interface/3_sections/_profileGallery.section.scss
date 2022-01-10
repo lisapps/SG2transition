@@ -1,0 +1,22 @@
+// Why is this named profileGallery? Why is it a downloadableGallery?
+
+.s-downloadableGallery {
+
+    .c-downloadableCard {
+        &__ {
+            &title, &copy { color: white; }
+        }
+    }
+
+    .l-flexTiles {
+        &__item {
+            background-color: rgba(53,53,53,0.85);
+
+            // flexTiles Modifier
+            &-- {
+                &alternate { background-color: rgba(40,40,40,0.7); }
+            }
+        }
+    }
+
+}

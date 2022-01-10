@@ -1,0 +1,30 @@
+.s-footer {
+	background: #000;
+	padding: 2em 1em 1.75em;
+	&__quickLinks {
+		display: flex;
+		margin: 0 0 1.25em 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0.75em;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		@include media-md {
+			flex-direction: row;
+		}
+		li {
+			padding: 1em 0;
+			@include media-md {
+				padding: 0 1em;
+				border-right: 1px solid #6c7175;
+			}
+			&:last-of-type {
+				border: 0;
+			}
+			a {
+				color: #d8d8d8;
+			}
+		}
+	}
+}

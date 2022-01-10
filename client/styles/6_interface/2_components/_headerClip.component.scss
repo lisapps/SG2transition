@@ -1,0 +1,174 @@
+.c-headerClip {
+
+	$root: &;
+	align-self: center;
+
+	// Children
+	&__{
+		&title {
+			position: relative;
+			background: none;
+			color: white;
+			margin: 0;
+			padding: 1em;
+			line-height: 1.875rem;
+			font-size: $headerClip-fontSize;
+			border-radius: 0 $headerClip-borderRadius 0 0;
+			@media screen and (min-width: 768px) {
+				padding: 1.25rem 1.875rem 1.25rem 0;
+			}
+			&::after {
+				content: '';
+				background: $headerClip-title-bg-default;
+				width: 100vw;
+				height: 100%;
+				top: 0;
+				right: 0;
+				position: absolute;
+				z-index: -1;
+				@media screen and (min-width: 768px) {
+					border-radius: 0 $headerClip-borderRadius 0 0;
+					backdrop-filter: blur(6px);
+					-webkit-backdrop-filter: blur(6px);
+				}
+			}
+		}
+		&desc {
+			position: relative;
+			padding-bottom: 1rem;
+			font-size: 1rem;
+			padding-left: 1.625em;
+			padding-right: 1.625em;
+			@media screen and (min-width: 768px) {
+				// background: $headerClip-desc-background;
+				padding-left: 0;
+				padding-right: 1.875rem;
+			}
+			&::after{
+				content: '';
+				background: $headerClip-desc-bg-default;
+				width: 100vw;
+				height: 100%;
+				top: 0;
+				right: 0;
+				position: absolute;
+				z-index: -1;
+			}
+		}
+		&cta {
+			position: relative;
+			background: none;
+			padding: .5em 1em;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@media screen and (min-width: 768px) {
+				border-radius: 0 0 $headerClip-borderRadius 0;
+				padding: 0.325rem 1.875rem 0.325rem 0;
+				text-align: left;
+				min-height: 1em;
+				justify-content: left;
+			}
+			&::after {
+				content: '';
+				background: $headerClip-cta-bg-default;
+				width: 100vw;
+				height: 100%;
+				top: 0;
+				right: 0;
+				position: absolute;
+				z-index: -1;
+				@media screen and (min-width: 768px) {
+					border-radius: 0 0 $headerClip-borderRadius 0;
+				}
+			}
+			&:empty {
+				@media screen and (max-width: 767px) {
+					display: none;
+				}
+			}
+			span {
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+				text-align: center;
+				font-size: 1.125em;
+			}
+
+			svg {
+				fill: white;
+				margin-right:.25em;
+				vertical-align: -0.125rem;
+			}
+
+			a:not(.btn) { // !-- Specificity Clash --- This shouldn't exist: Reformat a:not(.btn) declared in normalize.
+				color: white !important;
+				text-decoration: none;
+				flex-grow: 1;
+				&:hover {
+					svg { fill: white; }
+				}
+			}
+		}
+	}
+
+	html[dir="rtl"] & {
+		text-align: right;
+		#{$root}__cta {
+			svg { 
+				margin-right: 0;
+				margin-left: 0.25em;
+			}
+		}
+	}
+
+	// Modifiers
+	&-- {
+		&light {
+			.c-headerClip__title {
+				color: black;
+				&::after{ 
+					background: $headerClip-title-bg-light;
+				}
+			}
+			.c-headerClip__desc {
+				color: black;
+				&::after {
+					background: $headerClip-desc-bg-light;
+				}
+			}
+		}
+		&dark {
+			.c-headerClip__title {
+				color: white;
+				&::after{ 
+					background: $headerClip-title-bg-dark;
+				}
+			}
+			.c-headerClip__desc {
+				color: white;
+				&::after {
+					background: $headerClip-desc-bg-dark;
+				}
+			}
+		}
+		&altCTA {
+			.c-headerClip__cta {
+				&::after { 
+					background: $headerClip-cta-bg-alt;
+				}
+			}
+		}
+
+		&xbox{
+			.c-headerClip__cta {&::after {background: #0e7a0d;}}
+		}
+		&playstation{
+			.c-headerClip__cta {&::after {background: #003791;}}
+		}
+		&nintendo{
+			.c-headerClip__cta {&::after {background: #e60012;}}
+		}
+	}
+}

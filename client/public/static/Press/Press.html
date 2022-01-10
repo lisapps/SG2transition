@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://styleguide.kingston.com/css/kingston/"
+    />
+    <title>In page navigation</title>
+  </head>
+  <body id="iframe-body" style="overflow: hidden">
+    <section class="s-press">
+      <div class="l-tabView">
+        <a
+          href="http://www.kingston.com/"
+          target="_blank"
+          rel="noreferrer"
+          class="l-tabView__externals"
+          >Press Images</a
+        >
+        <ul class="l-tabView__tabs" role="tablist">
+          <li class="l-tabView__tabs__mobile">
+            <span>2017 Press Releases</span
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path d="M24 2L8 16l16 14" />
+            </svg>
+          </li>
+          <li
+            class="l-tabView__tabs__tab l-tabView__tabs__tab--active"
+            role="tab"
+          >
+            2017 Press Releases
+          </li>
+          <li class="l-tabView__tabs__tab" role="tab">2018 Press Releases</li>
+          <li
+            class="l-tabView__tabs__tab"
+            role="tab"
+            data-href="http://cmc.kingston.com/"
+          >
+            Press Images
+          </li>
+        </ul>
+        <div class="l-tabView__panels">
+          <div
+            class="l-tabView__panels__panel l-inner l-tabView__panels__panel--active"
+            role="tabpanel"
+          >
+            <ol class="c-dateList l-inner">
+              <li>
+                <a class="c-dateList__listing" href="#PressLink" target="_blank"
+                  ><div class="c-dateList__listing__title">May 4</div>
+                  <div class="c-dateList__listing__desc">Press Title</div></a
+                >
+              </li>
+            </ol>
+          </div>
+          <div class="l-tabView__panels__panel l-inner" role="tabpanel">
+            <p class="l-inner">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../rexusManager.component.js"></script>
+    <script src="../cuid.component.js"></script>
+    <script src="../tabs.layout.js"></script>
+  </body>
+</html>

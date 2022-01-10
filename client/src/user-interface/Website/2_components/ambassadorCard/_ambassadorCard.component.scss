@@ -1,0 +1,101 @@
+.c-ambassadorCard {
+    $root: &;
+    display: block;
+    height: 18.250rem;
+    width: 100%;
+    position: relative; 
+    margin-top: -3.125rem;
+    margin-left: 0;    
+    @media screen and (min-width: 37.5em) {
+        margin-top: 0;
+        margin-left: -5%;
+    }
+
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        &:hover, &:focus {
+            #{$root}__name {
+                h4 { color: $link-color-dark; }
+            }
+        }
+
+        picture {
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                min-height: 18.250rem;
+                width: 100%;
+                object-fit: cover;
+    
+                @media screen and (min-width: $screen-xlg) {
+                    transform: translateY(-10%);
+                    // top: 85%;
+                    // transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+        width: 18.25rem;
+        background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+        position: absolute;
+        bottom: 0;
+        padding: 10% 0.750em 0.750em;
+        transform-origin: initial;
+        overflow: hidden;
+        @media screen and (min-width: 37.5em) {
+            width: 100%;   
+        }
+            
+        h4 {
+            max-width: 80%; 
+            font-family: $font-2-family;
+            color: white; 
+            margin-bottom: 0;
+            hyphens: auto;
+            margin: auto;
+        }
+    }
+
+    html[dir="rtl"] & {
+        @media screen and (min-width: 37.5em) {
+            margin-left: 0;
+            margin-right: -5%;    
+        }
+            
+        &:first-child {
+            @media screen and (min-width: 37.5em) {
+                margin-right: 0;
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);    
+            }
+            #{$root}__name {
+                h4 { 
+                    @media screen and (min-width: 37.5em) {
+                        transform: translateX(10%);
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            @media screen and (min-width: 37.5em) {
+                -webkit-clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+            }
+            #{$root}__name {
+                h4 {
+                    @media screen and (min-width: 37.5em) {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+    }
+}

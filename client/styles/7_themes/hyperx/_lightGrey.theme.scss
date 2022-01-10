@@ -1,0 +1,7 @@
+.t-lightgrey, .t-lightGrey {
+	$body-color: $color-default-light-bg;
+	background-color: $body-color;
+	.f-input {
+		background-color: $body-color;
+	}
+}

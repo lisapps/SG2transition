@@ -1,0 +1,22 @@
+.e-historyArrow {
+  &__icon {
+    display: inline-block;
+    transform: scaleX(-1);
+    height: 26px;
+    width: auto;
+    position: relative;
+    vertical-align: bottom;
+    width: inherit;
+    left: -6px;
+    fill: #a0a0a0;
+    transition: fill 300ms, transform 300ms;
+  }
+
+  &:hover {
+    .e-historyArrow__icon {
+      fill: white;
+      text-decoration: underline;
+      transform: scaleX(-1) translateX(3px);
+    }
+  }
+}

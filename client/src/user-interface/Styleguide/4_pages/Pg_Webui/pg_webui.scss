@@ -1,0 +1,12 @@
+.pg-webMenu {
+  padding: 1em;
+  &__main {
+    background: #252525;
+    color: white;
+    padding: 1.25em 1.25em;
+    li {
+      font-size: 1.25em;
+      padding: 1.5em;
+    }
+  }
+}

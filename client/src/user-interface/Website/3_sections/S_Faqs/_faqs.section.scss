@@ -1,0 +1,76 @@
+.s-faqs {
+    $root: &;
+    padding: 1.5em 0;
+
+	@include media-md{
+		padding: 2em 0;
+	}
+	@include media-lg{
+		padding: 3.125em 0;
+    }
+    
+    .c-accordion {
+        &__ {
+            &tab {
+                button {
+                    color: $faqs_tab_text_color;
+                    border-bottom: 1px solid $color-default-med-bg;
+                    transition: color, border;
+                    transition-duration: $textHoverSpeed, $accordionSpeed;
+                    transition-timing-function: ease, ease-in;
+
+                    &:hover, &:focus {
+                        color: $accordionTitle_color_active;
+                        .c-accordion__tab__icon {
+                            fill: $accordionArrow_color_active;
+                        }
+                    }
+
+                    .c-accordion__tab__icon { 
+                        fill: $faqs_tab_icon_color; 
+                        transition: transform $accordionSpeed;
+                    }
+                }
+                &--active {
+                    button { 
+                        border-bottom: 1px solid transparent; 
+                        color: $accordionTitle_color_active;
+                        .c-accordion__tab__icon {
+                            fill: $accordionArrow_color_active;
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+            &panel {
+                width: 100vw;
+                background-color: $faqs_content_panel_color;
+                margin-left: calc(-50vw + 50%);
+            } 
+        }
+    }
+
+    &__ {
+        &content {
+            color: $faqs_content_text_color;
+            padding: 1.25em 0;
+            .l-inner { 
+                padding: 0 2.50em; 
+                > * {
+                    &:last-child { margin-bottom: 0; }
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        .c-accordion {
+            &__{
+                &panel {
+                    margin-right: calc(-50vw + 50%);
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

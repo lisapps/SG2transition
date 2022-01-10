@@ -1,0 +1,14 @@
+{ 
+    "productGallery3-layout-gutter": "1em",
+    "productGallery3-bgColor": "$gallery",
+    "productGallery3-activeTab-borderTop": "#00BAFD",
+    "productGallery3-activeTab-bg": "$gallery",
+    "productGallery3-tab-color-hover": "#5E5E5E",
+    "productGallery3-heading-bgColor": "black",
+    "productGallery3-heading-textColor": "white",
+
+    "productGallery3-tabView-bg-color": "black",
+
+    "productCard4-selectionsBtn-notSelected-btn-bg-color": "#353535",
+    "productCard4-selectionsBtn-notSelected-btn-bg-color-hover": "#A20520"
+}

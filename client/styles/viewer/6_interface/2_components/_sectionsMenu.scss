@@ -1,0 +1,130 @@
+.v-sectionsMenu {
+  &__brands {
+    background: $v-altBg;
+    padding: 1em 0;
+  }
+  &__tabs {
+    background: $v-mainBg;
+    height: 50px;
+  }
+  &__main {
+    background: $v-altBg;
+    color: white;
+    padding: 1.25em 1.25em;
+  }
+}
+
+.v-brandLogo {
+  position: relative;
+  padding: 1em;
+  opacity: 0.4;
+
+  transition: background 250ms;
+  border-radius: 14px;
+  transition-timing-function: ease-out;
+  &:hover {
+    cursor: pointer;
+    &::after {
+      transform: scaleX(0.9);
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    background: #979797;
+    margin: 0.25em auto 0;
+    height: 1px;
+    max-width: 60%;
+    transition: transform 300ms;
+  }
+  &-- {
+    &kt {
+      svg {
+        width: 13em;
+        height: auto;
+      }
+    }
+    &hx {
+      svg {
+        width: 13em;
+        height: auto;
+      }
+    }
+    &active {
+      background: #323232;
+      border-radius: 14px;
+      opacity: 1;
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+      &::after {
+        animation-timing-function: ease-in-out;
+        animation-name: brandAnimation;
+        animation-duration: 250ms;
+        background: #00c5ff;
+      }
+    }
+  }
+}
+
+.v-sectionCard {
+  padding: 1.5em;
+  position: relative;
+  margin-bottom: 1em;
+  color: white;
+  background: #222222;
+  border-radius: 10px;
+  transition: background-color 250ms ease-out;
+  &:hover {
+    background: #323232;
+    border-radius: 14px;
+    cursor: pointer;
+  }
+  &__ {
+    &verified {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      svg {
+        fill: lime;
+      }
+    }
+    &name {
+      padding: 0 0 0.75em;
+      position: relative;
+      text-align: center;
+      &::after {
+        content: "";
+        height: 1px;
+        display: block;
+        background: #979797;
+        bottom: 0;
+        position: absolute;
+        width: 105%;
+        margin-left: -2.5%;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin: 0 auto 2em;
+  }
+}
+
+@keyframes brandAnimation {
+  0% {
+    transform: scaleX(0.9);
+    background: #979797;
+  }
+  40% {
+    background: #979797;
+  }
+  60% {
+    transform: scaleX(0.15);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

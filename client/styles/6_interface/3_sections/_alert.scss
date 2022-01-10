@@ -1,0 +1,98 @@
+.l-mOverlay{
+      background: rgba(255,255,255,0.9);
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1005;
+      transition: opacity 500ms;
+      &[aria-hidden="true"]{
+            opacity: 0;
+            visibility: hidden;
+      }
+      &[aria-hidden="false"]{
+            opacity: 1;
+            visibility: visible;
+      }
+      .c-alert{
+            top: 45%;
+            transform: translateY(-50%);
+            margin: 0 auto;
+            &:focus{
+                  outline: 2px solid lightblue;
+            }
+      }
+}
+.c-alert{
+      position: relative;
+      max-width: 27rem;
+      display: flex;
+      flex-direction: column;
+      &:focus{
+            outline: 0;
+      }
+      &__header{
+            background: #000;
+            color: white;
+            padding: .5em 1em;
+            p{
+                  &:last-child{
+                        margin: 0;
+                  }
+            }
+      }
+      &__content, &__cta{
+            border: 1px solid #ccc;
+            background: white;
+            padding: .5em 1em;
+            border-top: 0;
+      }
+      &__content{
+            p{
+                  margin:0;
+            }
+            &:not(:last-child){
+                  border-bottom: 0;  
+            }
+      }
+      &__cta{
+            display: flex;
+            align-items: flex-end;
+            &__links{
+                  display: inline-block;
+                  position: absolute;
+                  right: 0;
+                  padding-right: 1em;
+                  bottom: 0.5em;
+            }
+            .e-btn, button{
+                  margin: 0 .125rem;
+            }
+            &--reversed{
+                  flex-direction: row-reverse;
+                  .c-alert__cta__links{
+                        right: auto;
+                        padding-right: 0;
+                        padding-left: 1em;
+                        left: 0;
+                  }
+            }
+      }
+      &__close{
+            align-self: flex-end;
+            position: absolute;
+            right: .5em;
+            top: .5em;
+            &:focus{
+                  outline: 1px solid lightblue;
+            }
+            & + .c-alert__header{
+                  padding: .5em 2.5em .5em 1em;
+            }
+      }
+      .f-input{
+            margin: 0;
+            border: 0;
+      }
+}

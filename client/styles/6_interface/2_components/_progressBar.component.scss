@@ -1,0 +1,79 @@
+.c-progressBar {
+    $root: &;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    &__ {
+        &info {
+            margin-left: auto;
+            &__ {
+                &size {
+                    display: inline;
+                    margin-right: 0.25em;
+
+                    span { font-weight: $font-1-weight-bold; }
+                }
+            }
+        }
+        &bar {
+            height: 0.75em;
+            width: 100%;
+            display: block;
+            position: relative;
+            background-color: $progressBar-bg-color;
+            border-radius: 0.25em;
+            border: 1px solid $progressBar-outline;
+
+            // &:after {
+            //     content: attr(data-size) "(" attr(data-value) ")";
+            //     position: absolute;
+            //     top: -1.75em;
+            //     right: 0;
+            // }
+
+            &__ {
+                &determinate {
+                    height: 100%;
+                    width: var(--progressValue);
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+            }
+        }
+    }
+
+    &-- {
+        &low {
+            #{$root}__bar__determinate { background-color: $progressBar-bg-color-low; }
+        }
+        &medium {
+            #{$root}__bar__determinate { background-color: $progressBar-bg-color-medium; }
+        }
+        &high {
+            #{$root}__bar__determinate { background-color: $progressBar-bg-color-high; }
+        }
+        &low, &medium, &high {
+            #{$root}__bar__determinate { opacity: 0.75; };
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__ {
+            &info {
+                margin-left: initial;
+                margin-right: auto;
+            }
+            &bar {
+                &__ {
+                    &determinate {
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+}

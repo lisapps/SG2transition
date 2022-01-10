@@ -1,0 +1,25 @@
+.t-stone {
+
+    background-color: $stone;
+
+    .c-articleCard__details {
+        background: white;
+        color: $coal;
+    }
+
+    .c-bannerCard__details {
+        background-color: white;  
+        color: $coal
+    }
+
+    .c-blogCard {
+        background-color: white;  
+        color: $coal;
+        &__tags {
+            &:after { background-image: linear-gradient(90deg, rgba(225,225,225,0.1), white); }
+        }
+    }
+    
+    
+}
+

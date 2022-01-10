@@ -1,0 +1,37 @@
+.s-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  flex: 1;
+  background: white;
+  color: #252525;
+  padding: 2.5em 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+  a {
+    color: #2263b2;
+    &:hover {
+      color: darken($color: #2263b2, $amount: 15%);
+      text-decoration: underline;
+    }
+  }
+  &__headline {
+    padding-bottom: 0 !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "tabbedview-bg-color": "$color-default-light-bg",
+    "tabbedview-hover-bg-color": "$silver",
+    "tabbedview-hover-focus-bg-color": "$gray",
+    "tabbedview-active-bg-color": "$coal"
+}

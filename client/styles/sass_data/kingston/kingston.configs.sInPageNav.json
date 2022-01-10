@@ -1,0 +1,9 @@
+{
+    "inPageNavColor": "inherit",
+    "inPageNav-link-color": "black",
+    "inPageNav-link-color-dk-bg": "white",
+    "inPageNav-text-color-dk-bg": "white",
+    "inpagenav_link_vert_padding": "1.15rem",
+    "inPageNav-price-font": "$font-1-family",
+    "inPageNav-price-color": "$cloudy"
+}

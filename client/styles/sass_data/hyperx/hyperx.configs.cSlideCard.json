@@ -1,0 +1,6 @@
+{
+    "slideHeight": "2.75em",
+    "slideBGColor": "$gallery",
+    "border-color": "$silver",
+    "transitionSpeed": "500ms"
+}

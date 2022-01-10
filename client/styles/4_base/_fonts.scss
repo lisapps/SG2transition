@@ -1,0 +1,41 @@
+/* ======================================== */
+/* =                                      = */
+/* =               Font Base              = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     @font-face base styles
+.      
+*/
+//https://www.hyperxgaming.com/Themes/HyperX/fonts/rbno3.1-book-webfont.woff
+
+//HYPERX
+@font-face {
+      font-family: 'rbno';
+      src: url('/fonts/rbno3.1-book-webfont.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+}
+@font-face {
+      font-family: 'rbno';
+      src: url('/fonts/rbno3.1-extrabold-webfont.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+}
+
+
+//KINGSTON
+@font-face {
+      font-family: "breuer text";
+      src: url('https://www.kingston.com/shared/fonts/breuertext-medium-webfont.woff2') format('woff');
+      font-weight: 500;
+      font-style: normal;
+}
+@font-face {
+      font-family: "breuer text";
+      src: url('https://www.kingston.com/shared/fonts/breuertext-bold-webfont.woff2') format('woff');
+      font-weight: 700;
+      font-style: normal;
+}

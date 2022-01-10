@@ -1,0 +1,9 @@
+node_modules
+.parcel-cache/
+dist/
+.env
+.DS_Store
+.vscode/
+server/node_modules
+client/node_modules
+package-lock.json

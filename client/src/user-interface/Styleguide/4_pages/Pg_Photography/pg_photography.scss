@@ -1,0 +1,25 @@
+.pg-photography {
+  .s-content {
+    .l-row > .l-row__col {
+      padding: 1em;
+      @include media-lg {
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &__guidance {
+    ul li {
+      display: flex;
+      margin-bottom: 0.5em;
+      > strong:first-child {
+        min-width: 20px;
+        display: inline-block;
+        text-align: end;
+        margin-right: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.u-flex {
+  display: flex !important;
+}
+.u-flex1 {
+  flex: 1 !important;
+}
+.u-flexColumn {
+  flex-direction: column !important;
+  &\@md {
+    @include media-md {
+      flex-direction: column !important;
+    }
+  }
+  &\@lg {
+    @include media-lg {
+      flex-direction: column !important;
+    }
+  }
+}
+.u-flexRow {
+  flex-direction: row !important;
+  &\@md {
+    @include media-md {
+      flex-direction: row !important;
+    }
+  }
+  &\@lg {
+    @include media-lg {
+      flex-direction: row !important;
+    }
+  }
+}
+.u-flexCenterAll {
+  align-items: center !important;
+  justify-content: center !important;
+}
+.u-spaceAround {
+  justify-content: space-around !important;
+}
+.u-spaceBetween {
+  justify-content: space-between !important;
+}
+.u-justifyCenter {
+  justify-content: center !important;
+}
+.u-alignCenter {
+  align-items: center !important;
+}

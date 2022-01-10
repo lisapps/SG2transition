@@ -1,0 +1,11 @@
+{
+    "decoder-numBlock-backgroundColor": "$night",
+    "decoder-numBlock-color": "white",
+
+    "decoder-numBlock-number-backgroundColor": "black",
+    "decoder-numBlock-number-borderColor": "white",
+    "decoder-numBlock-number": "white",
+    "decoder-numBlock-number-active": "$gold",
+    
+    "sc_s-decoder_paddingLeft": "1.5rem"
+}

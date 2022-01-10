@@ -1,0 +1,32 @@
+.s-content {
+    padding: 3.125em 0;
+
+    h3 {
+        @media screen and (min-width: $screen-lg) {
+            margin: 0 0 1em;
+        }
+    }
+
+    p, ul {
+        &:last-child { margin: 0; }
+        @media screen and (min-width: $screen-lg) {
+            margin: 0 0 $content-pUl-marginLeft; 
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    p, ul, blockquote, .l-row__col > img
+    { margin: 0 0 1.25rem; }
+    
+    img {
+        &.u-fr { margin: .5em 0 .5em 1em; }
+        &.u-fl { margin: .5em 1em .5em 0; }
+    }
+
+    html[dir="rtl"] & {
+        ul {
+            padding-right: 1rem;
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+.c-emailOptin{
+      $root: &;
+      padding: 3.125em 1.125em 1.125em;
+
+      &__ {
+            &captcha{
+                  @include media-md {
+                        display: flex;
+                        align-items: center;
+                  }
+                  img{
+                        width: 100%;
+                        max-width: 11.5em;
+                  }
+                  &__field{
+                        flex-grow: 1;
+                        @include media-md {
+                              margin: 0 0 0 1em;
+                        }
+                  }
+            }
+            &form {
+                  padding-bottom: 1.5em;
+                  &__ {
+                        &field { width: 100%; }
+                        &cta {
+                              @include media-md { margin: 0.5em 0; }
+                              button {
+                                    width: 100%;
+                                    margin-top: 1em;
+                                    @include media-md { margin: 0; }
+                              }
+                        }
+                  }
+                  .row {
+                        box-sizing: border-box;
+                        display: block;
+                        @include media-md { 
+                              display: flex; 
+                              margin-bottom: 1em;  
+                        }
+                        &::after{
+                              display: none;
+                        }
+                        & > * {
+                              width: 100%;
+                              @include media-md { 
+                                    width: 50%; 
+                                    &:first-child{ margin-right: .5em; }
+                                    &:last-child{ margin-left: .5em; }
+                              }
+                        }
+                  }
+            }
+            &disclaimer { padding-bottom: 1.5em; }
+      }
+
+      .c-heading{
+            padding: 0 0 1.125em;
+            &:last-child{
+                  padding: 0 0 2.125em;
+            }
+            &__block__header{
+                  p{
+                        text-align: left;
+                  }
+            }
+      }
+
+      html[dir="rtl"] & {
+            &__ {
+                  &captcha__field {
+                        @include media-md { margin: 0 1em 0 0; }
+                  }
+                  &form {
+                        .row {
+                              & > * {
+                                    @include media-md { 
+                                          width: 50%; 
+                                          &:first-child { 
+                                                margin-right: 0; 
+                                                margin-left: 0.5em;
+                                          }
+                                          &:last-child { 
+                                                margin-right: 0.5em; 
+                                                margin-left: 0; 
+                                          }
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+}

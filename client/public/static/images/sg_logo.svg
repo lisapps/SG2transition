@@ -1,0 +1,22 @@
+<svg width="30" height="25" viewBox="0 0 30 25" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    X
+  </title>
+  <defs>
+    <linearGradient x1="0%" y1="30.61%" x2="100%" y2="69.39%" id="linearGradient-1">
+      <stop stop-color="#00C6FF" offset="0%"/>
+      <stop stop-color="#FFAF00" offset="100%"/>
+    </linearGradient>
+    <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+      <stop stop-color="#00C6FF" offset="0%"/>
+      <stop stop-color="#FFAF00" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <g id="icons/temp_logo3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="temp-logo">
+      <path d="M15 25c8.284 0 15-6.716 15-15 0-8.284-6.716 0-15 0-8.284 0-15-8.284-15 0s6.716 15 15 15z" id="Oval" fill="url(#linearGradient-1)" opacity=".495"/>
+      <circle id="Oval" fill="url(#linearGradient-2)" opacity=".503" cx="15" cy="11" r="11"/>
+      <circle id="Oval" fill="#FFF" opacity=".231" cx="15" cy="5" r="2"/>
+    </g>
+  </g>
+</svg>

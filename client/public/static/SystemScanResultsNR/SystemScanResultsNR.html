@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://styleguide.kingston.com/css/kingston/"
+    />
+    <title>In page navigation</title>
+  </head>
+  <body id="iframe-body" style="overflow: hidden">
+    <section
+      class="s-systemScanResults s-systemScanResults--noResults t-silver"
+      id="systemScanResults0"
+    >
+      <div class="c-heading">
+        <div class="c-heading__block">
+          <div class="c-heading__block__header">
+            <h2>System Scan Results</h2>
+          </div>
+        </div>
+      </div>
+      <div class="l-inner s-systemScanResults__layout">
+        <div
+          class="c-systemScanResultsCard c-systemScanResultsCard--noScanResult"
+        >
+          <div class="c-systemScanResultsCard__header">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="c-systemScanResultsCard__header__icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <use
+                xlink="http://www.w3.org/1999/xlink"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="../images/icons-map.svg#results-no_info"
+              />
+            </svg>
+            <h3 class="u-h5">No Scan Results</h3>
+          </div>
+          <div class="c-systemScanResultsCard__content">
+            <p>
+              Sorry, this scan didn’t give us anything to base a storage
+              recommendation on. Please feel free to reach out to a Kingston
+              expert to help with your configuration questions.
+            </p>
+            <div class="c-systemScanResultsCard__content__cta">
+              <a class="e-btn e-btn--alt1"
+                ><svg xmlns="http://www.w3.org/2000/svg">
+                  <use
+                    xlink="http://www.w3.org/1999/xlink"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="../images/icons-map.svg#icon-chat"
+                  /></svg
+                ><span>Contact Support</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../rexusManager.component.js"></script>
+    <script src="../systemScanResults.section.js"></script>
+    <script src="../progressBar.component.js"></script>
+  </body>
+</html>

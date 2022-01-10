@@ -1,0 +1,533 @@
+.c-slideMenu {
+    $root: &;
+
+    display: flex;
+    height: $slideHeight;
+    position: sticky;
+    top: 0;
+    background-color: $slideBGColor;
+    transition: top 400ms;
+
+    &:after { 
+        content: "";
+        height: $slideHeight;
+        width: calc(100vw - 2em);
+        position: absolute;
+        left: 1em;
+        border-bottom: 1px solid $border-color;
+    
+        @include media-lg {
+            display: none;
+        }
+    }
+
+    &__ {
+        &slider {
+            @include media-md {
+                width: 50vw;
+                overflow: hidden;
+            }
+
+            &.c-filterCard {
+                .c-filterCard__results {
+                    display: none; 
+                }
+                &--applied {
+                    .c-filterCard__title {
+                        &:after {
+                            display: none;
+                            content: attr(data-applied);
+                        }
+                    }
+                }
+            }
+
+            &__{
+                &toggle {
+                    display: inline-flex;
+                    width: auto;
+                    align-items: center;
+                    padding: 0.625em 1em;
+                    margin: 0;
+                    background-color: transparent;
+                    border: none;
+                    z-index: 10;
+                    &:hover { cursor: pointer; }
+                    > * { margin: 0; }
+
+                    svg {
+                        height: 2em;
+                        width: 2em;
+                        position: absolute;
+                        left: 1em;
+                        opacity: 0;
+                        transition: opacity 250ms ease;
+                    }
+
+                    h5 { 
+                        transform: translateX(0); 
+                        transition: transform 250ms ease;
+                    }
+
+                    &:hover, &:focus { background-color: transparent; }
+                }
+                
+                &panel {
+                    // display: flex;
+                    position: absolute;
+                    top: 2.70em;
+                    height: 0;
+                    width: 100vw;
+                    background-color: $slideBGColor;
+                    flex-direction: column;
+                    transition: height;
+                    transition-duration: 500ms;
+
+                    @include media-md {
+                        display: flex;
+                        height: calc(100vh - #{$slideHeight});
+                        width: 16rem;
+                        position: absolute;
+                        border-right: 1px solid $border-color;
+                        transform: translateX(-16rem);
+                        transition: transform;
+                        transition-duration: $transitionSpeed;
+                    }
+
+                    @include media-lg {
+                        display: none;
+                        height: auto;
+                        top: unset;
+                        width: auto;
+                        border: 1px solid $border-color;
+                        transform: translateX(0);
+                        transition: unset;
+                    }
+                    
+                    &__{
+                        &content {
+                            height: 100%;
+                            width: 100%;
+                            flex-grow: 1;
+                            overflow-x: hidden;
+                            overflow-y: scroll;
+                            -webkit-overflow-scroll: touch;
+                            padding: 0;
+                            border-bottom: 0;
+                            opacity: 0;
+                            transition: padding, opacity;
+                            transition-duration: $transitionSpeed, $transitionSpeed;
+                            transition-delay: 350ms, 0ms;
+
+                            @include media-md { 
+                                padding: 1em;
+                                border-bottom: 1px solid $border-color;
+                                opacity: 1; 
+                            }
+
+                            ul {
+                                li {
+                                    background-color: rgba(256,256,256, 0);
+                                    padding: 0.5em 0;
+                                    margin-bottom: 0;
+                                    outline: none;
+                                    transition: background-color 500ms;
+
+                                    &[tabindex]:hover, &:focus { 
+                                        font-weight: 500;
+                                        width: 100%;
+                                        background-color: rgba(256,256,256, 0.5);
+                                    }
+
+                                    .f-input {
+                                        margin: 0; 
+                                        border: none;
+                                        &:last-child { margin: 0; }
+                                        &__checkbox {
+                                            input {
+                                                &:checked {
+                                                    & ~ label {
+                                                        font-weight: 500;
+                                                    }
+                                                }
+                                            }
+                                            label {
+                                                margin-left: 0;
+                                                margin-bottom: 0; 
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &cta {
+                            position: absolute;
+                            width: 100%;
+                            top: $slideHeight;
+                            background-color: white;
+                            padding: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: padding, opacity;
+                            transition-duration: $transitionSpeed, 150ms;
+                            transition-delay: 350ms, 0ms;
+
+                            @include media-md {
+                                position: relative;
+                                top: auto;
+                                padding: 0.5em 1em;
+                                opacity: 1; 
+                            }
+
+                            .e-btn { 
+                                width: 100%; 
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            
+            &--{
+                &active {
+                    @include media-md { width: 16em; }
+
+                    &.c-filterCard {
+                        .c-filterCard__results {
+                            display: block; 
+                            @include media-lg {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    #{$root}__slider__panel {
+                        // height: 100vh;
+                        // top: 0;
+                        height: calc(100vh - #{$slideHeight});
+                        height: calc((var(--vh, 1vh) * 100) - #{$slideHeight} - (var(--navHeight)));
+                        // height: -webkit-fill-available;
+                        @include media-md { transform: translateX(0); }
+                        @include media-lg { 
+                            display: block; 
+                            height: auto;
+                        }
+
+                        &__ {
+                            &content { 
+                                opacity: 1;
+                                padding: 1em; 
+                                border-top: 1px solid $border-color; 
+                                transition: padding, opacity;
+                                transition-duration: 0ms, 500ms;
+                                @include media-lg { border-top: none; }
+                            }
+                            &cta { 
+                                top: auto;
+                                bottom: 0;
+                                padding: 0.5em 1em; 
+                                opacity: 1;
+                                border-top: 1px solid $border-color;
+                                visibility: visible;
+                                transition: padding, opacity;
+                                transition-duration: 0ms, 500ms;
+                                transition-delay: 0ms, 150ms;
+                            }
+                        }
+                    }
+                }
+
+                &right {
+                    position: absolute;
+                    right: 0;
+                    @include media-md {
+                        height: $slideHeight;
+                        width: 50vw;
+                        text-align: right;
+
+                        transition: height;
+                        transition-delay: 240ms;
+                        transition-duration: 0ms;
+                    }
+
+                    @include media-lg {
+                        transition: unset;
+                    }
+
+                    #{$root}__slider__toggle {
+                        svg { 
+                            right: 1em; 
+                            left: auto;
+                        }
+                        h5 { transform: translate(0); }
+                    }
+                    #{$root}__slider__panel {
+                        right: 0;
+                        @include media-md {
+                            border-left: 1px solid $border-color;
+                            border-right: none;
+                            transform: translateX(16rem);
+                        }
+                        @include media-lg {
+                            border-right: 1px solid $border-color;
+                        }
+                    }
+                    &#{$root}__slider--active {
+                        position: absolute;
+                        right: 0;
+                        height: 100vh;
+                        text-align: right;
+                        #{$root}__slider__panel {
+                            transform: translateX(0);
+                        }  
+                    }
+                }
+            }
+        }
+        &overlay { 
+            opacity: 0.2;
+        }
+    }
+    &-- {
+        &activeLeft {
+            #{$root}__slider--right { 
+                display: none; 
+                @include media-lg {
+                    display: block;
+                    pointer-events: none;
+                }
+                #{$root}__slider__toggle {
+                    @include media-lg {
+                        h5 { color: $color-default-med-bg; }
+                        svg { fill: $color-default-med-bg; }
+                    }
+                }
+            }
+        }
+        &activeRight {
+            #{$root}__slider:not(.c-slideMenu__slider--right) { 
+                display: none; 
+                @include media-lg {
+                    display: block;
+                    pointer-events: none;
+                }
+                #{$root}__slider__toggle {
+                    @include media-lg {
+                        h5 { color: $color-default-med-bg; }
+                        svg { fill: $color-default-med-bg; }
+                    }
+                }
+            }
+            #{$root}__slider--right { display: block; }
+        }
+ 
+        &sticky {
+            background-color: transparent;
+            border-bottom: 1px solid $border-color;
+            // z-index: 1009;
+            z-index: 2147483638;
+
+            &:after {
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: auto;
+                background-color: $slideBGColor;
+                z-index: -1;
+            }
+
+            .c-filterCard--applied {
+                .c-filterCard__title {
+                    &:after {
+                        display: inline-block;
+                    }
+                }
+            }
+            
+            #{$root}__slider {
+                &__toggle {
+                    svg { opacity: 1; }
+                    h5 { 
+                        transform: translate(2em); 
+                        &:only-child {
+                            transform: translate(0);
+                        }
+                    }
+                }
+                &--right {
+                    #{$root}__slider__toggle {
+                        h5 { 
+                            transform: translate(-2em); 
+                            &:only-child {
+                                transform: translate(0);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#{$root}--activeLeft, &#{$root}--activeRight {
+                border-bottom: none;
+                &:before {
+                    @include media-md {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        height: $slideHeight;
+                        width: 16em;
+                    }
+                }
+                &:after {
+                    background-color: white;
+                }
+            }
+
+            &#{$root}--activeLeft {
+                &:before {
+                    @include media-md {
+                        left: 0;
+                        border-right: 1px solid $border-color;
+                    }
+                }
+            }
+            &#{$root}--activeRight {
+                &:before {
+                    @include media-md {
+                        right: 0;
+                        border-left: 1px solid $border-color;
+                    }
+                }
+            }
+        }
+
+        &disableScroll {
+            position: relative;
+            overflow: hidden;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__ {
+            &slider {
+                &__ {
+                    &toggle {
+                        svg { right: 1em; }
+                    }
+                    &panel {
+                        @include media-md {
+                            border-right: none;
+                            border-left: 1px solid $border-color;
+                            transform: translateX(16rem);
+                        }
+                        @include media-lg {
+                            border: 1px solid $border-color;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                &--{
+                    &active {
+                        #{$root}__slider__panel {
+                            display: flex;
+                            @include media-md {
+                                transform: translateX(0);
+                            }
+                            @include media-lg {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                    &right {
+                        left: 0;
+                        right: auto;
+                        @include media-md {
+                            width: 50vw;
+                            text-align: left;
+                        }
+                        #{$root}__slider__toggle {
+                            svg {
+                                left: 1em;
+                                right: auto;
+                            }
+                        }
+                        #{$root}__slider__panel {
+                            right: auto;
+                            left: 0;
+                            @include media-md {
+                                transform: translateX(-16rem);
+                                border-left: none;
+                                border-right: 1px solid $border-color;
+                            }
+                            @include media-lg {
+                                border-left: 1px solid $border-color;
+                            }
+                        }
+                        &#{$root}__slider--active {
+                            text-align: left;
+                            #{$root}__slider__panel {
+                                left: 0;
+                                right: auto;
+                                transform: translateX(0);
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+        &-- {
+            &sticky {
+                #{$root}__slider {
+                    &__toggle {
+                        h5 { 
+                            transform: translate(-2em); 
+                        }
+                    }
+                    &--right {
+                        #{$root}__slider__toggle {
+                            h5 { 
+                                transform: translate(2em);
+                            }
+                        }
+                    }
+                }
+
+                &#{$root}--activeLeft {
+                    &:before {
+                        @include media-md {
+                            left: auto;
+                            right: 0;
+                            border-right: none;
+                            border-left: 1px solid $border-color;
+                        }
+                    }
+                }
+                &#{$root}--activeRight {
+                    &:before {
+                        @include media-md {
+                            right: auto;
+                            left: 0;
+                            border-left: none;
+                            border-right: 1px solid $border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacity {
+    to { opacity: 1; }
+}
+
+@keyframes leftToRightText {
+    to { transform: translate(2em);  }
+}
+
+@keyframes rightToLeftText {
+    to { transform: translate(-2em);  }
+}

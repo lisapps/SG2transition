@@ -1,0 +1,24 @@
+
+
+
+{	
+	"btn-font-family": "$font-2-family",
+    "btn-font-weight": "$font-2-weight-normal",
+    "btn-font-size": "$font-base-size",
+
+	"btn-border-size": "1px",
+    "btn-corners": "3px",
+
+	"btn-padding": "0.5em 1.5em 0.6em",
+	"btn-margin": "0 0.125rem 0.5rem",
+
+	"btn1_normal": "( \"color\": white, \"background-color\": $mainred, \"border-color\": $mainred )",
+	"btn1_hover": "( \"color\": white, \"background-color\": $darkred, \"border-color\": $darkred )",
+	"button1": "(\"normal\": $btn1_normal, \"hover\": $btn1_hover)",
+
+	"btn2_normal": "( \"color\": black, \"background-color\": rgba(0,0,0,0.05), \"border-color\": $night )",
+	"btn2_hover": "( \"color\": black, \"background-color\": rgba(0,0,0,0.05), \"border-color\": $night )",
+	"button2": "(\"normal\": $btn2_normal, \"hover\": $btn2_hover)",
+
+	"buttons": "$button1, $button2"
+}

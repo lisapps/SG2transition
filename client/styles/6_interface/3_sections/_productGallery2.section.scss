@@ -1,0 +1,28 @@
+.s-productGallery2 {
+	padding: .625em;
+	.l-flexTiles {		
+		&__item {
+			position: relative;
+			overflow: hidden;
+			margin-top: -1px;
+			padding-bottom: .625em;
+			&:last-child { padding-bottom: 0; }
+			@media screen and (min-width: 37.5em) {
+				/*
+					// ^^ SHOULD BE 50em ^^ //
+					but can't because the minimum width allowed per card is 300
+					so somehow the JS needs to recognize when the flextiles should
+					activate on responsiveness
+				*/
+				padding: .625em;
+				&:last-child { padding-bottom: .625em; }
+				
+			}
+			&--alternate {
+				.c-productCard2 {
+					background: $color-default-light-bg; 
+				} 
+			}
+		}
+	}
+}

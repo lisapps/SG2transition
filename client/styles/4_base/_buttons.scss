@@ -1,0 +1,66 @@
+/* ======================================== */
+/* =                                      = */
+/* =              Button Base             = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base styles for button elements
+.      
+*/
+
+
+// - - - - - - - - - -
+// * Buttons
+// - - - - - - - - - -
+
+// .e-btn {
+.e-btn, button, input[type="submit"], input[type="reset"] {
+	border-radius: $btn-corners;
+	border-style: solid;
+	border-width: $btn-border-size;	
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $btn-font-family;
+	font-size: $btn-font-size;
+	font-weight: $btn-font-weight;
+	line-height: normal;
+	margin: 0;
+	padding: $btn-padding;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 150ms ease-in, border-color 150ms ease-in;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	outline: 0;
+}
+
+@for $i from 1 through length($buttons) {
+    @if $i==1 {
+        .e-btn {
+        	@include btnStates(nth($buttons, $i));
+		}
+		button.e-btn, input[type="submit"].e-btn, input[type="reset"].e-btn {
+        	@include btnStates(nth($buttons, $i));
+		}
+    } @else {
+        .e-btn--alt#{$i - 1} {
+            @include btnStates(nth($buttons, $i));
+		}
+		button.e-btn--alt#{$i - 1}, input[type="submit"].e-btn--alt#{$i - 1}, input[type="reset"].e-btn--alt#{$i - 1} {
+			@include btnStates(nth($buttons, $i));	
+		}
+    }
+}
+
+.e-btn {
+	&-- {
+		&\- { font-size: 0.875em; }
+		&\+ { font-size: 1.125em; }
+	}
+}

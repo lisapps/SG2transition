@@ -1,0 +1,7 @@
+{    
+    "searchConfig-outline-padding": "0 0.625em 0 1.375em",
+    "searchConfig-outline-padding-rtl": "0 1.375em 0 0.625em",
+    "searchConfig-input-border": "$cloudy",
+    "searchConfig-svg-fill": "$coal",
+    "searchConfig-singlebar-string": "$cloudy"
+}

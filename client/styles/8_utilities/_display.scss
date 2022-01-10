@@ -1,0 +1,122 @@
+/* ======================================== */
+/* =                                      = */
+/* =           Display Utilities          = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Defines display and visibility utilities
+.      
+*/
+
+// - - - - - - - - -
+// * Block 
+// prefix: .u-show
+// usage:  -sm || -md || -lg || -xlg
+// - - - - - - - - -
+
+.u-show {
+      &-sm {
+            display: initial;
+            @media screen and (min-width: $screen-md) { display: none; }
+      }
+      &-md {
+            display: none;
+            @media screen and (min-width: $screen-md) { display: initial; }
+            @media screen and (min-width: $screen-lg) { display: none; }
+      }
+      &-lg {
+            display: none;
+            @media screen and (min-width: $screen-lg) { display: initial; }
+            @media screen and (min-width: $screen-md) { &.u-show-md { display: initial; } }
+            @media screen and (min-width: $screen-xlg) { display: none; &.u-show-md { display: none; } }
+      }
+      &-xlg {
+            display: none;
+            @media screen and (min-width: $screen-xlg) { display: initial; }
+            @media screen and (min-width: $screen-lg) { &.u-show-lg { display: initial; } }
+            @media screen and (min-width: $screen-md) { &.u-show-md { display: initial; } }
+      }
+}
+
+// - - - - - - - - -
+// * None
+// prefix: $hide
+// usage:  hide || -sm || -md || -lg || -xlg
+// - - - - - - - - -
+.u-hide {
+      display: none;
+      &-sm {
+            display: none;
+            @media screen and (min-width: $screen-md) { display: initial; }
+      }
+      &-md {
+            display: initial;
+            @media screen and (min-width: $screen-md) { display: none; }
+      }
+      &-lg {
+            display: initial;
+            @media screen and (min-width: $screen-lg) { display: none; }
+      }
+}
+
+// - - - - - - - - - - -
+// display as block
+// - - - - - - - - - - -
+.u-block {
+      &-sm {
+            display: block;
+            @media screen and (min-width: $screen-md) { display: initial; }
+      }
+      &-md {
+            display: initial;
+            @media screen and (min-width: $screen-md) { display: block; }
+            @media screen and (min-width: $screen-lg) { display: initial; }
+      }
+      &-lg {
+            display: initial;
+            @media screen and (min-width: $screen-lg) { display: block; }
+            @media screen and (min-width: $screen-md) { &.u-block-md { display: initial; } }
+            @media screen and (min-width: $screen-xlg) { display: initial; &.u-block-md { display: initial; } }
+      }
+      &-xlg {
+            display: initial;
+            @media screen and (min-width: $screen-xlg) { display: block; }
+            @media screen and (min-width: $screen-lg) { &.u-block-lg { display: initial; } }
+            @media screen and (min-width: $screen-md) { &.u-block-md { display: initial; } }
+      }
+}
+
+// - - - - - - - - -
+// * Display Flex
+// - - - - - - - - -
+.u-dsp-flex{
+      display: flex !important;
+}
+
+// - - - - - - - - -
+// * Visibility
+// usage:  invisible
+// - - - - - - - - -
+.u-invisible {
+	visibility: hidden;
+	position: absolute;
+}
+
+.u-overlay {
+      &::before {
+            content: "";
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background-color: rgba(255,255,255,0.8);
+            z-index: 1000;
+      }
+}
+
+.u-frm-disable {
+      pointer-events: none;
+      opacity: 0.5;
+}

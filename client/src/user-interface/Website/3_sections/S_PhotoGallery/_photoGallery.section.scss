@@ -1,0 +1,137 @@
+.s-photoGallery {
+	$root: &;
+
+	.c-modal {
+		&__content {
+			height: 100%;
+			width: 100%;
+	
+			#{$root}__ {
+				&slider {
+					position: inherit;
+					height: 100%;
+					@include media-md { padding: 0; }
+					
+					.slick-track, .slick-list { height: 100%; }
+					.slick-slide { outline: 0; }
+		
+					&__imgWrap{
+						height: 100%;
+						text-align: center;
+						position: relative;
+						overflow: hidden;
+		
+						img {
+							display: inline-block;
+							height: 100vh;
+							width: auto;
+							max-height: 100%;
+							max-width: none;
+							position: absolute;
+							left: 50%;
+							margin: 0 auto;
+							transform: translateX(-50%);
+						}
+					}
+				}
+
+				&overlayControls {
+					display: flex;
+					width: 100%;
+					position: absolute;
+					bottom: 0;
+					background-color: $sPhotoGallery-overlayControls-bg;
+					justify-content: space-between;
+					align-items: center;
+					padding: 1em;
+		
+					button {
+						border: none;
+						&.slick-disabled svg { fill: $sPhotoGallery-slick-disabled; }
+	
+						svg {
+							height: 2.25em;
+							width: 2.25em;
+							fill: $sPhotoGallery-overlayControls-btn-svg;
+							transition: fill 250ms ease; 
+
+							&:hover, &:focus { 
+								fill: darken($sPhotoGallery-overlayControls-btn-svg-hover, 5%); 
+								cursor: pointer;
+							}
+						}
+					}
+			
+					p {
+						color: $sPhotoGallery-text;
+						margin: 0;
+						text-align: center;
+					}
+		
+					&__content {
+						opacity: 1;
+						transition: opacity 0.25s;
+		
+						&.fade { opacity: 0; }
+					}
+				}
+			}
+
+			&__ {
+				&captionTitle { line-height: 2.5; }
+				&captionDescription { line-height: 1.5; }
+			}
+		}
+	}
+
+	.slick-dots {
+		//-- If Touch Device
+		@media (hover: hover) { display: none !important; }
+	}
+
+	&__ {
+		&cards { padding: 0; }
+		&controls {
+			display: flex;
+			width: 100%;
+			padding: 1em;
+			position: absolute;
+			bottom: 0.5em;
+			background-color: $sPhotoGallery-controls-bg;
+			justify-content: space-between;
+			@include media-md { display: none; }
+
+			//-- If Touch Device
+			@media (hover: none) { display: none; }
+
+			button {
+				background-color: $sPhotoGallery-controls-btn-bg;
+				padding: 0;
+				border: none;
+				&.slick-disabled svg { fill: $color-default-med-bg; }
+
+				svg {
+					height: 2.25em;
+					width: 2.25em;
+					fill: $sPhotoGallery-controls-btn-svg;
+					transition: fill 250ms ease; 
+
+					&:hover, &:focus { 
+						fill: darken($sPhotoGallery-controls-btn-svg-hover, 5%); 
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+
+	html[dir="rtl"] & {
+		#{$root}__controls,
+		#{$root}__overlayControls {
+			button {
+				svg { transform: rotate(180deg); }
+			}
+		}
+	}
+}

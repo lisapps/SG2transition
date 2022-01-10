@@ -1,0 +1,261 @@
+// ### [[BEGIN]] LEGACY CODE REMOVE AS SOON AS POSSIBLE ### //
+.row {
+	@for $i from 1 through $col-number {
+		.col-span-#{$i} {
+			float: left;
+			width: $i * (100%/$col-number);
+			padding: 0 0.375em;
+			box-sizing: border-box;
+			&:not(.static) {
+				float: none;
+				width: 100%;
+				padding: 0;
+				@media screen and (min-width: $screen-md) {
+					float: left;
+					width: $i * (100%/$col-number);
+					padding: 0 0.375em;
+				}
+			}
+		}
+		.col-offset-#{$i} { margin-left: $i * (100%/$col-number); }
+	}
+	> [class*=col-span] {
+		&:first-child { padding-left: 0; }
+		&:last-child { padding-right: 0; }
+	}
+
+	&::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+// ### [[END]] LEGACY CODE ### //
+
+// [Prefix]: l-
+.l- {
+	&inner {
+		max-width: $coreLayout-max-content-width + ($h-margins * 2);
+		padding: 0 $h-margins;
+		margin: auto;
+	}
+	&row {
+		display:flex;
+		list-style: none;
+		direction: ltr;
+		text-align: left;
+		flex-flow: row wrap;
+		margin-right: 0;
+		margin-left: -$gutters;
+		padding-right: 0;
+		padding-left: 0;
+		&__col {
+			width: 100%;
+			display: inline-block;
+			padding-left: $gutters;
+			text-align: left;
+			vertical-align: top;
+			word-wrap: break-word;
+			overflow: hidden;
+                  // Column Modifiers 
+                  // ex: l_row__col--
+			&-- {
+				// Independent Alignment 				
+				&top{
+					align-self: flex-start;
+				}
+				&middle{
+				    align-self: center;
+				}
+				&bottom{
+					align-self: flex-end;
+				}
+				// Content Flow Columns
+				&flow{
+					@for $i from 2 through 12 {
+						&#{$i}{
+							column-count: $i;
+						}
+					}
+					@for $a from 1 through length($breakpoints){
+						@for $i from 2 through 12 {
+							&#{$i}\@#{nth($breakpointsName, $a)}{
+								@media (min-width: #{nth($breakpoints, $a)}) { 
+									column-count: $i;
+								}
+							}
+						}
+					}
+					@for $a from 1 through length($breakpoints){   
+                        @for $i from 2 through 12 {   
+                            &#{$i}\@#{nth($breakpointsName, $a)}{
+                                @if $a != length($breakpoints){
+                                    @media (min-width: #{nth($breakpoints, $a)}) and (max-width: #{nth($breakpoints, $a+1)} ) {
+                                        column-count: $i;
+                                    }                                       
+                                }
+                                @else{
+                                    @media (min-width: #{nth($breakpoints, $a)}) {
+                                        column-count: $i;
+                                    }                                       
+                                }
+                            }
+                        }
+					}
+				}
+			}
+		}
+		.l-row{
+			margin-left: 0;
+			width: 100%;
+			.l-row__col:first-child{
+				padding-left: 0;
+			}
+			@media (max-width: #{$screen-md}){
+				.l-1\/1{
+					padding-left: 0;
+				}	
+			}
+		}
+            // -- General Row Modifiers .
+            //    ex: l_row--
+		&-- {
+			//Gutters
+			&flush {
+				margin-left: 0;
+				>.l-row__col {
+					padding-left: 0;
+				}
+			}			
+			//Direction
+			&reverse {
+				flex-direction: row-reverse;
+			}
+			//Size - Horizontal
+			&fit {
+				>.l-row__col {
+					width: auto;
+					flex: 1 1 auto;
+				}
+			}
+			//Size - Vertical
+			&equal {
+				>.l-row__col {
+					display: flex;
+				}	
+			}
+			//Positioning - Vertical
+			&middle {
+				align-items: center;
+				>.l-row__col {
+					vertical-align: middle;
+				}
+			}
+			&bottom {
+				align-items: flex-end;
+				>.l-row__col {
+					vertical-align: bottom;
+				}
+			}
+			//Positioning - Horizontal
+			&right {
+				text-align: right;
+				justify-content: flex-end;
+				>.l-row__col {
+					text-align: left;
+				}
+			}		
+			&center {
+				text-align: center;
+				justify-content: center;
+				>.l-row__col {
+					text-align: left;
+				}
+			}
+		}		
+	}
+	&grid{
+		display: grid;
+		grid-column-gap: $gutters;		
+		grid-row-gap: $gutters;
+		&--{	
+			// Flush Gutters Modifiers
+			// Usage example: .l-grid--flush / .l-grid--flush@md
+			&flush{
+				@mixin noGridGap {
+					grid-column-gap: 0;		
+					grid-row-gap: 0;
+				}
+				@include noGridGap();
+				&\@sm{ @media (max-width: $screen-md) { @include noGridGap() } }
+				&\@md{ @media (min-width: $screen-md) and (max-width: $screen-lg) { @include noGridGap() } }
+				&\@lg{ @media (min-width: $screen-lg) and (max-width: $screen-xlg) { @include noGridGap() } }				
+				&\@xlg{ @media (min-width: $screen-xlg) { @include noGridGap() } }													
+			}
+			// Grid Column Amount Modifiers
+			// Usage example: .l-grid--4col
+			@for $i from 2 through $col-number {
+				&#{$i}col{
+					grid-template-columns: repeat($i, 1fr);
+				}
+			}
+			// Media Query Column Modifiers
+			// Usage example: .l-grid--6col@md
+			@for $a from 1 through length($breakpoints){
+				@media (min-width: #{nth($breakpoints, $a)}) {
+					@for $i from 2 through $col-number {
+						&#{$i}col\@#{nth($breakpointsName, $a)}{
+							grid-template-columns: repeat($i, 1fr);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// -- Scaffolding
+	@for $i from 2 through $col-number {
+		@if $i == 2 {
+			&1\/1 { width: 100%; }
+		}
+		@for $x from 1 through $i {
+			@if $x != $i {
+				&#{$x}\/#{$i} {
+					width: $x/$i * 100%;
+				}
+			}
+		}
+	}
+	@for $a from 1 through length($breakpoints) {
+		@for $i from 2 through $col-number {
+			@if $i == 2 {
+				&1\/1\@#{nth($breakpointsName, $a)} {
+					@media (min-width: #{nth($breakpoints, $a)}) { 
+						width:100%;
+					}
+				}
+			}
+			@for $x from 1 through $i {
+				@if $x != $i {
+					&#{$x}\/#{$i} {
+						&\@#{nth($breakpointsName, $a)} {
+							@media (min-width: #{nth($breakpoints, $a)}) { 
+								width: $x/$i * 100%;
+							}
+						}
+					}
+				}
+			}
+		}		
+	}// End Scaffolding
+
+	html[dir="rtl"] & {
+		&row {
+			text-align: right;
+			direction: rtl;
+			&__col { 
+				text-align: right; 
+			}
+		}
+    }
+}

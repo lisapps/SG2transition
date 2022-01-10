@@ -1,0 +1,150 @@
+.s-footer {
+
+	font-size: $footer_font_size;
+	$root: &;
+	.l-inner {
+		padding-top: 1.875em;
+		padding-bottom: 1.875em;
+	}
+
+	&__links {
+		padding-top: 0.25rem;
+		hyphens: auto;
+		
+		@media screen and (max-width: $screen-md) { margin-bottom: 1rem; }
+
+		span { 
+			display: block;
+			margin-bottom: 0.5em;
+			a:not(.e-btn) {
+				color: $footer-sectionTitle-color;
+				&:hover { 
+					color: $footer-sectionTitle-hoverColor;
+					text-decoration: none; 
+				}
+			}
+		}
+
+		ul {
+			@extend .u-list-unstyled;
+
+			@media screen and (min-width: $screen-md) {
+				margin-bottom: 0;
+			}
+
+			span { margin-bottom: 0.25em; } 
+			
+			li {
+				a:not(.e-btn) {
+					color: $footer-links-color;
+					&:hover { 
+						color: $footer-links-color-hover;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		&__section {
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+			display: flex;
+			flex-direction: column;
+			@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+				margin-bottom: 1rem;
+			}
+		}
+
+		&--flow {
+			@mixin flowContent {
+				display: block;
+				column-gap: 0;
+				.l-row__col { display: block; }
+			}
+
+			@for $i from 2 through 12 {
+				&#{$i}\@sm{
+					@include media-sm {
+						@include flowContent;
+						columns: $i auto;							
+					}
+				}
+			}					
+			@for $a from 1 through length($breakpoints){	
+				@for $i from 2 through 12 {	
+					&#{$i}\@#{nth($breakpointsName, $a)}{
+						@if $a != length($breakpoints){
+							@media (min-width: #{nth($breakpoints, $a)}) and (max-width: #{nth($breakpoints, $a+1)} ) { 
+								@include flowContent;
+								columns: $i auto;
+							}										
+						}
+						@else{
+							@media (min-width: #{nth($breakpoints, $a)}) {
+								@include flowContent;
+								columns: $i auto;
+							}										
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&__social { 
+		ul {
+			display: flex;
+			flex-flow: row nowrap;
+			max-width: 10rem;
+			padding: 0;
+			list-style: none;
+			margin-left: auto;
+
+			li {
+				padding: 0 .5rem;
+				svg {
+					height: 1.5rem;
+					width: 1.5rem;
+					fill: $color-default-med-bg; //$$
+				}	
+			}	
+		}
+		
+		svg {
+			max-width: 9rem;
+			height: 4rem;
+			width: 100%;
+			float: right;
+		}
+	}
+
+	&__email {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 1.5rem;
+		@media screen and (max-width: $screen-md) {
+			padding-top: 1rem;
+			border-top: 1px solid $color-svg-dark-fill;
+		}
+		&:last-child { margin-bottom: 0; }
+		h6 { 
+			line-height: 1.375em; 
+			margin-bottom: 1em;
+		}
+		.e-btn { 
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	html[dir="rtl"] & {
+		&__links {
+			&__section {
+				ul {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}

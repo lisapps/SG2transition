@@ -1,0 +1,129 @@
+.s-decoder {
+    $root: &;
+
+    &__ {
+        &numBlock {
+            position: relative;
+            background-color: $decoder-numBlock-backgroundColor;
+            text-align: center;
+            padding: 1.25em 0.5em;
+            border: 1px solid $decoder-numBlock-border;
+            color: $decoder-numBlock-color;
+
+            &__ {
+                &numbers {
+                    display: flex;
+                    font-family: $font-1-family;
+                    @media screen and (max-width: 41em) {    
+                        display: block;
+                        width: 100%;
+                    }
+                    > ul {
+                        display: flex;
+                        width: 100%;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            color: $decoder-numBlock-number;
+                            min-width: 3rem;
+                            padding: 0 0.25em;
+                            font-size: 2em;
+                            margin: 0.125em;
+                            border: 1px solid $decoder-numBlock-number-borderColor;
+                            display: inline-block;
+                            box-sizing: border-box;
+                            text-transform: uppercase;
+                            background-color: $decoder-numBlock-number-backgroundColor;
+                            font-weight: $font-1-weight-bold;
+                            cursor: pointer;
+                            &.c-accordion__tab--active {
+                                color: $decoder-numBlock-number-active;
+                            }
+                        }
+                        .slash {
+                            border: none;
+                            background: none;
+                            min-width: 0;
+                            padding: 0;
+                            color: black;
+                        }
+                    }
+                }
+                &toggle {
+                    position: absolute;
+                    right: 0;
+                    bottom: -2.25em;
+                    cursor: pointer;
+                    @media screen and (max-width: 60em) { right: 1em; }
+        
+                    &__show, &__hide {
+                        background-color: transparent;
+                        color: $link-color;
+                        font-family: $font-1-family;
+                        font-weight: $font-1-weight-normal;
+                        border: none;
+                        padding: 0;
+                        margin: 0;
+                        &:hover {
+                            background-color: transparent;
+                            color: $link-hover;
+                        }
+                    }
+        
+                    &__hide { display: none; }
+        
+                    &--active {
+                        #{$root}__numBlock__toggle__show { display: none; }
+                        #{$root}__numBlock__toggle__hide { display: inline; }
+                    }
+                }
+            }
+        } 
+        &legend {
+            padding: 2.5em 0;
+            @media screen and (max-width: 60em) { padding: 2.5em 2em; }
+            
+            > * { font-size: 1.125em; }
+            ul {
+                list-style-type: none;
+                padding-left: $sc_s-decoder_paddingLeft;
+                margin: 0;
+            }
+
+            .c-accordion {
+                &__ {
+                    &tab {
+                        button {
+                            padding-top: 0.75em;
+                            padding-bottom: 0.75em;
+                        }
+                    }
+                    &panel {
+                        &__content { padding: 1em 0; }
+                    }
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__{
+            &numBlock {
+                &__ {
+                    &toggle {
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+            &legend {
+                ul { 
+                    padding-right: $sc_s-decoder_paddingLeft;
+                    padding-left: 0;
+                }
+            }  
+        }
+    } 
+}

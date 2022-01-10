@@ -1,0 +1,249 @@
+.s-flexibleArticleGallery {
+    
+    $root: &;
+
+    .l- {
+        &row {
+            margin-left: -$rssGutter;
+            margin-bottom: $rssGutter;
+
+            &:nth-of-type(3) { 
+                @media screen and (max-width: $screen-lg) {
+                    margin-bottom: 0;
+                    .l-row__col {
+                        &:nth-of-type(2){ margin-bottom: 0; }
+                    }    
+                }
+            }
+            &:last-child { margin-bottom: 0; }
+            @media screen and (max-width: $screen-lg) {
+                margin-bottom: 0;
+            }
+
+            &__col {
+                padding-left: $rssGutter;
+                @media screen and (max-width: $screen-lg) {
+                    margin-bottom: $rssGutter;
+                }
+            }
+        }
+    }
+
+    &__ {
+        &slides {
+            background-color: transparent;
+            // z-index: 11;
+            @include media-lg { position: relative; }
+
+            @media screen and (min-width: $centerPoint1) and (max-width: $screen-lg2) {
+                max-width: $centerPoint1;
+                margin: 0 auto;
+            }
+            @media screen and (min-width: $centerPoint2) and (max-width: $centerEndPoint2) {
+                max-width: $centerPoint2;
+                margin: 0 auto;
+            }
+            @media screen and (min-width: $centerPoint3) and (max-width: $centerEndPoint3) {
+                max-width: $centerPoint3;
+                margin: 0 auto;
+            }
+            @media screen and (min-width: $centerPoint4) {
+                max-width: $centerPoint4;
+                margin: 0 auto;
+            }
+
+
+            &.c-slideMenu {
+
+                .c-slideMenu__slider {
+                    &__{
+                        &toggle {
+                            background: transparent;
+                            border: none;
+                            outline: none;
+
+                            svg {
+                                fill: #000;
+                                @include media-lg {
+                                    opacity: 1;
+                                    transition: unset;
+                                }
+                            }
+
+                            h5 { 
+                                @include media-lg {
+                                    transform: translate(2em); 
+                                    transition: unset;
+                                }
+                            }
+
+                            &:hover, &:focus {
+                                svg { fill: $link-color; }
+                                h5 { color: $link-color; }
+                            }
+                        }
+                        &panel {
+                            @include media-lg {
+                                left: 1.25em;
+                            }
+
+                            .f-input { border: none; }
+                            
+                            &__content {
+                                @include media-lg {
+                                    overflow-y: auto;     
+                                }
+                            }
+                        }
+                    }
+                    &-- {
+                        &active {
+                            .c-filterCard__results {
+                                display: block; 
+                                @include media-lg {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &right {
+                            .c-slideMenu__slider__toggle {
+                                h5 { 
+                                    @include media-lg {
+                                        transform: translate(-1.5em); 
+                                        transition: unset;
+                                    }
+                                }
+
+                                svg { 
+                                    height: 1.125em;
+                                    width: 1.125em;
+                                }
+                            }
+                            .c-slideMenu__slider__panel {
+                                @include media-lg {
+                                    left: auto;
+                                    right: 1.25em;
+                                }
+                            }
+                        }
+                    }
+                    }
+                &--activeLeft, &--activeRight { z-index: 2147483638; }
+            }
+
+            &.c-slideMenu__slider--active {
+                .c-filterCard__results {
+                    display: block; 
+                    @include media-lg {
+                        display: none;
+                    }
+                }
+            }
+            &__ {
+                &search {
+                    &__ {
+                        &details {
+                            &__content {
+                                ul {
+                                    display: block;
+                                    text-align: left;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &posts { 
+            padding: $postPadding;
+            transition: opacity 250ms ease-in-out;
+            @include media-lg { padding-top: 0; }
+            
+            .l- {
+                &row {
+                    &__col { margin-bottom: $rssGutter; }
+                }
+
+                @for $i from 2 through $col-number {
+                    @if $i == 2{
+                        &1\/1{ width: 100%; }
+                    }
+                    @for $x from 1 through $i {
+                        @if $x != $i {
+                            &#{$x}\/#{$i}{
+                                width: $x/$i * 100%;
+                            }
+                        }
+                    }
+                }
+                @for $a from 1 through length($flexibleArticleGalleryBreakpoints){
+                    @for $i from 2 through $col-number {
+                        @if $i == 2{
+                            &1\/1\@#{nth($flexibleArticleGalleryBreakpointsName, $a)}{
+                                @media (min-width: #{nth($flexibleArticleGalleryBreakpoints, $a)}) { 
+                                    width:100%;
+                                }
+                            }
+                        }
+                        @for $x from 1 through $i {
+                            @if $x != $i {
+                                &#{$x}\/#{$i}{
+                                    &\@#{nth($flexibleArticleGalleryBreakpointsName, $a)}{
+                                        @media (min-width: #{nth($flexibleArticleGalleryBreakpoints, $a)}) { 
+                                            width: $x/$i * 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }		
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] & {
+        &__ {
+            &slides {
+                .c-slideMenu {
+                    &__{
+                        &slider {
+                            &__{
+                                &toggle {
+                                    h5 { 
+                                        @include media-lg {
+                                            transform: translate(-2.5em); 
+                                        }
+                                    }
+                                }
+                                &panel {
+                                    @include media-lg {
+                                        left: auto;
+                                        right: 1.25em;
+                                    }
+                                }
+                            }
+                            &--right {
+                                .c-slideMenu__slider__toggle {
+                                    h5 { 
+                                        @include media-lg {
+                                            transform: translate(1.5em); 
+                                        }
+                                    }
+                                }
+                                .c-slideMenu__slider__panel {
+                                    @include media-lg {
+                                        right: auto;
+                                        left: 1.25em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "table-heading-background": "$stone",
+    "table-striped-background": "$pearl",
+    "table-cta-background": "$stone",
+    "table-border-color": "$gray"
+}

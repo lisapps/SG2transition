@@ -1,0 +1,280 @@
+.c-dialog {
+    $root: &;
+    background-color: white;
+    position: relative;
+    max-width: 27rem;
+    max-height: 40rem;
+    display: flex;
+    flex-direction: column;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &__ {
+        &header {
+            display: flex;
+            background: $dialog-header-background;
+            justify-content: space-between;
+            padding: .5em 1em .5em 1em;
+            >*:not(.c-dialog__header__close) {
+                color: $dialog-notClose-color;
+                margin-bottom: 0;
+                line-height: inherit;
+                margin-right: 1rem;
+                &:only-child { margin-right: 0; }
+            }
+            &__close {
+                background-color: $dialog-closeBtn-background;
+                align-self: auto;
+                position: absolute;
+                right: 0.5em;
+                top: 0.5em;
+                padding: 0.25em;
+                width: 1.5em;
+                height: 1.5em;
+                margin: 0;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+
+        &content,
+        &cta {
+            border: 1px solid $dialog-border-color;
+            padding: .5em 1.25em;
+            border-top: 0;
+        }
+
+        &content {
+            p {
+                &:last-child {
+                    margin: 0;
+                }
+            }
+
+            &:not(:last-child) {
+                border-bottom: 0;
+            }
+
+            overflow-y: auto;
+        }
+
+        &cta {
+            display: flex;
+            align-items: flex-end;
+            padding-top: 1.25em;
+
+            &__ {
+                &links {
+                    display: inline-block;
+                    padding-right: 1em;
+                    bottom: 0.5em;
+                }
+
+                &btns {
+                    margin-left: auto;
+
+                    &-- {
+                        &center {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+
+            .e-btn,
+            button {
+                margin: 0 .125rem;
+            }
+        }
+    }
+
+    &-- {
+        &form {
+            max-width: 23.5rem;
+            width: 100%;
+
+            #{$root} {
+                &__ {
+                    &header {
+                        background-color: $dialog-form-header-backgroundColor;
+                        text-align: center;
+                        padding: $dialog-form-header-padding;
+
+                        >*:not(.c-dialog__header__close) {
+                            margin-right: 0;
+                        }
+                        
+                        >* {
+                            font-size: 1.25rem;
+                        }
+                        
+                        &__close {
+                            background-color: $dialog-form-closeBtn-backgroundColor; 
+                            border-color: $dialog-form-closeBtn-borderColor;
+                            font-size: 1rem; 
+                            svg { 
+                                fill: white; 
+                                transform: translateY($dialog-form-closeBtn-transformY);
+                            }
+                        }
+                    }
+
+                    &content {
+                        padding: 1.25em;
+
+                        form {
+                            >* {
+                                margin-bottom: 1em;
+                            }
+
+                            +* {
+                                margin-top: 1em;
+                            }
+
+                            .f-input {
+                                margin-top: 0;
+
+                                + * {
+                                    margin-bottom: 1em;
+
+                                    a:not(.e-btn) {
+                                        color: $font-base-color;
+                                        font-weight: 400;
+                                    }
+                                }
+
+                                &__ {
+                                    &checkbox {
+                                        label {
+                                            a:not(.e-btn) { color: $link-color; }
+                                        }
+                                    }
+                                }
+                            }
+                            &:first-child {
+                                .f-input { 
+                                    &:first-child { margin-bottom: 0; }
+                                }
+                            }
+                        }
+
+                        > p {
+                            font-size: $dialog-form-content-p-fontSize;
+                            line-height: 1.4;
+                            margin-bottom: 0.25rem;
+                            &:first-child { 
+                                font-size: $dialog-form-content-p-firstChild-fontSize;
+                                margin-bottom: $dialog-form-content-p-marginBottom; 
+                            }
+                        }
+
+                        button {
+                            width: 100%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+
+                        .reCAPTCHA {
+                            a { color: $dialog-form-recaptcha-link; }
+                        }
+
+                        &__radio {
+                            .f-input {
+                                display: block;
+                                // flex-wrap: wrap;
+                                margin: 0;
+                                border: none;
+                                &__checkbox, &__radio {
+                                    padding-top: 0.25em;
+                                    padding-bottom: 0.25em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &popup {
+            max-height: 0;
+            position: fixed;
+            bottom: 0;
+            left: 1.125em;
+            z-index: 3141592; //above the chat
+
+            -webkit-box-shadow: 0px 0.125em 2.250em -0.875em rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0.125em 2.250em -0.875em rgba(0,0,0,0.75);
+            box-shadow: 0px 0.125em 2.250em -0.875em rgba(0,0,0,0.75);
+
+            transition: all 0.5s ease-out;
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+
+            #{$root} {
+                &__ {
+                    &content {
+                        border-bottom: none;
+                        &:last-child {
+                            @media screen and (max-device-width: 60em) and (orientation: landscape) {
+                                height: 100%;
+                            } 
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $screen-md) {
+                max-width: initial;
+                width: 100%;
+                left: 0;
+            }
+
+            @media screen and (max-device-width: 60em) and (orientation: landscape) {
+                max-width: 100%;
+                height: 100%;
+                left: 0;
+            }
+        }
+
+        // -- For the form popup
+        &bottomRight {
+            left: auto;
+            right: 1.125em;
+        }
+        &active {
+            max-height: 100%;
+        }
+    }
+
+    html[dir="rtl"] & {
+        &header {
+            >*:not(.c-dialog__header__close) {
+                margin-right: 0rem;
+            }
+            &__close {
+                right: auto;
+                left: 0.5em;
+            }
+        }
+        &cta {
+            &__{ 
+                &links {
+                    padding-left: 1rem;
+                    padding-right: 0; 
+                }
+                &btns {
+                    margin-right: auto;
+                    margin-left: 0; 
+                }
+            }
+        }
+    }
+}

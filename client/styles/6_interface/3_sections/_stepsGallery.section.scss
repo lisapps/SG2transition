@@ -1,0 +1,14 @@
+.s-stepsGallery {
+
+    .l-flexTiles {
+        &__ {
+            &item {
+                .c-stepCard__cta { visibility: hidden; }
+                &:last-child {
+                    .c-stepCard__cta { visibility: visible; }
+                }
+            }
+        }
+    }
+    
+}

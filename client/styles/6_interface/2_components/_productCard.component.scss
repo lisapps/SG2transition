@@ -1,0 +1,305 @@
+.c-productCard {
+		
+	$root: &;
+	overflow: hidden;
+
+	// -- elements
+	&__img {
+		float: left;
+		padding-right: 1em;
+		padding-bottom: 1.5em;
+		text-align: center;
+		width: 25vw;
+		height: 25vw;
+
+		a {
+			display: flex;
+    		width: 100%;
+			height: inherit;	
+		}
+
+		@media screen and (min-width: $screen-md) {
+			-ms-grid-row: 1;
+			-ms-grid-row-span: 2;
+			-ms-grid-column: 1;
+			grid-area: img;
+			display: flex;
+			float: none;
+			padding: 0;
+			width: auto;
+			height: auto;
+		}
+		@media screen and (min-width: 37.5em) {
+			/*
+				// ^^ SHOULD BE 50em ^^ //
+				but can't because the minimum width allowed per card is 300
+				so somehow the JS needs to recognize when the flextiles should
+				activate on responsiveness
+			*/					
+			height: 11.25em;
+		}
+		&[data-kit] {
+			&::after {
+				content: "x" attr(data-kit);
+				display: inline-block;
+				background: rgba(0, 0, 0, 0.8);
+				color: white;
+				line-height: 1;
+				width: 1em;
+				padding: 0.625em 0.5em 0.375em 0.5em;
+				margin: 0.25em 0 0.5em;
+				font-size: 0.75em;
+				box-sizing: content-box;
+				border-radius: 50%;
+				font-weight: $font-1-weight-bold;
+			}
+			@media screen and (min-width: 37.5em) {
+				/*
+					// ^^ SHOULD BE 50em ^^ //
+					but can't because the minimum width allowed per card is 300
+					so somehow the JS needs to recognize when the flextiles should
+					activate on responsiveness
+				*/
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			img {
+				max-height: 85%;
+				margin-bottom: 0.5em;
+				@media screen and (min-width: 37.5em) {
+					/*
+						// ^^ SHOULD BE 50em ^^ //
+						but can't because the minimum width allowed per card is 300
+						so somehow the JS needs to recognize when the flextiles should
+						activate on responsiveness
+					*/
+					margin: auto;
+				}
+			}
+		}
+		img {
+			display: block;
+			margin: auto;
+			align-self: center;
+			max-height: 100%;
+			@media screen and (min-width: 37.5em) {
+				/*
+					// ^^ SHOULD BE 50em ^^ //
+					but can't because the minimum width allowed per card is 300
+					so somehow the JS needs to recognize when the flextiles should
+					activate on responsiveness
+				*/
+				margin: auto;
+			}
+		}
+	}
+	&__body {
+		@media screen and (min-width: $screen-md) {
+			-ms-grid-row: 1;
+			-ms-grid-column: 2;
+			grid-area: details;
+		}
+		@media screen and (min-width: 37.5em) {
+			/*
+				// ^^ SHOULD BE 50em ^^ //
+				but can't because the minimum width allowed per card is 300
+				so somehow the JS needs to recognize when the flextiles should
+				activate on responsiveness
+			*/
+			flex-grow: 1;
+		}
+		
+		&__title {					
+			font-family: $font-1-family;
+			@media screen and (min-width: 37.5em) {
+				/*
+					// ^^ SHOULD BE 50em ^^ //
+					but can't because the minimum width allowed per card is 300
+					so somehow the JS needs to recognize when the flextiles should
+					activate on responsiveness
+				*/
+				text-align: center;
+			}
+		}
+		&__details {					
+			ul, ol {
+				&:not(.list-unstyled) {
+					// padding: 0;
+					list-style: disc;
+					// list-style-position: inside;
+				}
+			}
+		}
+	}
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		@media screen and (min-width: $screen-md) {
+			-ms-grid-row: 2;
+			-ms-grid-column: 2;
+			grid-area: footer;
+		}
+
+		> *:last-child {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+			grid-template-areas: "quantity cta";
+			grid-gap: 0 1.5em;
+			.f-quantity {
+				-ms-grid-row: 1;
+				-ms-grid-column: 1;
+				grid-area: quantity;
+			}
+			> *:not(.f-quantity) {
+				-ms-grid-row: 1;
+				-ms-grid-column: 2;
+				grid-area: cta;
+				margin: 0;
+				svg{ transform: scale(1.5); }
+			}
+		}
+		&__price {
+			text-align: right;
+			> *:first-child {
+				text-decoration: line-through;
+				font-size: 0.875em;
+				color: $product-footer-price;
+			}
+			> *:last-child {
+				font-weight: $font-1-weight-bold;
+				font-size: 1.125em;
+				margin-left: 0.25em;
+				span { font-size: 87%; vertical-align: top; }
+			}
+		}
+	}			
+	&__overlay {
+		background-color: $accent-2;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 101%;
+		left: 0;
+		transition: bottom 0.25s;
+		display: flex;
+		flex-direction: column;
+		padding: 1em;
+
+		h5 {
+			text-align: center;
+			font-family: $font-1-family;
+			color: white;
+			padding-bottom: 1em;
+			margin: 0;
+		}
+		&__close {
+			display: block;
+			svg {
+				position: absolute;
+				top: 0.5em;
+				right: 1em;
+				width: .875em;
+				height: .875em;
+				fill: white;
+			}
+		}
+		&__body {
+			background-color: white;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			flex-grow: 1;
+			margin: 0;
+			li {
+				text-align: center;
+				margin: 0;
+				width: 33.3%;
+				@media screen and (min-width: 37.5em) {
+					// ^^ SHOULD BE 50em ^^ //
+					/*
+						but can't because the minimum width allowed per card is 300
+						so somehow the JS needs to recognize when the flextiles should
+						activate on responsiveness
+					*/
+					width: 50%;
+				}
+
+				a {
+					display: block;
+					height: 100%;
+					position: relative;
+				}
+			}
+		}
+	}
+
+	
+	// ### MODIFIERS ### //
+	&-- {
+		&active {
+			.c-productCard__overlay {
+				bottom: 0;
+			}
+		}
+
+		&lite {
+			#{$root}__footer {
+				> *:last-child {
+					-ms-grid-row: 1;
+					-ms-grid-column: 1;
+					-ms-grid-column-span: 2;
+					grid-template-columns: 1fr;
+					grid-template-areas: "cta";
+					margin-top: 0.5em;
+					@media screen and (min-width: 37.5em) {
+						/*
+							// ^^ SHOULD BE 50em ^^ //
+							but can't because the minimum width allowed per card is 300
+							so somehow the JS needs to recognize when the flextiles should
+							activate on responsiveness
+						*/
+						margin: 0;
+						display: inline-block;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}		
+
+
+	// ### MEDIA QUERIES ### //
+	@media screen and (min-width: $screen-md) {
+		display: -ms-grid;
+		display: grid;
+		grid-gap: 0 1em;
+		-ms-grid-columns: 25% 1fr;
+		grid-template-columns: 25% 1fr;
+		grid-template-areas: 
+			"img details"
+			"img footer";
+		&--lite {
+			grid-template-areas: 
+				"img details"
+				"footer footer";
+		}
+	}
+	@media screen and (min-width: 37.5em) {				
+		/*
+			// ^^ SHOULD BE 50em ^^ //
+			but can't because the minimum width allowed per card is 300
+			so somehow the JS needs to recognize when the flextiles should
+			activate on responsiveness
+		*/
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		&__body {
+			p { text-align: center; }
+		}
+	}
+}

@@ -1,0 +1,94 @@
+/* ======================================== */
+/* =                                      = */
+/* =              Forms Base              = */
+/* =                                      = */
+/* ======================================== */
+
+/*
+.
+.     Base Table Styles
+.     form | input | textarea | label | fieldset | legend | select | optgroup | option | datalist | output
+.      
+*/
+
+// - - - - - - - - - -
+// * Form
+// - - - - - - - - - - 
+form {
+      // Base styles for form tag
+      margin: auto;
+}
+
+
+// - - - - - - - - - -
+// * Input
+// - - - - - - - - - - 
+input{
+      // Base styles for input tag
+      outline: none;
+}
+
+
+// - - - - - - - - - -
+// * Text Area
+// - - - - - - - - - - 
+textarea{
+      // Base styles for textarea
+}
+
+
+// - - - - - - - - - -
+// * Label
+// - - - - - - - - - - 
+label{
+      // Base styles for label
+}
+
+
+// - - - - - - - - - -
+// * Fieldset
+// - - - - - - - - - - 
+fieldset{
+      margin-top: $margin-base-top;
+      margin-bottom: $margin-base-bottom;
+}
+
+
+// - - - - - - - - - -
+// * Legend
+// - - - - - - - - - - 
+legend{
+      font-family: $font-2-family;
+      font-size: 1.125em;
+      margin: 0;
+}
+
+
+// - - - - - - - - - -
+// * Select
+// - - - - - - - - - - 
+select{
+      // Base styles for select
+}
+optgroup{
+      // Base styles for optgroup
+}
+option{
+      // Base styles for option
+}
+
+
+// - - - - - - - - - -
+// * Data List
+// - - - - - - - - - - 
+datalist{
+      // Base styles for datalist
+}
+
+
+// - - - - - - - - - -
+// * Output
+// - - - - - - - - - - 
+output {
+      // Base styles for output
+}

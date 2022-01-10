@@ -1,0 +1,48 @@
+// ### BUTTONS ### //
+
+	// -- button properties    
+	$btn-font-family			: $font-2-family;
+	$btn-font-weight			: $font-2-weight-normal;
+	$btn-font-size				: $font-base-size;
+
+	$btn-border-size:   1px;
+    $btn-corners:		3px;
+
+	$btn-padding				: 0.5em 1.5em 0.6em;
+	$btn-margin					: 0 0.125rem 0.5rem;
+		
+
+	// -- button states
+	/*
+		There are only 2 states to be set, hover and normal. The hover
+		state will share the :focus and :active states.
+	*/
+	$btn1_normal: (
+		"color": #fff,
+		"background-color": $mainred,
+		"border-color": $mainred
+	);
+	$btn1_hover: (
+		"color": #fff,
+		"background-color": $darkred,
+		"border-color": $darkred
+	);
+	
+	$button1: ("normal": $btn1_normal, "hover": $btn1_hover);
+	
+	$btn2_normal: (
+		"color": #000,
+		"background-color": rgba(0,0,0,0.05),
+		"border-color": $night
+	);
+	$btn2_hover: (
+		"color": #000,
+		"background-color": rgba(0,0,0,0.15),
+		"border-color": $night
+	);
+	$button2: ("normal": $btn2_normal, "hover": $btn2_hover);
+	
+	// -- append all your button declarations to the list (array) below
+	$buttons: $button1, $button2;
+
+	$btn-paypal-txt-color: $night;

@@ -1,0 +1,323 @@
+.s-hero {
+	$root: &;
+	padding-top: 0;
+	overflow: hidden;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	&__ {
+		&link {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+		&background {
+			top:0;
+			left: 0;
+			position: relative; 
+			width: 100vw;
+			max-height: 100vw;
+			overflow: hidden;
+
+			@media (min-width: 32em) {
+				height: 46vw;
+			}
+
+			@media (min-width: 64em) {
+				height: 37.5vw;
+			}
+
+			&::before {
+				content: '';
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -2;
+			}
+			video {
+				width: 100%;
+				height: auto;
+				max-width: 100%;
+				display: block;
+
+				&.s-hero__background__ {
+					&small {
+						@media screen and (min-width: $screen-md) { display: none; }
+					}
+					&medium, &large {
+						display: none;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+					&medium {
+						@media screen and (min-width: $screen-md) and (max-width: 1199px) { display: block; }
+					}
+					&large {
+						@media screen and (min-width: 1200px) { display: block; }
+					}
+				}
+            }
+            picture {
+				width: 100%;
+				@media (min-width: 32em) {
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			img {
+				display:block;
+				@media screen and (min-width: 1200px) { width: 100%; }
+			}
+		}
+		&inner {
+			display: flex;
+			position: relative;
+			padding-bottom: 0;
+			padding: 0;
+			@media screen and (min-width: 768px) {
+				height: 100%;
+				width: 100%;
+				position: relative;
+				padding: 0 2rem; 
+				margin: 0 auto;
+			}
+			@media screen and (min-width: 768px) { 
+				padding: 0 3.125rem; 
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				max-width: 75em;
+				z-index: 11;
+			}
+			@media screen and (min-width: 1900px) {
+				left: 0;
+				transform: none;
+				margin-left: 22em;
+			}
+			&__ {
+				&content {
+					display: -ms-flexbox;
+					margin: auto 0;
+					width: 100%;
+					@media screen and (min-width: 768px) {
+						width: auto;
+						max-width: 42%;
+						position: relative;
+						background-color: transparent;
+						text-align: left;
+						padding: 0;
+						p { color: initial; }
+					}
+					@media screen and (min-width: 1024px){
+						max-width: 28em;
+					}
+					
+					p {
+						color: white;
+						position: relative;
+						z-index: 2;
+						&:empty { display: none; }
+						&:last-of-type { margin: 0; }
+					}
+					.c-headerClip {
+						&__ {
+							&title { z-index: 2; }
+							&cta { z-index: 11; }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	html[dir="rtl"] & {
+		&__ {
+			&inner {
+				justify-content: flex-end;
+			}
+		}
+		&--right {
+			#{$root}__inner {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	// MODIFIERS
+	&-- {
+		// custom homepage
+		&landing {
+							
+			@media screen and (min-width: 768px) {
+				height: 60vw;
+				max-height: 46.25em;
+			}
+								
+			.s-hero__inner__content{ 
+				@media screen and (min-width: 768px) {
+					max-width: 60%;
+				}
+			}
+
+			.c-headerClip {
+				&__ {
+					&title {
+						@media screen and (min-width: 768px) {
+							font-size: 2.25em;
+							padding-bottom: 0.375em;
+						}
+						@include media-lg { font-size: 2.75em; }
+					}
+				}
+			}
+
+			#{$root}__background {
+				height: 100%;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+
+				.e-vimeoPlayer {
+					&__ {
+						&player { width: 112vw; }
+					}
+				}
+
+				picture {
+					width: auto;
+					top: initial;
+					left: 50%;
+					transform: translateX(-50%);
+					height: 100%;
+					img {
+						width: auto;
+						height: 100%;
+						max-width: unset;
+					}
+				}
+			}
+		}
+		
+		// positioning
+		&right {
+			.s-hero__inner {
+				justify-content: flex-end;
+				@media screen and (min-width: 1900px) {
+					right: 0;
+					left: auto;
+					margin-right: 22em;
+				}
+			}
+			.c-headerClip {
+				&__ {
+					&title {
+						border-radius: $headerClip-borderRadius 0 0 0;
+							
+						@media screen and (min-width: 768px) {
+							padding-left: 1.875rem;
+							padding-right: 0;
+						}
+						&::after{
+							right: unset;
+							left: 0;
+							@media screen and (min-width: 768px) {
+								border-radius: $headerClip-borderRadius 0 0 0;
+							}
+						}
+					}
+					&desc {
+						@include media-md {
+							padding: 0 0 1.25rem 1.875rem;
+						}
+						&::after{
+							right: unset;
+							left: 0;
+						}
+					}
+					&cta {
+						@media screen and (min-width: 768px) {
+							padding: 0.325rem 0 0.325rem 1.875rem; 
+							border-radius: 0 0 0 $headerClip-borderRadius;
+						}
+						&::after{
+							right: unset;
+							left: 0;
+							border-radius: 0 0 0 $headerClip-borderRadius;
+						}
+					}
+				}
+			}
+		}
+
+		// theme
+		&light {
+			.c-headerClip__title {
+				color: black;
+				&::after{ 
+					background: rgba(255,255,255,.8);
+				}
+			}
+			.c-headerClip__desc {
+				color: black;
+				&::after {
+					background: $headerClip-desc-bg-light;
+				}
+			}
+			.c-headerClip__cta {
+				&::after { 
+					background: $hero-cta-bg-theme-alt;
+				}
+			}
+		}
+
+		&dark {
+			.c-headerClip__title {
+				color: white;
+				&::after{ 
+					background: rgba(0,0,0,.8);
+				}
+			}
+			.c-headerClip__desc {
+				color: white;
+				&::after {
+					background: $headerClip-desc-bg-dark;
+				}
+			}
+			.c-headerClip__cta {
+				&::after { 
+					background: $hero-cta-bg-theme-alt;
+				}
+			}
+		}
+
+		&altCTA {
+			.c-headerClip__cta {
+				&::after { 
+					background: $hero-cta-bg-alt;
+				}
+			}
+			&.s-hero--light {
+				.c-headerClip__cta {
+					&::after { 
+						background: $hero-cta-bg-combo-alt;
+					}
+				}
+			}
+			&.s-hero--dark {
+				.c-headerClip__cta {
+					&::after { 
+						background: $hero-cta-bg-combo-alt;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+.s-headline {
+  background: #252525; //Replace w/ Color variable
+  font-family: "proxima-nova", sans-serif;
+  text-align: center;
+  padding: 2.5em 1em 1.875em;
+  &__breadcrumbs {
+    font-size: 0.875em;
+    margin: 0 0 0.5em;
+    &__slash {
+      margin: 0.5em;
+    }
+  }
+  &__title {
+  }
+  &__description {
+    margin-bottom: 0;
+  }
+  &-- {
+    &alignLeft {
+      text-align: left;
+      padding: 2.5em 0 1.875em;
+      .s-headline__title {
+        margin: 0;
+      }
+    }
+  }
+}

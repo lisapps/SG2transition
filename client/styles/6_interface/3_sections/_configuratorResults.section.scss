@@ -1,0 +1,169 @@
+.s-configuratorResults {
+  $root: &;
+  background-color: $configuratorResults-bg-color;
+  padding: 1em 0;
+
+  #{$root}__accordion {
+    &:only-child {
+      #{$root}__accordion__results {
+        > .c-accordion__panel__content {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &__ {
+      &heading {
+        font-size: initial;
+        &:hover {
+          cursor: default;
+        }
+
+        button {
+          width: auto;
+          font-family: inherit;
+          font-size: 1.675em;
+          border: none;
+          margin: 0 auto;
+
+          &:hover,
+          &:focus {
+            color: initial;
+            cursor: default;
+            pointer-events: none;
+
+            @include media-md {
+              cursor: pointer;
+              pointer-events: initial;
+            }
+          }
+
+          .c-accordion__tab__icon {
+            display: none;
+            height: 0.5em;
+            width: 0.5em;
+            fill: initial;
+            margin-left: 0.75em;
+            @include media-md {
+              display: block;
+            }
+          }
+        }
+
+        &.c-accordion__tab--active {
+          & + #{$root}__accordion__results {
+            .c-accordion__panel__content {
+              .l-inner {
+                .c-configuratorResultsCard {
+                  .c-accordion {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &results {
+        > .c-accordion__panel__content {
+          padding: 1em 0 0;
+
+          .l-inner {
+            .c-accordion {
+              opacity: 0;
+              transition: opacity 250ms ease-in;
+            }
+          }
+        }
+
+        &__ {
+          &grid {
+            display: grid;
+            grid-gap: 1em;
+            margin-bottom: 1em;
+            @include media-md {
+              grid-template-columns: 1fr 1fr;
+            }
+
+            &:only-child {
+              margin-bottom: 0;
+            }
+
+            .c-configuratorResultsCard {
+              &:only-child {
+                // width: auto;
+                // min-width: 26em;
+                grid-column: span 2;
+                justify-self: center;
+
+                @include media-md {
+                  ul {
+                    display: flex;
+                    li {
+                      display: inline-block;
+                      flex-grow: 1;
+                    }
+                  }
+                }
+
+                .c-configuratorResultsCard__info__bankSchema {
+                  .c-accordion__tab {
+                    @include media-md {
+                      display: flex;
+                      justify-content: flex-end;
+                    }
+                  }
+                  .c-accordion__panel__content {
+                    @include media-md {
+                      ul {
+                        display: initial;
+                        li {
+                          display: block;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &:first-child:nth-last-child(3) {
+                grid-row: span 2;
+              }
+
+              &:first-child:nth-last-child(4) {
+                grid-row: span 2;
+              }
+
+              &:nth-child(3):nth-last-child(2) {
+                grid-row: span 2;
+              }
+
+              &:first-child:nth-last-child(5) {
+                grid-row: span 2;
+              }
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__ {
+    &important {
+      margin-top: $configuratorResults-gutter;
+      h5 {
+        font-family: $font-1-family;
+      }
+      .c-configuratorResultsCard {
+        &:not(.c-configuratorResultsCard--important) {
+          margin-bottom: $configuratorResults-gutter;
+        }
+      }
+    }
+  }
+
+  html[dir="rtl"] & {
+  }
+}

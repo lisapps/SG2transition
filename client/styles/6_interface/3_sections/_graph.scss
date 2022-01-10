@@ -1,0 +1,64 @@
+//Section
+.s-graph {
+	$root: &;
+	table {
+		margin-bottom: 4em;
+		border: 0;
+		th, td {
+			min-width: 7em;
+		}
+	}
+
+	.l-container {
+		> * {
+			padding-top: 2em;
+			padding-bottom: 2em;
+			width: 100%;
+			&:first-child { padding-top: 4em; }
+			&:last-child { padding-bottom: 4em; }
+		}
+	}
+	html[dir="rtl"] & {
+		table {
+			th { text-align: right; }
+		}
+	}
+}
+
+
+// --- GRAPHING COMPONENT --- //
+// ========================== //
+.c-graph {
+	&__item {
+		width: 0;
+		position: relative;		
+	}
+	
+	&--bar {
+		.c-graph__item {
+			background-color: $color-default-med-bg;
+			max-width: 100%;
+			min-width: 1px;
+			margin: 0.5em 0;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to left, rgba(0,0,0,0) 40%,rgba(0,0,0,0.35) 100%);
+			}
+
+			&__info {
+				text-align: right;
+				padding: 0.25em 0.5em;
+				line-height: 1.25;
+				span{
+					font-size: 0.875em;
+					display: block;
+				}
+			}
+		}
+	}
+}
+// ========================== //

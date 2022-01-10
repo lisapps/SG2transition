@@ -1,0 +1,53 @@
+.e-blockquote {
+    display: inline-block;
+    width: 100%;
+    background-color: $color-default-med-bg;
+    font-weight: $font-1-weight-bold;
+    text-align: left;
+    padding: 1em 1.5em 1em 3.5em;
+    margin: 0;
+
+    &__copy {
+        display: inline-block;
+        margin: 0 0 .5em;
+        position: relative;
+        svg {
+            fill: $color-svg-dark-fill;
+            &:first-child {
+                position: absolute;
+                right: 100%;
+                margin: .125em .5em 0 0;
+            }
+            &:last-child {
+                margin: .125em 0 0 .5em;
+            }
+        }
+    }
+    &__title {
+        span {
+            font-style: italic;
+            display: inline-block;
+        }
+    }
+
+    &--{
+        &center {
+            .e-blockquote {    
+                &__copy {
+                    svg {
+                        &:first-child {
+                            @media screen and (min-width: $screen-lg) {
+                                position: initial;
+                            }
+                        }
+                    }
+                }
+            }
+            //is there to detect column width
+            @media screen and (min-width: $screen-lg) {
+                text-align: center;
+                padding: 1em 1.75em;
+            }
+        }
+    }
+}
